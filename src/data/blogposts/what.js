@@ -66,7 +66,7 @@ catch you in the next adventure in "making small models think big without meltin
     tags: ['AI', 'small models', 'big dreams'],
     publishDate: '2025-01-06',
     category: 'Technology',
-    featured: true,
+    featured: false,
     authorId: 'frgmt0'
 });
 

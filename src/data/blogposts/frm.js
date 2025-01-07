@@ -79,7 +79,7 @@ that's the story of fRM—a TypeScript ORM that's paving the way for AI to handl
   tags: ['AI', 'SRN', 'SLT-', 'fRM', 'TypeScript', 'ORM'],
   publishDate: '2024-12-22',
   category: 'Technology',
-  featured: true,
+  featured: false,
   authorId: 'frgmt0'
 });
 

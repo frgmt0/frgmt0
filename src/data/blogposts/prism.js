@@ -104,7 +104,7 @@ This blog post only scratches the surface of what PRISM can do. If you're intere
   tags: ['AI', 'PRISM', '2D Neural Networks', 'Knowledge Graphs', 'Checker Layer', 'Artificial Intelligence', 'Machine Learning'],
   publishDate: '2024-12-19',
   category: 'Technology',
-  featured: true,
+  featured: false,
   authorId: 'frgmt0'
 });
 

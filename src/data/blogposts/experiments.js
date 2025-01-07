@@ -84,7 +84,7 @@ that's it for now! catch you in the next adventure in "making AI think better wi
     tags: ['AI', 'small models', 'big dreams'],
     publishDate: '2025-01-06',
     category: 'Technology',
-    featured: true,
+    featured: false,
     authorId: 'frgmt0'
 });
 

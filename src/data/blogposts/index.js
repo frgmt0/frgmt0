@@ -3,6 +3,7 @@ import prismBlogPost from './prism';
 import frm from './frm';
 import what from './what';
 import experiments from './experiments';
+import post from './01072025';
 // import webPerformance from './webPerformance';
 
 // Add all blog posts to this array
@@ -13,6 +14,7 @@ const allBlogPosts = [
   frm,
   what,
   experiments,
+  post
   // webPerformance,
   // Add new blog posts here
 ];
