@@ -1,6 +1,6 @@
 import BlogPost from '../BlogPost';
 
-const whatBlogPost = new BlogPost({
+const what = new BlogPost({
     id: 'smoll-models-big-dreams',
     title: 'small models, big dreams: when 1B parameters punch above their weight',
     summary: 'how to get started with AI',
@@ -70,4 +70,4 @@ catch you in the next adventure in "making small models think big without meltin
     authorId: 'frgmt0'
 });
 
-export default whatBlogPost;  
+export default what;  

@@ -1,6 +1,6 @@
 import BlogPost from './BlogPost';
 
-const experimentsBlogPost = new BlogPost({
+const experiments = new BlogPost({
     id: 'experiments',
     title: 'adventures in AGI benchmarking: beam search vs MCTS',
     summary: 'messing around with the Arc AGI benchmark',
@@ -87,3 +87,5 @@ that's it for now! catch you in the next adventure in "making AI think better wi
     featured: true,
     authorId: 'frgmt0'
 });
+
+export default experiments;
