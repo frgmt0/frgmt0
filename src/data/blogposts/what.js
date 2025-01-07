@@ -1,4 +1,4 @@
-import BlogPost from '../BlogPost';
+import BlogPost from '../../models/BlogPost';
 
 const what = new BlogPost({
     id: 'smoll-models-big-dreams',

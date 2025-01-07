@@ -1,4 +1,4 @@
-import BlogPost from './BlogPost';
+import BlogPost from '../../models/BlogPost';
 
 const experiments = new BlogPost({
     id: 'experiments',
