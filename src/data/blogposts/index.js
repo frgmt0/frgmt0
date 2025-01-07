@@ -1,6 +1,8 @@
 import frgmtAi from './frgmtAi';
 import prismBlogPost from './prism';
 import frm from './frm';
+import what from './what';
+import experiments from './experiments';
 // import webPerformance from './webPerformance';
 
 // Add all blog posts to this array
@@ -8,7 +10,9 @@ import frm from './frm';
 const allBlogPosts = [
   frgmtAi,
   prismBlogPost,
-  frm
+  frm,
+  what,
+  experiments,
   // webPerformance,
   // Add new blog posts here
 ];
