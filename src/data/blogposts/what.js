@@ -62,7 +62,7 @@ random fact: during testing, my computer got so hot i could have made toast on i
 
 catch you in the next adventure in "making small models think big without melting your hardware." >:>
     `,
-    coverImage: '/Users/jace/dev/coldtapwater/portfolio/public/images/what.jpg',
+    coverImage: '/images/what.jpg',
     tags: ['AI', 'small models', 'big dreams'],
     publishDate: '2025-01-06',
     category: 'Technology',

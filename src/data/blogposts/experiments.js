@@ -80,7 +80,7 @@ random fact: during testing, i'm pretty sure claude started enjoying the puzzles
 
 that's it for now! catch you in the next adventure in "making AI think better without breaking the bank." >:>
 `,
-    coverImage: '/Users/jace/dev/coldtapwater/portfolio/public/images/experiments.jpg',
+    coverImage: '/images/experiments.jpg',
     tags: ['AI', 'small models', 'big dreams'],
     publishDate: '2025-01-06',
     category: 'Technology',
