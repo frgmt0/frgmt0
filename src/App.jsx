@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import LocomotiveScroll from 'locomotive-scroll';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
@@ -18,44 +16,15 @@ import BlogPost from './pages/Blog/BlogPost';
 function App() {
   const location = useLocation();
 
-  useEffect(() => {
-    // Initialize Locomotive Scroll
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      multiplier: 1,
-      lerp: 0.1,
-      scrollFromAnywhere: true,
-      resetNativeScroll: true
-    });
-
-    // Update scroll on route change
-    const handleRouteChange = () => {
-      if (scroll) {
-        scroll.update();
-        scroll.scrollTo(0, { duration: 0, disableLerp: true });
-      }
-    };
-
-    handleRouteChange();
-
-    // Cleanup
-    return () => {
-      if (scroll) scroll.destroy();
-    };
-  }, [location.pathname]); // Re-initialize on route change
-
   return (
     <div className="min-h-screen flex flex-col relative">
       <CustomCursor />
       <Navbar />
       <Banner />
       <main 
-        data-scroll-container
         className="flex-1 relative"
         style={{ 
-          minHeight: '100vh',
-          overflow: 'hidden'
+          minHeight: '100vh'
         }}
       >
         <AnimatePresence mode="wait">

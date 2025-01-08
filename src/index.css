@@ -231,10 +231,6 @@ button {
   text-decoration: none;
 }
 
-.locomotive-scroll {
-  overflow: hidden;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
