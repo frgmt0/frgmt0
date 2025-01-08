@@ -8,7 +8,7 @@ const Art = () => {
   const { fontStyle } = useFont();
 
   // Use the same font as headers based on fontStyle
-  const headerFont = fontStyle === 'EasyRead' ? 'TrashHand' : 'aaaiight';
+  const headerFont = fontStyle === 'EasyRead' ? 'Borela' : 'Borela';
 
   return (
     <div className="min-h-screen bg-background-color pt-20">
@@ -19,7 +19,7 @@ const Art = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 
-            className="font-street text-4xl md:text-5xl mb-8 tracking-wider text-gradient text-center homecard-container"
+            className="font-borela text-4xl md:text-5xl mb-8 tracking-wider text-gradient text-center homecard-container"
             style={{ fontFamily: headerFont }}
           >
             Art & Photo Gallery
@@ -45,17 +45,17 @@ const Art = () => {
                     <div className="caption-overlay">
                       <div className="caption-content">
                         <h3 
-                          className="font-street text-2xl mb-2"
+                          className="font-borela text-2xl mb-2"
                           style={{ fontFamily: headerFont }}
                         >
                           {caption.title}
                         </h3>
-                        <p className="font-street text-sm mb-1">{caption.description}</p>
+                        <p className="font-borela text-sm mb-1">{caption.description}</p>
                         {caption.location && (
-                          <p className="font-street text-sm location">📍 {caption.location}</p>
+                          <p className="font-borela text-sm location">📍 {caption.location}</p>
                         )}
                         {caption.date && (
-                          <p className="font-street text-sm date">{caption.getFormattedDate()}</p>
+                          <p className="font-borela text-sm date">{caption.getFormattedDate()}</p>
                         )}
                       </div>
                     </div>

@@ -21,7 +21,7 @@ const Blog = () => {
           className="text-center"
         >
           <h1 
-            className="font-main text-4xl md:text-5xl mb-8 tracking-wider text-gradient"
+            className="font-borela text-4xl md:text-5xl mb-8 tracking-wider text-gradient"
             style={{ fontFamily: headerFont }}
           >
             Blog

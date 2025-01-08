@@ -9,6 +9,7 @@ const navItems = [
   { name: 'About', path: '/about' },
   { name: 'Art', path: '/art' },
   { name: 'Blog', path: '/blog' },
+  { name: 'API', path: 'https://api.frgmt.xyz', external: true },
 ];
 
 const Navbar = () => {
@@ -46,12 +47,23 @@ const Navbar = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link
-                    to={item.path}
-                    className="font-header text-2xl text-gray-300 hover:text-white transition-colors duration-300 tracking-wider"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-borela text-2xl text-gray-300 hover:text-white transition-colors duration-300 tracking-wider"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className="font-borela text-2xl text-gray-300 hover:text-white transition-colors duration-300 tracking-wider"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
               
@@ -126,13 +138,25 @@ const Navbar = () => {
               whileHover={{ x: 10 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                to={item.path}
-                onClick={closeMobileMenu}
-                className="font-header text-xl text-gray-300 hover:text-white block px-4 py-3 rounded-md tracking-wider transition-colors duration-300"
-              >
-                {item.name}
-              </Link>
+              {item.external ? (
+                <a
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMobileMenu}
+                  className="font-borela text-xl text-gray-300 hover:text-white block px-4 py-3 rounded-md tracking-wider transition-colors duration-300"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  to={item.path}
+                  onClick={closeMobileMenu}
+                  className="font-borela text-xl text-gray-300 hover:text-white block px-4 py-3 rounded-md tracking-wider transition-colors duration-300"
+                >
+                  {item.name}
+                </Link>
+              )}
             </motion.div>
           ))}
           

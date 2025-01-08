@@ -45,12 +45,12 @@ const Research = () => {
             transition={{ duration: 0.5 }}
             className="bg-black/30 rounded-xl p-8 h-[calc(100%-3rem)] flex flex-col"
           >
-            <h1 className="font-tag text-4xl md:text-5xl mb-6 tracking-wider text-gradient flex-shrink-0">
+            <h1 className="font-borela text-4xl md:text-5xl mb-6 tracking-wider text-gradient flex-shrink-0">
               PRISM Research Paper
             </h1>
             {isLoading ? (
               <div className="flex justify-center items-center flex-grow">
-                <div className="text-primary-color font-street text-xl">Loading PDF...</div>
+                <div className="text-primary-color font-borela text-xl">Loading PDF...</div>
               </div>
             ) : (
               <div className="flex-grow w-full rounded-lg overflow-hidden">
