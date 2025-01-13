@@ -4,19 +4,6 @@
 
 /*Main Font*/
 @font-face {
-  font-family: 'Street Wars Demo';
-  src: url('/fonts/text/Street Wars Demo.ttf') format('truetype');
-  font-display: swap;
-  letter-spacing: 0.02em;
-}
-@font-face {
-  font-family: 'main';
-  src: url('/fonts/text/mainText.ttf') format('truetype');
-  font-display: swap;
-  letter-spacing: 0.02em;
-  font-size: 200;
-}
-@font-face {
   font-family: 'borela';
   src: url('/fonts/text/BORELA.otf') format('truetype');
   font-display: swap;
@@ -30,13 +17,6 @@
   font-display: swap;
   letter-spacing: 0.02em;
   font-size: 200;
-}
-
-@font-face {
-  font-family: 'header';
-  src: url('/fonts/header/header.otf') format('truetype');
-  font-display: swap;
-  letter-spacing: 0.02em;
 }
 
 /*Neutral Header Font*/
@@ -83,7 +63,7 @@ html {
 }
 
 body {
-  background-image: url('./images/background.jpg');
+  background-image: url('/images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
