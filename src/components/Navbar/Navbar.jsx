@@ -9,7 +9,6 @@ const navItems = [
   { name: 'About', path: '/about' },
   { name: 'Art', path: '/art' },
   { name: 'Blog', path: 'https://blog.frgmt.xyz' },
-  { name: 'API', path: 'https://api.frgmt.xyz', external: true },
 ];
 
 const Navbar = () => {
