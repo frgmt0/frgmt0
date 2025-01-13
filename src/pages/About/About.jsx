@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const SkillTag = ({ name }) => (
-  <span className="px-4 py-2 bg-primary-color/20 rounded-full font-main text-lg tracking-wider">
+  <span className="px-4 py-2 bg-primary-color/20 rounded-full font-borela text-lg tracking-wider">
     {name}
   </span>
 );
@@ -11,7 +11,7 @@ const Section = ({ title, children }) => (
     <h2 className="font-borela text-4xl md:text-5xl mb-6 tracking-wider text-gradient homecard-container">
       {title}
     </h2>
-    <div className="space-y-4 font-sans text-xl text-gray-300 tracking-wide leading-relaxed">
+    <div className="space-y-4 font-borela text-xl text-gray-300 tracking-wide leading-relaxed">
       {children}
     </div>
   </div>

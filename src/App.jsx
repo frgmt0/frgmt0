@@ -17,7 +17,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-screen flex flex-col relative parallax">
       <CustomCursor />
       <Navbar />
       <Banner />

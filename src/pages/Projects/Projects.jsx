@@ -20,7 +20,7 @@ const ProjectCard = ({ project, isFeatured }) => {
       <div className="bg-black/30 rounded-xl p-8 h-full transform transition-all duration-300 hover:scale-[1.02] hover:bg-black/40 hover:shadow-xl hover:shadow-primary-color/20">
         {isFeatured && project.prevText && (
           <div className="mb-2 pt-12 pb-4">
-            <h1 className="font-logo text-6xl md:text-7xl tracking-wider text-gradient homecard-container">
+            <h1 className="font-logo2 text-6xl md:text-8xl tracking-wider text-gradient prevtext-container space-y-2">
               {project.prevText}
             </h1>
           </div>

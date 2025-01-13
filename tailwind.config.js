@@ -12,6 +12,7 @@ export default {
         'tag': ['main', 'sans-serif'],
         'main': ['header', 'sans-serif'],
         'logo': ['logo', 'sans-serif'],
+        'logo2': ['logo2', 'sans-serif'],
         'neutralStreet': ['paradize', 'sans-serif'],
         'neutralHeaderTag': ['TrashHand', 'sans-serif'],
         'sans': ['borela', 'sans-serif'],
@@ -61,7 +62,7 @@ export default {
             },
             code: {
               color: theme('colors.primary-color'),
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0)',
               padding: '0.25rem 0.5rem',
               borderRadius: '0.25rem',
               fontWeight: '400',
@@ -73,7 +74,7 @@ export default {
               content: '""',
             },
             pre: {
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0)',
               code: {
                 backgroundColor: 'transparent',
                 padding: '0',

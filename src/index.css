@@ -54,6 +54,13 @@
   letter-spacing: 0.02em;
 }
 
+@font-face {
+  font-family: 'logo2';
+  src: url('/fonts/mainName/logo2.ttf') format('truetype');
+  font-display: swap;
+  letter-spacing: 0.02em;
+}
+
 :root {
   --primary-color: #ff3366;
   --secondary-color: #33ff99;
@@ -76,7 +83,7 @@ html {
 }
 
 body {
-  background-image: url('/background.png');
+  background-image: url('./images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -137,6 +144,15 @@ body::before {
   background-color: rgba(17, 17, 17, 0.85);
   z-index: -1;
 }
+
+.bg-image {
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+  }
 
 /* Art Page Styles */
 .art-container {
@@ -202,6 +218,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .homecard-container {
@@ -209,6 +226,15 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.prevtext-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
 }
 
 .logo-container {
@@ -217,6 +243,7 @@ body::before {
   flex-direction: column;
   justify-content: center;
   min-height: min-content;
+  height: 100vh;
 }
 
 button {

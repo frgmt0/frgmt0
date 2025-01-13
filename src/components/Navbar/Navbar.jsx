@@ -8,7 +8,7 @@ const navItems = [
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'About', path: '/about' },
   { name: 'Art', path: '/art' },
-  { name: 'Blog', path: '/blog' },
+  { name: 'Blog', path: 'https://blog.frgmt.xyz' },
   { name: 'API', path: 'https://api.frgmt.xyz', external: true },
 ];
 
@@ -25,7 +25,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/200 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gray-500/20 to-transparent"></div>
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.div
@@ -33,7 +34,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Link to="/" className="font-logo text-3xl text-gradient tracking-wider navbar-container">
+            <Link to="/" className="font-logo2 text-3xl text-gradient tracking-wider navbar-container">
               frgmt_
             </Link>
           </motion.div>
