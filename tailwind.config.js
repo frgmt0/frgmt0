@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'graffiti': ['Street Wars Demo', 'sans-serif'],
         'header': ['main', 'sans-serif'],
         'tag': ['main', 'sans-serif'],
         'main': ['header', 'sans-serif'],
