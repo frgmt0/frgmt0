@@ -12,7 +12,7 @@ const Blog = () => {
   const headerFont = fontStyle === 'EasyRead' ? 'Borela' : 'Borela';
 
   return (
-    <div className="min-h-screen bg-background-color pt-20">
+    <div className="min-h-screen bg-background-image pt-20">
       <div className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

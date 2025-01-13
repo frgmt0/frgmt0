@@ -33,6 +33,11 @@ html {
 
 body {
   background-color: var(--background-color);
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-color);
   letter-spacing: 0.2em;
   line-height: 1.8;
@@ -56,6 +61,32 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 50%,
+    var(--secondary-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .text-gradient {

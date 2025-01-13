@@ -50,7 +50,7 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background-color pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-background-image pt-20 flex items-center justify-center">
         <div className="text-center">
           <h1 
             className="font-borela text-4xl mb-4 tracking-wider text-gradient"
