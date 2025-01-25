@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import allProjects from '../../data/projects';
 import { Link } from 'react-router-dom';
+import ShapeBlur from '../../components/ShapeBlur/ShapeBlur';
 
 const GitHubIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -19,7 +20,16 @@ import TiltedCard from '../../components/tiltedcard/TitledCard';
 const ProjectCard = ({ project, isFeatured }) => {
   return (
     <div className="col-span-1">
-      <div className="h-full">
+      <div className="h-full relative overflow-hidden">
+        <ShapeBlur
+          variation={0}
+          pixelRatioProp={window.devicePixelRatio || 1}
+          shapeSize={0.8}
+          roundness={0.5}
+          borderSize={0.05}
+          circleSize={0.5}
+          circleEdge={1}
+        />
         <TiltedCard
           imageSrc=""
           altText={project.title}
