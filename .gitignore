@@ -73,3 +73,4 @@ debug.log
 
 # Yarn Integrity file
 .yarn-integrity
+.aider*
