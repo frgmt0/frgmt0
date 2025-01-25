@@ -46,44 +46,44 @@ const ProjectCard = ({ project, isFeatured }) => {
                 {project.title}
               </h2>
               <div className="space-y-6">
-          <p className="font-borela text-xl text-gray-300 tracking-wide leading-relaxed">
-            {project.description}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {project.technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-primary-color/20 rounded-full font-main text-sm tracking-wider"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-wrap gap-4">
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-primary-color/10 hover:bg-primary-color/20 border-2 border-primary-color/30 hover:border-primary-color rounded-lg text-white hover:text-primary-color font-main text-xl transition-all duration-300 hover:-translate-y-1 github-link"
-              >
-                <span>View on GitHub</span>
-                <GitHubIcon />
-              </a>
-            )}
-            {project.liveUrl && (
-              <Link
-                to={project.liveUrl}
-                className="inline-flex items-center gap-3 px-6 py-3 bg-primary-color/10 hover:bg-primary-color/20 border-2 border-primary-color/30 hover:border-primary-color rounded-lg text-white hover:text-primary-color font-main text-xl transition-all duration-300 hover:-translate-y-1 github-link"
-              >
-                <span>View Research</span>
-                <DocumentIcon />
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+                <p className="font-borela text-xl text-gray-300 tracking-wide leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-primary-color/20 rounded-full font-main text-sm tracking-wider"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-primary-color/10 hover:bg-primary-color/20 border-2 border-primary-color/30 hover:border-primary-color rounded-lg text-white hover:text-primary-color font-main text-xl transition-all duration-300 hover:-translate-y-1 github-link"
+                    >
+                      <span>View on GitHub</span>
+                      <GitHubIcon />
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <Link
+                      to={project.liveUrl}
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-primary-color/10 hover:bg-primary-color/20 border-2 border-primary-color/30 hover:border-primary-color rounded-lg text-white hover:text-primary-color font-main text-xl transition-all duration-300 hover:-translate-y-1 github-link"
+                    >
+                      <span>View Research</span>
+                      <DocumentIcon />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          }
   );
 };
 
