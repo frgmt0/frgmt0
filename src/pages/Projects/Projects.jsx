@@ -34,17 +34,18 @@ const ProjectCard = ({ project, isFeatured }) => {
           showTooltip={true}
           displayOverlayContent={true}
           overlayContent={
-        {isFeatured && project.prevText && (
-          <div className="mb-2 pt-12 pb-4">
-            <h1 className="font-logo2 text-6xl md:text-8xl tracking-wider text-gradient prevtext-container space-y-2">
-              {project.prevText}
-            </h1>
-          </div>
-        )}
-        <h2 className={`${isFeatured ? 'text-5xl md:text-6xl' : 'text-4xl md:text-5xl'} mb-6 tracking-wider text-gradient homecard-container`}>
-          {project.title}
-        </h2>
-        <div className="space-y-6">
+            <div className="space-y-4 p-6">
+              {isFeatured && project.prevText && (
+                <div className="mb-2">
+                  <h1 className="font-logo2 text-6xl md:text-8xl tracking-wider text-gradient prevtext-container">
+                    {project.prevText}
+                  </h1>
+                </div>
+              )}
+              <h2 className={`${isFeatured ? 'text-5xl md:text-6xl' : 'text-4xl md:text-5xl'} tracking-wider text-gradient homecard-container`}>
+                {project.title}
+              </h2>
+              <div className="space-y-6">
           <p className="font-borela text-xl text-gray-300 tracking-wide leading-relaxed">
             {project.description}
           </p>
