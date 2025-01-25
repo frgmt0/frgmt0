@@ -19,30 +19,24 @@ import TiltedCard from '../../components/tiltedcard/TitledCard';
 const ProjectCard = ({ project, isFeatured }) => {
   return (
     <div className={`${isFeatured ? 'col-span-1 md:col-span-2 lg:col-span-2' : ''}`}>
-      <div className="bg-black/30 rounded-xl p-8 h-full">
+      <div className="h-full">
         <TiltedCard
-          imageSrc={project.coverImage || '/images/default-project.jpg'}
+          imageSrc=""
           altText={project.title}
-          captionText={project.title}
+          captionText=""
           containerHeight="400px"
           containerWidth="100%"
           imageHeight="100%"
           imageWidth="100%"
+          className="bg-black/20 backdrop-blur-sm"
           rotateAmplitude={8}
           scaleOnHover={1.05}
           showMobileWarning={false}
           showTooltip={true}
           displayOverlayContent={true}
           overlayContent={
-            <div className="space-y-4 p-6">
-              {isFeatured && project.prevText && (
-                <div className="mb-2">
-                  <h1 className="font-logo2 text-6xl md:text-8xl tracking-wider text-gradient prevtext-container">
-                    {project.prevText}
-                  </h1>
-                </div>
-              )}
-              <h2 className={`${isFeatured ? 'text-5xl md:text-6xl' : 'text-4xl md:text-5xl'} tracking-wider text-gradient homecard-container`}>
+            <div className="space-y-4 p-6 w-full">
+              <h2 className={`${isFeatured ? 'text-5xl md:text-6xl' : 'text-4xl md:text-5xl'} tracking-wider text-gradient homecard-container mb-6`}>
                 {project.title}
               </h2>
               <div className="space-y-6">

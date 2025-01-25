@@ -79,20 +79,20 @@ const TiltedCard = ({
         }}
         className="w-full h-full relative"
       >
-        <img
-          src={imageSrc}
-          alt={altText}
+        <div
           style={{
             height: imageHeight,
             width: imageWidth,
-            objectFit: "cover"
           }}
-          className="rounded-lg shadow-xl"
-        />
-        
+          className="rounded-lg shadow-xl bg-black/30 flex items-center justify-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-logo2 tracking-wider text-gradient">
+            {altText}
+          </h2>
+        </div>
         {displayOverlayContent && (
           <div 
-            className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
             style={{
               transform: "translateZ(20px)"
             }}
