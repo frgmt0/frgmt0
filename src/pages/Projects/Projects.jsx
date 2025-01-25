@@ -84,6 +84,9 @@ const ProjectCard = ({ project, isFeatured }) => {
               </div>
             </div>
           }
+        />
+      </div>
+    </div>
   );
 };
 
