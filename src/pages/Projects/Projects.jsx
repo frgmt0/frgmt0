@@ -14,10 +14,26 @@ const DocumentIcon = () => (
   </svg>
 );
 
+import TiltedCard from '../../components/tiltedcard/TitledCard';
+
 const ProjectCard = ({ project, isFeatured }) => {
   return (
     <div className={`${isFeatured ? 'col-span-1 md:col-span-2 lg:col-span-2' : ''}`}>
-      <div className="bg-black/30 rounded-xl p-8 h-full transform transition-all duration-300 hover:scale-[1.02] hover:bg-black/40 hover:shadow-xl hover:shadow-primary-color/20">
+      <div className="bg-black/30 rounded-xl p-8 h-full">
+        <TiltedCard
+          imageSrc={project.coverImage || '/images/default-project.jpg'}
+          altText={project.title}
+          captionText={project.title}
+          containerHeight="400px"
+          containerWidth="100%"
+          imageHeight="100%"
+          imageWidth="100%"
+          rotateAmplitude={8}
+          scaleOnHover={1.05}
+          showMobileWarning={false}
+          showTooltip={true}
+          displayOverlayContent={true}
+          overlayContent={
         {isFeatured && project.prevText && (
           <div className="mb-2 pt-12 pb-4">
             <h1 className="font-logo2 text-6xl md:text-8xl tracking-wider text-gradient prevtext-container space-y-2">
