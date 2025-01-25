@@ -24,8 +24,8 @@ const ProjectCard = ({ project, isFeatured }) => {
           imageSrc=""
           altText={project.title}
           captionText=""
-          containerHeight="350px"
-          containerWidth="350px"
+          containerHeight="450px"
+          containerWidth="400px"
           imageHeight="100%"
           imageWidth="100%"
           className="bg-black/20 backdrop-blur-sm"
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, isFeatured }) => {
           showTooltip={true}
           displayOverlayContent={true}
           overlayContent={
-            <div className="space-y-4 p-6 w-full">
+            <div className="space-y-4 p-8 w-full overflow-y-auto max-h-[450px]">
               <h2 className="text-4xl tracking-wider text-gradient homecard-container mb-6 font-borela">
                 {project.title}
               </h2>
@@ -88,7 +88,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background-color pt-20">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
           {allProjects.map((project, index) => (
             <ProjectCard 
               key={project.id} 

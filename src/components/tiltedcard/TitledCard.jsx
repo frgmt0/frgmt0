@@ -92,7 +92,7 @@ const TiltedCard = ({
         </div>
         {displayOverlayContent && (
           <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 overflow-hidden"
             style={{
               transform: "translateZ(20px)"
             }}
