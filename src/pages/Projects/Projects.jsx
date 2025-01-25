@@ -32,7 +32,7 @@ const ProjectCard = ({ project, isFeatured }) => {
           rotateAmplitude={8}
           scaleOnHover={1.05}
           showMobileWarning={false}
-          showTooltip={true}
+          showTooltip={false}
           displayOverlayContent={true}
           overlayContent={
             <div className="space-y-4 p-8 w-full overflow-y-auto max-h-[450px]">
