@@ -1,9 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-const ShapeBlur = ({ borderWidth = 2, blurRadius = 20, opacity = 0.5 }) => {
+const ShapeBlur = ({ 
+  borderWidth = 2, 
+  blurRadius = 20, 
+  opacity = 0.5,
+  bloomIntensity = 2,
+  bloomDuration = 1000 
+}) => {
   const canvasRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [bloomState, setBloomState] = useState({ active: false, startTime: 0 });
+  const animationFrameRef = useRef();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -30,14 +39,38 @@ const ShapeBlur = ({ borderWidth = 2, blurRadius = 20, opacity = 0.5 }) => {
       });
     };
 
+    const handleMouseEnter = () => {
+      setIsHovering(true);
+      setBloomState({ active: false, startTime: 0 });
+    };
+
+    const handleMouseLeave = (e) => {
+      setIsHovering(false);
+      const rect = canvas.getBoundingClientRect();
+      setMousePos({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+      setBloomState({ 
+        active: true, 
+        startTime: performance.now(),
+        exitX: e.clientX - rect.left,
+        exitY: e.clientY - rect.top
+      });
+    };
+
     canvas.parentElement.addEventListener("mousemove", handleMouseMove);
-    canvas.parentElement.addEventListener("mouseleave", () => {
-      setMousePos({ x: rect.width / 2, y: rect.height / 2 });
-    });
+    canvas.parentElement.addEventListener("mouseenter", handleMouseEnter);
+    canvas.parentElement.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("resize", updateCanvasSize);
       canvas.parentElement.removeEventListener("mousemove", handleMouseMove);
+      canvas.parentElement.removeEventListener("mouseenter", handleMouseEnter);
+      canvas.parentElement.removeEventListener("mouseleave", handleMouseLeave);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, []);
 
@@ -48,37 +81,62 @@ const ShapeBlur = ({ borderWidth = 2, blurRadius = 20, opacity = 0.5 }) => {
     const ctx = canvas.getContext("2d");
     const rect = canvas.getBoundingClientRect();
 
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const drawFrame = (timestamp) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Create gradient for the border
-    const gradient = ctx.createLinearGradient(
-      mousePos.x - blurRadius * 2,
-      mousePos.y - blurRadius * 2,
-      mousePos.x + blurRadius * 2,
-      mousePos.y + blurRadius * 2,
-    );
-    gradient.addColorStop(0, `rgba(255, 51, 102, ${opacity})`);
-    gradient.addColorStop(0.5, `rgba(153, 51, 255, ${opacity})`);
-    gradient.addColorStop(1, `rgba(51, 255, 153, ${opacity})`);
+      let currentBlurRadius = blurRadius;
+      let currentOpacity = opacity;
+      let currentBorderWidth = borderWidth;
 
-    // Draw border
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = borderWidth;
-    ctx.filter = `blur(${blurRadius}px)`;
+      if (bloomState.active) {
+        const elapsed = timestamp - bloomState.startTime;
+        const progress = Math.min(elapsed / bloomDuration, 1);
+        const easeOutProgress = 1 - Math.pow(1 - progress, 3); // Cubic ease-out
 
-    // Draw rounded rectangle
-    const padding = blurRadius + borderWidth;
-    ctx.beginPath();
-    ctx.roundRect(
-      padding,
-      padding,
-      rect.width - padding * 2,
-      rect.height - padding * 2,
-      10,
-    );
-    ctx.stroke();
-  }, [mousePos, borderWidth, blurRadius, opacity]);
+        currentBlurRadius = blurRadius + (blurRadius * bloomIntensity * easeOutProgress);
+        currentOpacity = opacity * (1 - easeOutProgress);
+        currentBorderWidth = borderWidth * (1 + bloomIntensity * easeOutProgress);
+
+        if (progress < 1) {
+          animationFrameRef.current = requestAnimationFrame(drawFrame);
+        }
+      }
+
+      const gradient = ctx.createLinearGradient(
+        mousePos.x - currentBlurRadius * 2,
+        mousePos.y - currentBlurRadius * 2,
+        mousePos.x + currentBlurRadius * 2,
+        mousePos.y + currentBlurRadius * 2
+      );
+      
+      gradient.addColorStop(0, `rgba(255, 51, 102, ${currentOpacity})`);
+      gradient.addColorStop(0.5, `rgba(153, 51, 255, ${currentOpacity})`);
+      gradient.addColorStop(1, `rgba(51, 255, 153, ${currentOpacity})`);
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = currentBorderWidth;
+      ctx.filter = `blur(${currentBlurRadius}px)`;
+
+      const padding = currentBlurRadius + currentBorderWidth;
+      ctx.beginPath();
+      ctx.roundRect(
+        padding,
+        padding,
+        rect.width - padding * 2,
+        rect.height - padding * 2,
+        10
+      );
+      ctx.stroke();
+    };
+
+    animationFrameRef.current = requestAnimationFrame(drawFrame);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [mousePos, borderWidth, blurRadius, opacity, bloomState, bloomIntensity, bloomDuration]);
 
   return (
     <canvas
@@ -99,6 +157,8 @@ ShapeBlur.propTypes = {
   borderWidth: PropTypes.number,
   blurRadius: PropTypes.number,
   opacity: PropTypes.number,
+  bloomIntensity: PropTypes.number,
+  bloomDuration: PropTypes.number,
 };
 
 export default ShapeBlur;
