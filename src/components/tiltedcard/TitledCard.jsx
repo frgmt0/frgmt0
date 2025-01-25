@@ -86,7 +86,7 @@ const TiltedCard = ({
           }}
           className="rounded-lg shadow-xl bg-black/30 flex items-center justify-center"
         >
-          <h2 className="text-4xl md:text-5xl font-logo2 tracking-wider text-gradient">
+          <h2 className="text-4xl md:text-5xl font-borela tracking-wider text-gradient">
             {altText}
           </h2>
         </div>
