@@ -1,76 +1,89 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 const ShapeBlur = ({
-  variation = 0,
-  pixelRatioProp = 1,
-  shapeSize = 0.5,
-  roundness = 0.5,
-  borderSize = 0.05,
-  circleSize = 0.5,
-  circleEdge = 1,
+  borderWidth = 2,
+  blurRadius = 20,
+  opacity = 0.5,
 }) => {
   const canvasRef = useRef(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    const pixelRatio = pixelRatioProp;
-    const width = canvas.offsetWidth * pixelRatio;
-    const height = canvas.offsetHeight * pixelRatio;
+    const pixelRatio = window.devicePixelRatio || 1;
+    
+    const updateCanvasSize = () => {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * pixelRatio;
+      canvas.height = rect.height * pixelRatio;
+      ctx.scale(pixelRatio, pixelRatio);
+    };
 
-    canvas.width = width;
-    canvas.height = height;
-    ctx.scale(pixelRatio, pixelRatio);
+    updateCanvasSize();
+    window.addEventListener('resize', updateCanvasSize);
+
+    const handleMouseMove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      setMousePos({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
+    };
+
+    canvas.parentElement.addEventListener('mousemove', handleMouseMove);
+    canvas.parentElement.addEventListener('mouseleave', () => {
+      setMousePos({ x: rect.width / 2, y: rect.height / 2 });
+    });
+
+    return () => {
+      window.removeEventListener('resize', updateCanvasSize);
+      canvas.parentElement.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    const rect = canvas.getBoundingClientRect();
 
     // Clear canvas
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Set up gradient
-    const gradient = ctx.createRadialGradient(
-      width / 2,
-      height / 2,
-      0,
-      width / 2,
-      height / 2,
-      width / 2,
+    // Create gradient for the border
+    const gradient = ctx.createLinearGradient(
+      mousePos.x - blurRadius * 2,
+      mousePos.y - blurRadius * 2,
+      mousePos.x + blurRadius * 2,
+      mousePos.y + blurRadius * 2
     );
-    gradient.addColorStop(0, "rgba(255, 51, 102, 0.15)"); // Primary color with opacity
-    gradient.addColorStop(1, "rgba(153, 51, 255, 0)"); // Accent color fading to transparent
+    gradient.addColorStop(0, `rgba(255, 51, 102, ${opacity})`);
+    gradient.addColorStop(0.5, `rgba(153, 51, 255, ${opacity})`);
+    gradient.addColorStop(1, `rgba(51, 255, 153, ${opacity})`);
 
-    // Draw shape
-    ctx.fillStyle = gradient;
-    ctx.filter = "blur(50px)";
+    // Draw border
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = borderWidth;
+    ctx.filter = `blur(${blurRadius}px)`;
+    
+    // Draw rounded rectangle
+    const padding = blurRadius + borderWidth;
+    ctx.beginPath();
+    ctx.roundRect(
+      padding,
+      padding,
+      rect.width - padding * 2,
+      rect.height - padding * 2,
+      10
+    );
+    ctx.stroke();
 
-    const centerX = width / 2;
-    const centerY = height / 2;
-    const size = Math.min(width, height) * shapeSize;
-
-    switch (variation) {
-      case 0: // Circle
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
-        ctx.fill();
-        break;
-      case 1: // Square
-        ctx.fillRect(centerX - size / 2, centerY - size / 2, size, size);
-        break;
-      default:
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
-        ctx.fill();
-    }
-  }, [
-    variation,
-    pixelRatioProp,
-    shapeSize,
-    roundness,
-    borderSize,
-    circleSize,
-    circleEdge,
-  ]);
+  }, [mousePos, borderWidth, blurRadius, opacity]);
 
   return (
     <canvas
@@ -88,13 +101,9 @@ const ShapeBlur = ({
 };
 
 ShapeBlur.propTypes = {
-  variation: PropTypes.number,
-  pixelRatioProp: PropTypes.number,
-  shapeSize: PropTypes.number,
-  roundness: PropTypes.number,
-  borderSize: PropTypes.number,
-  circleSize: PropTypes.number,
-  circleEdge: PropTypes.number,
+  borderWidth: PropTypes.number,
+  blurRadius: PropTypes.number,
+  opacity: PropTypes.number,
 };
 
 export default ShapeBlur;

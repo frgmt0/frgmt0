@@ -22,13 +22,9 @@ const ProjectCard = ({ project, isFeatured }) => {
     <div className="col-span-1">
       <div className="h-full relative overflow-hidden">
         <ShapeBlur
-          variation={0}
-          pixelRatioProp={window.devicePixelRatio || 1}
-          shapeSize={0.8}
-          roundness={0.5}
-          borderSize={0.05}
-          circleSize={0.5}
-          circleEdge={1}
+          borderWidth={2}
+          blurRadius={15}
+          opacity={0.6}
         />
         <TiltedCard
           imageSrc=""
