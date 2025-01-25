@@ -36,9 +36,6 @@ const ProjectCard = ({ project, isFeatured }) => {
           displayOverlayContent={true}
           overlayContent={
             <div className="space-y-4 p-8 w-full overflow-y-auto max-h-[450px]">
-              <h2 className="text-4xl tracking-wider text-gradient homecard-container mb-6 font-borela">
-                {project.title}
-              </h2>
               <div className="space-y-6">
                 <p className="font-borela text-xl text-gray-300 tracking-wide leading-relaxed">
                   {project.description}
