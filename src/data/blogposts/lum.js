@@ -50,7 +50,7 @@ const lum = new BlogPost({
 
   # final thoughts
   i usually end my posts with some kind of witty remark, but this time i'll just say this: if you're a mental health professional, we built this for you. not for investors, not for the tech crowd, but for the people doing the vital work of helping others navigate their mental health journeys. we're here to support that work, not disrupt it.
-  if you want to learn more, check out https://lum.frgmt.xyz. and if you're skeptical about another AI tool making big promises? good. you should be. read our social contract, ask us tough questions, challenge our assumptions. that's exactly what we need to build something that actually matters.
+  if you want to learn more, check out [lum.frgmt.xyz](https://lum.frgmt.xyz). and if you're skeptical about another AI tool making big promises? good. you should be. read our social contract, ask us tough questions, challenge our assumptions. that's exactly what we need to build something that actually matters.
 
   ---
 
