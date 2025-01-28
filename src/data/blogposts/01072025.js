@@ -1,10 +1,11 @@
-import BlogPost from '../../models/BlogPost';
+import BlogPost from "../../models/BlogPost";
 
 const post = new BlogPost({
-    id: '01072025',
-    title: 'the ever expanding quest for knowledge',
-    summary: 'a look back at my journey with AI as a student, and a discussion of the paradox of "smart" models',
-    content: `
+  id: "01072025",
+  title: "the ever expanding quest for knowledge",
+  summary:
+    'a look back at my journey with AI as a student, and a discussion of the paradox of "smart" models',
+  content: `
 # the ever expanding quest for knowledge
 
 alright folks, grab your coffee (or your energy drink of choice… im a monster type of guy personally) because we need to talk about something that's been driving me absolutely crazy lately. as an electrical engineering student who's way too invested in AI development, i've hit this weird paradox that i can't stop thinking about: why are our "smartest" AI models so... well, not smart when it comes to actual learning?
@@ -123,7 +124,7 @@ this is where things get really interesting. imagine an AI that could:
 # pseudo-code for how AI should think
 def solve_problem(problem, complexity):
     initial_approach = quick_analysis(problem)
-    
+
     if complexity > self.current_capabilities:
         # scale up thinking resources
         additional_resources = request_compute()
@@ -131,7 +132,7 @@ def solve_problem(problem, complexity):
         second_opinion = consult_other_model()
         # or admit limitations
         return "this is beyond my current understanding"
-    
+
     return solve_with_confidence(problem)
 \`\`\`
 
@@ -145,7 +146,7 @@ here's a hot take: we don't need models that can do everything. we need:
 
 so what are we doing about this at SoFragment? well, we're taking a different approach:
 
-1. **reasoning first**: 
+1. **reasoning first**:
 instead of just making bigger models, we're focusing on better reasoning systems:
 - implementing MCTS for complex problem-solving
 - developing dynamic reasoning paths
@@ -209,7 +210,7 @@ but the experiments i've run with MCTS and smaller models suggest something exci
 
 ## final thoughts
 
-the future of AI in engineering education isn't about replacing human understanding. it's about enhancing it. 
+the future of AI in engineering education isn't about replacing human understanding. it's about enhancing it.
 
 we need systems that can:
 - help develop real intuition about complex systems
@@ -223,12 +224,12 @@ random thought: maybe the real AGI was the friends we made along the way... just
 p.s. if you're interested in the MCTS experiments or want to chat about specialized AI development, hit me up. always down to geek out about this stuff.
 @frgmt.xyz on Bluesky and you can probably find me on discord as well
 `,
-    coverImage: '/images/0107.jpg',
-    tags: ['AI', 'small models', 'big dreams'],
-    publishDate: '2025-01-07',
-    category: 'Technology',
-    featured: true,
-    authorId: 'frgmt0'
+  coverImage: "/images/0107.jpg",
+  tags: ["AI", "small models", "big dreams"],
+  publishDate: "2025-01-07",
+  category: "Technology",
+  featured: false,
+  authorId: "frgmt0",
 });
 
 export default post;

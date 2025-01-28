@@ -1,9 +1,10 @@
-import frgmtAi from './frgmtAi';
-import prismBlogPost from './prism';
-import frm from './frm';
-import what from './what';
-import experiments from './experiments';
-import post from './01072025';
+import frgmtAi from "./frgmtAi";
+import prismBlogPost from "./prism";
+import frm from "./frm";
+import what from "./what";
+import experiments from "./experiments";
+import post from "./01072025";
+import lum from "./lum";
 // import webPerformance from './webPerformance';
 
 // Add all blog posts to this array
@@ -14,13 +15,14 @@ const allBlogPosts = [
   frm,
   what,
   experiments,
-  post
+  post,
+  lum,
   // webPerformance,
   // Add new blog posts here
 ];
 
 // Validate all blog posts
-allBlogPosts.forEach(post => {
+allBlogPosts.forEach((post) => {
   try {
     post.validate();
   } catch (error) {
