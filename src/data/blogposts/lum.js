@@ -54,7 +54,7 @@ const lum = new BlogPost({
 
   building something meaningful requires more than just good code. it requires understanding, respect, and a commitment to doing things right. that's what lüm is about. let's make something that actually helps.
   `,
-  coverImage: "/images/prismcover.jpg",
+  coverImage: "/images/lum.jpg",
   tags: ["AI", "Psychology", "Resources", "Artificial Intelligence"],
   publishDate: "2025-01-28",
   category: "Technology",
