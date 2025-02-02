@@ -8,24 +8,23 @@ const Blog = () => {
       <div className="container">
         <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>Blog</h1>
         <div className="blog-grid">
-            {allBlogPosts.map((post) => {
-              const postData = post.getPreviewData();
-              return (
-                <div key={postData.id} className="blog-card">
-                  <img src={postData.coverImage} alt={postData.title} />
-                  <div className="blog-card-content">
-                    <div className="blog-card-date">{postData.formattedPublishDate}</div>
-                    <h3>{postData.title}</h3>
-                    <p className="blog-card-summary">{postData.summary}</p>
-                    <Link to={`/${postData.id}`} className="cta-button secondary">
-                      Read →
-                    </Link>
-                  </div>
+          {allBlogPosts.map((post) => {
+            const postData = post.getPreviewData();
+            return (
+              <div key={postData.id} className="blog-card">
+                <img src={postData.coverImage} alt={postData.title} />
+                <div className="blog-card-content">
+                  <div className="blog-card-date">{postData.formattedPublishDate}</div>
+                  <h3>{postData.title}</h3>
+                  <p className="blog-card-summary">{postData.summary}</p>
+                  <Link to={`/${postData.id}`} className="cta-button secondary">
+                    Read →
+                  </Link>
                 </div>
-              );
-            })}
-          </div>
-        </section>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
