@@ -209,10 +209,11 @@ a:hover {
 }
 
 .blog-post-content img {
-    max-width: 100%;
+    max-width: 800px;
     height: auto;
     border-radius: 8px;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    display: block;
 }
 
 .blog-post-content p {

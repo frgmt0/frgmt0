@@ -96,56 +96,6 @@ const BlogPost = () => {
               ))}
             </div>
 
-            {/* Author Section */}
-            <div className="flex items-center gap-4 mb-8 bg-black/30 p-4 rounded-lg">
-              {post.author.avatar && (
-                <img 
-                  src={post.author.avatar} 
-                  alt={post.author.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-              )}
-              <div>
-                <h3 className="text-lg font-semibold text-white">{post.author.name}</h3>
-                {post.author.bio && (
-                  <p className="text-gray-400 text-sm mt-1">{post.author.bio}</p>
-                )}
-                {post.author.social && (
-                  <div className="flex gap-3 mt-2">
-                    {post.author.social.github && (
-                      <a 
-                        href={post.author.social.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-primary-color transition-colors"
-                      >
-                        GitHub
-                      </a>
-                    )}
-                    {post.author.social.bluesky && (
-                      <a 
-                        href={post.author.social.bluesky}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-primary-color transition-colors"
-                      >
-                        Bluesky
-                      </a>
-                    )}
-                    {post.author.social.linkedin && (
-                      <a 
-                        href={post.author.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-primary-color transition-colors"
-                      >
-                        LinkedIn
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
           </div>
 
           {/* Cover Image */}
@@ -277,6 +227,59 @@ const BlogPost = () => {
               Last updated: {post.formattedLastModified}
             </div>
           )}
+
+          {/* Author Section */}
+          <div className="mt-8 p-6 bg-black/30 rounded-lg">
+            <div className="flex items-center gap-6">
+              {post.author.avatar && (
+                <img 
+                  src={post.author.avatar} 
+                  alt={post.author.name}
+                  className="w-16 h-16 rounded-full object-cover ring-2 ring-primary ring-offset-2 ring-offset-black/30"
+                />
+              )}
+              <div>
+                <h3 className="text-xl mb-2">{post.author.name}</h3>
+                {post.author.bio && (
+                  <p className="text-gray-300 mb-3">{post.author.bio}</p>
+                )}
+                {post.author.social && (
+                  <div className="flex gap-4">
+                    {post.author.social.github && (
+                      <a 
+                        href={post.author.social.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cta-button secondary"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {post.author.social.bluesky && (
+                      <a 
+                        href={post.author.social.bluesky}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cta-button secondary"
+                      >
+                        Bluesky
+                      </a>
+                    )}
+                    {post.author.social.linkedin && (
+                      <a 
+                        href={post.author.social.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cta-button secondary"
+                      >
+                        LinkedIn
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
   );
