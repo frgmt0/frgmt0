@@ -245,6 +245,16 @@ a:hover {
     padding: 0;
 }
 
+.blog-post-content ul,
+.blog-post-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.blog-post-content li {
+    margin: 0.5rem 0;
+}
+
 /* Blog Grid styles */
 .blog-grid {
     display: flex;
