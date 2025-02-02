@@ -231,21 +231,20 @@ const BlogPost = () => {
           {/* Author Section */}
           <div className="mt-8 p-6 bg-black/30 rounded-lg">
             <div className="flex items-center gap-6">
-              {post.author.avatar && (
+              <div className="author-info">
                 <div className="author-avatar">
                   <img 
                     src={post.author.avatar} 
                     alt={post.author.name}
                   />
                 </div>
+                <h3 className="text-xl">{post.author.name}</h3>
+              </div>
+              {post.author.bio && (
+                <p className="text-gray-300 mb-3">{post.author.bio}</p>
               )}
-              <div>
-                <h3 className="text-xl mb-2">{post.author.name}</h3>
-                {post.author.bio && (
-                  <p className="text-gray-300 mb-3">{post.author.bio}</p>
-                )}
-                {post.author.social && (
-                  <div className="flex gap-4">
+              {post.author.social && (
+                <div className="author-social">
                     {post.author.social.github && (
                       <a 
                         href={post.author.social.github}
