@@ -1,15 +1,15 @@
-import BlogPost from '../../models/BlogPost';
+import BlogPost from "../../models/BlogPost";
 
 const post = new BlogPost({
-  id: '02022025',
+  id: "02022025",
   title: "Let's Talk About Self-Care",
-  content: `# part 1: let's talk about self-care
+  content: `# let's talk about self-care
 
 hey everyone, switching things up today. usually i'm here talking about code and tech, but sometimes we need to talk about the other stuff too. i've been thinking a lot about self-care lately, and i want to share some thoughts. *(warning: no technical jargon ahead)*
 
 let's talk about self-care. and before you roll your eyes and picture a montage of candles and someone journaling with their $12 matcha latte, hear me out. self-care isn't just about pampering yourself. it's about doing the things that keep you from becoming a complete dumpster fire. and that's a lot harder than it sounds.
 
-society has made a mess of the whole concept. on one hand, we're bombarded with instagram influencers telling us to "romanticize our lives" and buy overpriced bath salts. on the other, there's still this weird stigma around actually doing the work to take care of yourself. therapy? taboo. taking a mental health day? weak. setting boundaries? rude. 
+society has made a mess of the whole concept. on one hand, we're bombarded with instagram influencers telling us to "romanticize our lives" and buy overpriced bath salts. on the other, there's still this weird stigma around actually doing the work to take care of yourself. therapy? taboo. taking a mental health day? weak. setting boundaries? rude.
 
 it's like society is screaming at us to take care of ourselves while simultaneously handing us a list of reasons why we shouldn't. even now, with therapy apps and meditation podcasts flooding every ad break, self-care is still something people whisper about, like it's this shameful secret.
 
@@ -37,7 +37,7 @@ so here's my unsolicited self-care advice:
 
 self-care isn't a one-size-fits-all solution. it's messy, imperfect, and different for everyone. but if there's one thing i've learned, it's that taking care of yourself isn't a luxury - it's a necessity.
 
-# part 2: on loss and moving forward
+# on loss and moving forward
 
 loss is one of those things nobody wants to talk about but everyone eventually faces. it doesn't care who you are, where you're from, or what your plans for the week were. it's going to show up, uninvited, and leave you changed.
 
@@ -63,7 +63,7 @@ that's why self-care matters so much. looking back, i wish i'd had someone outsi
 
 loss is a painful teacher. it doesn't wait for you to be ready or give you a choice in the matter. but if there's one thing i've learned, it's that coping doesn't mean ignoring the pain. it means finding a way to live with it, even when it feels unbearable.
 
-# part 3: the art of giving advice (and maybe taking it too)
+# the art of giving advice (and maybe taking it too)
 
 i've always considered myself pretty great at giving advice. honestly, it's not that hard - just listen to the person in front of you in a genuine way and then whip out what i call the sandwich. no, not the kind you eat. *(though let's be real, sandwiches are amazing and deserve their own blog post)*
 
@@ -92,13 +92,14 @@ find some friends who actually care about you, hold each other accountable, and 
 ---
 
 *(this started as a sociology essay, but sometimes the best content comes from unexpected places. thanks for reading all three parts - you're the real mvp)*`,
-  summary: "A personal reflection on self-care, loss, and the art of giving (and taking) advice. No code, just real talk about mental health, grief, and the importance of having a support system.",
+  summary:
+    "A personal reflection on self-care, loss, and the art of giving (and taking) advice. No code, just real talk about mental health, grief, and the importance of having a support system.",
   coverImage: "/images/what.jpg",
   tags: ["personal", "mental-health", "self-care", "life-lessons"],
   publishDate: "2025-02-02",
   readTime: "15 min read",
   category: "Personal",
-  authorId: "frgmt0"
+  authorId: "frgmt0",
 });
 
 export default post;
