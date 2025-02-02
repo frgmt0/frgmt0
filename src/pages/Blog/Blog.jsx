@@ -9,58 +9,25 @@ const Blog = () => {
         <section className="visible">
           <h1>Blog</h1>
 
-          {/* Featured Posts Section */}
-          <div className="mb-12">
-            <h2 
-              className="font-borela text-3xl mb-6 tracking-wide"
-              style={{ fontFamily: headerFont }}
-            >
-              Featured Posts
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {allBlogPosts
-                .filter(post => post.featured)
-                .map((post, index) => {
-                  const postData = post.getPreviewData();
-                  return (
-                    <FeaturedPostCard 
-                      key={postData.id} 
-                      post={postData} 
-                      index={index}
-                      headerFont={headerFont}
-                      isHovered={hoveredId === postData.id}
-                      onHover={setHoveredId}
-                    />
-                  );
-                })}
-            </div>
+          <div className="blog-grid">
+            {allBlogPosts.map((post) => {
+              const postData = post.getPreviewData();
+              return (
+                <div key={postData.id} className="blog-card">
+                  <img src={postData.coverImage} alt={postData.title} />
+                  <div className="blog-card-content">
+                    <div className="blog-card-date">{postData.formattedPublishDate}</div>
+                    <h3>{postData.title}</h3>
+                    <p className="blog-card-summary">{postData.summary}</p>
+                    <Link to={`/${postData.id}`} className="cta-button secondary">
+                      Read →
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-
-          {/* All Posts Grid */}
-          <div>
-            <h2 
-              className="font-borela text-3xl mb-6 tracking-wide"
-              style={{ fontFamily: headerFont }}
-            >
-              All Posts
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allBlogPosts.map((post, index) => {
-                const postData = post.getPreviewData();
-                return (
-                  <BlogPostCard 
-                    key={postData.id} 
-                    post={postData} 
-                    index={index}
-                    headerFont={headerFont}
-                    isHovered={hoveredId === postData.id}
-                    onHover={setHoveredId}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </motion.div>
+        </section>
       </div>
     </div>
   );
