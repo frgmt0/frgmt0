@@ -10,16 +10,16 @@ import lum from "./lum";
 // Add all blog posts to this array
 // The order here determines the display order in the blog list
 const allBlogPosts = [
-  frgmtAi,
-  prismBlogPost,
-  frm,
-  what,
-  experiments,
-  post,
   lum,
+  post,
+  experiments,
+  what,
+  frm,
+  prismBlogPost,
+  frgmtAi,
   // webPerformance,
   // Add new blog posts here
-];
+].sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
 // Validate all blog posts
 allBlogPosts.forEach((post) => {

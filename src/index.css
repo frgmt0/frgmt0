@@ -178,7 +178,7 @@ a:hover {
 .blog-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     margin: 2rem 0;
     width: 100%;
 }
@@ -197,6 +197,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     height: 300px;
+    padding: 2rem;
 }
 
 .blog-card:hover {
