@@ -31,11 +31,17 @@ class BlogPost {
   }
 
   // Get blog post preview data
+  truncateSummary(length = 140) {
+    if (!this.summary) return '';
+    if (this.summary.length <= length) return this.summary;
+    return this.summary.slice(0, length).trim() + '...';
+  }
+
   getPreviewData() {
     return {
       id: this.id,
       title: this.title,
-      summary: this.summary,
+      summary: this.truncateSummary(),
       coverImage: this.coverImage,
       tags: this.tags,
       publishDate: this.getFormattedDate(this.publishDate),

@@ -230,11 +230,8 @@ a:hover {
 
 .blog-card-summary {
     line-height: 1.6;
-    flex-grow: 1;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
+    margin: 0;
+    padding: 0;
 }
 
 .cta-button {
