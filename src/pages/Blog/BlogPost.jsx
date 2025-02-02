@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useFont } from '../../context/FontContext';
-import allBlogPosts from '../../data/blogposts';
-import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import React, { useEffect, useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useFont } from "../../context/FontContext";
+import allBlogPosts from "../../data/blogposts";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const DocumentIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
   </svg>
 );
 
@@ -21,10 +21,10 @@ const BlogPost = () => {
   const navigate = useNavigate();
 
   // Use the same font as headers based on fontStyle
-  const headerFont = fontStyle === 'EasyRead' ? 'Borela': 'Borela';
+  const headerFont = fontStyle === "EasyRead" ? "Borela" : "Borela";
 
   useEffect(() => {
-    const foundPost = allBlogPosts.find(p => p.id === id);
+    const foundPost = allBlogPosts.find((p) => p.id === id);
     if (foundPost) {
       setPost(foundPost.getFullData());
     }
@@ -35,16 +35,16 @@ const BlogPost = () => {
     ...atomDark,
     'pre[class*="language-"]': {
       ...atomDark['pre[class*="language-"]'],
-      background: 'rgba(0, 0, 0, 0.5)',
-      borderRadius: '0.5rem',
-      padding: '1rem',
-      marginBottom: '1.5rem',
-      marginTop: '1rem',
+      background: "rgba(0, 0, 0, 0.5)",
+      borderRadius: "0.5rem",
+      padding: "1rem",
+      marginBottom: "1.5rem",
+      marginTop: "1rem",
     },
     'code[class*="language-"]': {
       ...atomDark['code[class*="language-"]'],
-      background: 'transparent',
-      textShadow: 'none',
+      background: "transparent",
+      textShadow: "none",
     },
   };
 
@@ -52,13 +52,13 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-background-image pt-20 flex items-center justify-center">
         <div className="text-center">
-          <h1 
+          <h1
             className="font-borela text-4xl mb-4 tracking-wider text-gradient"
             style={{ fontFamily: headerFont }}
           >
             Post Not Found
           </h1>
-          <Link 
+          <Link
             to="/"
             className="text-primary-color hover:text-accent-color transition-colors"
           >
@@ -72,7 +72,11 @@ const BlogPost = () => {
   return (
     <div className="page-background">
       <div className="blog-post">
-        <Link to="/" className="cta-button secondary" style={{ marginBottom: '2rem' }}>
+        <Link
+          to="/"
+          className="cta-button secondary"
+          style={{ marginBottom: "2rem" }}
+        >
           ← Back to Blog
         </Link>
         <article>
@@ -86,8 +90,8 @@ const BlogPost = () => {
               <span>{post.formattedPublishDate}</span>
             </div>
             <div className="flex flex-wrap gap-2 mb-8">
-              {post.tags.map(tag => (
-                <span 
+              {post.tags.map((tag) => (
+                <span
                   key={tag}
                   className="px-3 py-1 rounded-full bg-primary-color/20 text-primary-color text-sm"
                 >
@@ -95,54 +99,42 @@ const BlogPost = () => {
                 </span>
               ))}
             </div>
-
           </div>
-
-          {/* Cover Image */}
-          {post.coverImage && (
-            <div className="relative aspect-video mb-12 rounded-xl overflow-hidden">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
 
           <div className="blog-post-content">
             <ReactMarkdown
               components={{
                 h1: ({ node, ...props }) => (
-                  <h1 
-                    style={{ fontFamily: headerFont }} 
+                  <h1
+                    style={{ fontFamily: headerFont }}
                     className="font-borela text-3xl md:text-4xl mb-6 tracking-wide"
                     {...props}
                   />
                 ),
                 h2: ({ node, ...props }) => (
-                  <h2 
+                  <h2
                     style={{ fontFamily: headerFont }}
                     className="font-borela text-2xl md:text-3xl mb-4 tracking-wide"
                     {...props}
                   />
                 ),
                 h3: ({ node, ...props }) => (
-                  <h3 
+                  <h3
                     style={{ fontFamily: headerFont }}
                     className="font-borela text-xl md:text-2xl mb-3 tracking-wide"
                     {...props}
                   />
                 ),
                 p: ({ node, ...props }) => (
-                  <p 
+                  <p
                     className="mb-4 text-gray-300 leading-relaxed"
                     {...props}
                   />
                 ),
                 code: ({ node, inline, className, children, ...props }) => {
-                  const match = /language-(\w+)/.exec(className || '');
-                  const language = match ? match[1] : '';
-                  
+                  const match = /language-(\w+)/.exec(className || "");
+                  const language = match ? match[1] : "";
+
                   return !inline ? (
                     <SyntaxHighlighter
                       style={customTheme}
@@ -152,10 +144,10 @@ const BlogPost = () => {
                       wrapLines={true}
                       {...props}
                     >
-                      {String(children).replace(/\n$/, '')}
+                      {String(children).replace(/\n$/, "")}
                     </SyntaxHighlighter>
                   ) : (
-                    <code 
+                    <code
                       className="bg-black/50 px-1.5 py-0.5 rounded text-primary-color font-mono text-sm"
                       {...props}
                     >
@@ -167,18 +159,22 @@ const BlogPost = () => {
                   <pre className="bg-transparent" {...props} />
                 ),
                 ul: ({ node, ...props }) => (
-                  <ul className="list-disc list-inside mb-4 text-gray-300" {...props} />
+                  <ul
+                    className="list-disc list-inside mb-4 text-gray-300"
+                    {...props}
+                  />
                 ),
                 ol: ({ node, ...props }) => (
-                  <ol className="list-decimal list-inside mb-4 text-gray-300" {...props} />
+                  <ol
+                    className="list-decimal list-inside mb-4 text-gray-300"
+                    {...props}
+                  />
                 ),
-                li: ({ node, ...props }) => (
-                  <li className="mb-2" {...props} />
-                ),
+                li: ({ node, ...props }) => <li className="mb-2" {...props} />,
                 a: ({ node, href, children, ...props }) => {
-                  const isInternal = href?.startsWith('/');
-                  const isResearchPaper = href?.includes('/portfolio/research');
-                  
+                  const isInternal = href?.startsWith("/");
+                  const isResearchPaper = href?.includes("/portfolio/research");
+
                   if (isResearchPaper) {
                     return (
                       <span
@@ -186,12 +182,14 @@ const BlogPost = () => {
                         className="inline-flex items-center gap-2 text-xl font-borela tracking-wide cursor-pointer transition-all duration-300 hover:-translate-y-0.5 group"
                         {...props}
                       >
-                        <span className="text-white group-hover:text-gradient">{children}</span>
+                        <span className="text-white group-hover:text-gradient">
+                          {children}
+                        </span>
                         <DocumentIcon className="text-primary-color" />
                       </span>
                     );
                   }
-                  
+
                   if (isInternal) {
                     return (
                       <span
@@ -204,7 +202,7 @@ const BlogPost = () => {
                     );
                   }
                   return (
-                    <a 
+                    <a
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -232,10 +230,7 @@ const BlogPost = () => {
           <div className="mt-8 p-6 bg-black/30 rounded-lg">
             <div className="author-info">
               <div className="author-avatar">
-                <img 
-                  src={post.author.avatar} 
-                  alt={post.author.name}
-                />
+                <img src={post.author.avatar} alt={post.author.name} />
               </div>
               <h3 className="text-xl">{post.author.name}</h3>
             </div>
@@ -245,7 +240,7 @@ const BlogPost = () => {
             {post.author.social && (
               <div className="author-social">
                 {post.author.social.github && (
-                  <a 
+                  <a
                     href={post.author.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -255,23 +250,13 @@ const BlogPost = () => {
                   </a>
                 )}
                 {post.author.social.bluesky && (
-                  <a 
+                  <a
                     href={post.author.social.bluesky}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cta-button secondary"
                   >
                     Bluesky
-                  </a>
-                )}
-                {post.author.social.linkedin && (
-                  <a 
-                    href={post.author.social.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button secondary"
-                  >
-                    LinkedIn
                   </a>
                 )}
               </div>
