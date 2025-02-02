@@ -1,7 +1,7 @@
 /* Font */
 @font-face {
-    font-family: "Patrick Hand";
-    src: url("/fonts/PatrickHand-Regular.ttf") format("truetype");
+    font-family: "Borela";
+    src: url("/fonts/text/BORELA.otf") format("truetype");
     font-display: block;
     font-weight: normal;
     font-style: normal;
@@ -29,7 +29,7 @@ body {
     background: #1a1a1a;
     color: var(--text);
     min-height: 100vh;
-    font-family: "Patrick Hand", "Comic Sans MS", "Comic Sans", cursive;
+    font-family: "Borela";
 }
 
 .page-background {
@@ -110,7 +110,9 @@ section:hover {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     background: linear-gradient(90deg, #796879, #aa9aa9, #796879);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -144,9 +146,15 @@ h3::after {
     -webkit-transform: translateZ(0);
 }
 
-h1 { font-size: 2.5em; }
-h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.5em;
+}
 
 p {
     line-height: 1.6;
@@ -154,13 +162,21 @@ p {
 }
 
 @keyframes shine {
-    0% { background-position: 200% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 200% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes wave {
-    0% { background-position: 0px 0; }
-    100% { background-position: -100px 0; }
+    0% {
+        background-position: 0px 0;
+    }
+    100% {
+        background-position: -100px 0;
+    }
 }
 
 /* Links */
