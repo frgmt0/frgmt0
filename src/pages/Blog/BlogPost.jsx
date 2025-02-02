@@ -70,37 +70,21 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background-color pt-20">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Back Button */}
-          <Link 
-            to="/"
-            className="inline-flex items-center text-primary-color hover:text-accent-color transition-colors mb-8"
-          >
-            <ArrowLeftIcon className="w-5 h-5 mr-2" />
-            Back to Blog
-          </Link>
+    <div className="page-background">
+      <div className="blog-post">
+        <Link to="/" className="cta-button secondary" style={{ marginBottom: '2rem' }}>
+          ← Back to Blog
+        </Link>
 
-          {/* Header Section */}
-          <div className="mb-12">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-primary-color">{post.category}</span>
-              <span className="text-gray-400">•</span>
-              <span className="text-gray-400">{post.readTime}</span>
-              <span className="text-gray-400">•</span>
-              <span className="text-gray-400">{post.formattedPublishDate}</span>
-            </div>
-            <h1 
-              className="font-borela text-4xl md:text-5xl mb-6 tracking-wider text-gradient"
-              style={{ fontFamily: headerFont }}
-            >
-              {post.title}
-            </h1>
+        <div className="blog-post-header">
+          <h1>{post.title}</h1>
+          <div className="blog-post-meta">
+            <span>{post.category}</span>
+            <span>•</span>
+            <span>{post.readTime}</span>
+            <span>•</span>
+            <span>{post.formattedPublishDate}</span>
+          </div>
             <div className="flex flex-wrap gap-2 mb-8">
               {post.tags.map(tag => (
                 <span 
@@ -175,8 +159,7 @@ const BlogPost = () => {
             </div>
           )}
 
-          {/* Content */}
-          <div className="prose prose-invert prose-lg max-w-none">
+          <div className="blog-post-content">
             <ReactMarkdown
               components={{
                 h1: ({ node, ...props }) => (
