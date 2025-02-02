@@ -230,58 +230,56 @@ const BlogPost = () => {
 
           {/* Author Section */}
           <div className="mt-8 p-6 bg-black/30 rounded-lg">
-            <div className="flex items-center gap-6">
-              <div className="author-info">
-                <div className="author-avatar">
-                  <img 
-                    src={post.author.avatar} 
-                    alt={post.author.name}
-                  />
-                </div>
-                <h3 className="text-xl">{post.author.name}</h3>
+            <div className="author-info">
+              <div className="author-avatar">
+                <img 
+                  src={post.author.avatar} 
+                  alt={post.author.name}
+                />
               </div>
-              {post.author.bio && (
-                <p className="text-gray-300 mb-3">{post.author.bio}</p>
-              )}
-              {post.author.social && (
-                <div className="author-social">
-                    {post.author.social.github && (
-                      <a 
-                        href={post.author.social.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-button secondary"
-                      >
-                        GitHub
-                      </a>
-                    )}
-                    {post.author.social.bluesky && (
-                      <a 
-                        href={post.author.social.bluesky}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-button secondary"
-                      >
-                        Bluesky
-                      </a>
-                    )}
-                    {post.author.social.linkedin && (
-                      <a 
-                        href={post.author.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-button secondary"
-                      >
-                        LinkedIn
-                      </a>
-                    )}
-                  </div>
+              <h3 className="text-xl">{post.author.name}</h3>
+            </div>
+            {post.author.bio && (
+              <p className="text-gray-300 mb-3">{post.author.bio}</p>
+            )}
+            {post.author.social && (
+              <div className="author-social">
+                {post.author.social.github && (
+                  <a 
+                    href={post.author.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-button secondary"
+                  >
+                    GitHub
+                  </a>
+                )}
+                {post.author.social.bluesky && (
+                  <a 
+                    href={post.author.social.bluesky}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-button secondary"
+                  >
+                    Bluesky
+                  </a>
+                )}
+                {post.author.social.linkedin && (
+                  <a 
+                    href={post.author.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-button secondary"
+                  >
+                    LinkedIn
+                  </a>
                 )}
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
+    </div>
   );
 };
 
