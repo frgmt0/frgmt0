@@ -1,30 +1,13 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useFont } from '../../context/FontContext';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import allBlogPosts from '../../data/blogposts';
 
 const Blog = () => {
-  const [hoveredId, setHoveredId] = useState(null);
-  const { fontStyle } = useFont();
-
-  // Use the same font as headers based on fontStyle
-  const headerFont = fontStyle === 'EasyRead' ? 'Borela' : 'Borela';
-
   return (
-    <div className="min-h-screen bg-background-image pt-20">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 
-            className="font-borela text-4xl md:text-5xl mb-8 tracking-wider text-gradient text-center homecard-container"
-            style={{ fontFamily: headerFont }}
-          >
-            Blog
-          </h1>
+    <div className="page-background">
+      <div className="container">
+        <section className="visible">
+          <h1>Blog</h1>
 
           {/* Featured Posts Section */}
           <div className="mb-12">
