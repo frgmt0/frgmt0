@@ -277,7 +277,7 @@ const BlogPost = () => {
               Last updated: {post.formattedLastModified}
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
