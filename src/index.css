@@ -196,8 +196,7 @@ a:hover {
         inset 0 0 0 1px rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: row;
-    height: 300px;
-    padding: 2rem;
+    height: 400px;
 }
 
 .blog-card:hover {
@@ -215,11 +214,12 @@ a:hover {
 }
 
 .blog-card-content {
-    padding: 2rem;
+    padding: 2.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1.5rem;
 }
 
 .blog-card-date {
@@ -229,8 +229,12 @@ a:hover {
 }
 
 .blog-card-summary {
-    margin: 1rem 0;
     line-height: 1.6;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 }
 
 .cta-button {
