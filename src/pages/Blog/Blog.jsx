@@ -7,7 +7,7 @@ const Blog = () => {
     <div className="page-background">
       <div className="container">
         <section className="visible">
-          <h1>Blog</h1>
+          <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>Blog</h1>
 
           <div className="blog-grid">
             {allBlogPosts.map((post) => {

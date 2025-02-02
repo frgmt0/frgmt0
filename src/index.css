@@ -28,11 +28,7 @@ html {
 body {
     background: #1a1a1a;
     color: var(--text);
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
     font-family: "Patrick Hand", "Comic Sans MS", "Comic Sans", cursive;
 }
 
@@ -42,14 +38,12 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: calc(100vh - 2rem);
-    width: calc(100vw - 2rem);
+    min-height: 100vh;
+    width: 100%;
     position: relative;
-    border-radius: 24px;
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Custom scrollbar styles */
@@ -77,10 +71,9 @@ body {
 
 /* Container */
 .container {
-    width: min(800px, 100% - 4rem);
+    width: min(1200px, 100% - 4rem);
     margin-inline: auto;
-    padding: 6rem 0 2rem;
-    min-height: calc(100vh - 2rem);
+    padding: 2rem;
     font-size: 16pt;
 }
 
@@ -183,10 +176,11 @@ a:hover {
 
 /* Blog specific styles */
 .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin: 2rem 0;
+    width: 100%;
 }
 
 .blog-card {
@@ -200,6 +194,9 @@ a:hover {
         0 4px 24px -1px rgba(0, 0, 0, 0.1),
         0 6px 10px -2px rgba(0, 0, 0, 0.05),
         inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: row;
+    height: 300px;
 }
 
 .blog-card:hover {
@@ -211,13 +208,17 @@ a:hover {
 }
 
 .blog-card img {
-    width: 100%;
-    height: 200px;
+    width: 300px;
+    height: 100%;
     object-fit: cover;
 }
 
 .blog-card-content {
-    padding: 1.5rem;
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .blog-card-date {
