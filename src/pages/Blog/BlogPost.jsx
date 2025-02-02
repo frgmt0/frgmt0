@@ -75,16 +75,16 @@ const BlogPost = () => {
         <Link to="/" className="cta-button secondary" style={{ marginBottom: '2rem' }}>
           ← Back to Blog
         </Link>
-
-        <div className="blog-post-header">
-          <h1>{post.title}</h1>
-          <div className="blog-post-meta">
-            <span>{post.category}</span>
-            <span>•</span>
-            <span>{post.readTime}</span>
-            <span>•</span>
-            <span>{post.formattedPublishDate}</span>
-          </div>
+        <article>
+          <div className="blog-post-header">
+            <h1>{post.title}</h1>
+            <div className="blog-post-meta">
+              <span>{post.category}</span>
+              <span>•</span>
+              <span>{post.readTime}</span>
+              <span>•</span>
+              <span>{post.formattedPublishDate}</span>
+            </div>
             <div className="flex flex-wrap gap-2 mb-8">
               {post.tags.map(tag => (
                 <span 
@@ -277,7 +277,7 @@ const BlogPost = () => {
               </div>
             )}
           </div>
-        </div>
+        </article>
       </div>
     </div>
   );
