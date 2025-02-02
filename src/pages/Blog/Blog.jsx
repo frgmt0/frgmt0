@@ -29,7 +29,7 @@ const Blog = () => {
         </div>
 
         <div className="blog-grid">
-          {allBlogPosts.map((post) => {
+          {filteredPosts.map((post) => {
             const postData = post.getPreviewData();
             return (
               <div key={postData.id} className="blog-card">
