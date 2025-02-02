@@ -232,11 +232,12 @@ const BlogPost = () => {
           <div className="mt-8 p-6 bg-black/30 rounded-lg">
             <div className="flex items-center gap-6">
               {post.author.avatar && (
-                <img 
-                  src={post.author.avatar} 
-                  alt={post.author.name}
-                  className="w-16 h-16 rounded-full object-cover ring-2 ring-primary ring-offset-2 ring-offset-black/30"
-                />
+                <div className="author-avatar">
+                  <img 
+                    src={post.author.avatar} 
+                    alt={post.author.name}
+                  />
+                </div>
               )}
               <div>
                 <h3 className="text-xl mb-2">{post.author.name}</h3>
