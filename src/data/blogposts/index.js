@@ -1,10 +1,12 @@
-import post from './02022025';
+import post from "./02022025";
+import tariffs from "./02022025-news";
 // import webPerformance from './webPerformance';
 
 // Add all blog posts to this array
 // The order here determines the display order in the blog list
 const allBlogPosts = [
   post,
+  tariffs,
   // webPerformance,
   // Add new blog posts here
 ].sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));

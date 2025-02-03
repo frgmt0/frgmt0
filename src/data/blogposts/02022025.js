@@ -97,7 +97,6 @@ find some friends who actually care about you, hold each other accountable, and 
   coverImage: "/images/what.jpg",
   tags: ["personal", "mental-health", "self-care", "life-lessons"],
   publishDate: "2025-02-02",
-  readTime: "15 min read",
   category: "Personal",
   authorId: "frgmt0",
 });
