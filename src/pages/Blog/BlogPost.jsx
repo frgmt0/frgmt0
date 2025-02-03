@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import { getRelatedPosts } from "../../utils/postUtils";
+import ShareButtons from "../../components/ShareButtons";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -63,6 +64,10 @@ const BlogPost = () => {
             </div>
           </div>
 
+          <ShareButtons 
+            url={window.location.href} 
+            title={post.title}
+          />
           <div className="blog-post-content">
             <ReactMarkdown
               components={{
