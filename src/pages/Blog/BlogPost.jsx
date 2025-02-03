@@ -156,10 +156,11 @@ const BlogPost = () => {
           </div>
 
           {/* Related Posts */}
-          <div className="related-posts">
-            <h2>Related Posts</h2>
-            <div className="related-posts-grid">
-              {getRelatedPosts(post, allBlogPosts).map((relatedPost) => {
+          {getRelatedPosts(post, allBlogPosts).length > 0 && (
+            <div className="related-posts">
+              <h2>Related Posts</h2>
+              <div className="related-posts-grid">
+                {getRelatedPosts(post, allBlogPosts).map((relatedPost) => {
                 const postData = relatedPost.getPreviewData();
                 return (
                   <Link 
@@ -174,9 +175,10 @@ const BlogPost = () => {
                     </div>
                   </Link>
                 );
-              })}
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </article>
       </div>
     </div>
