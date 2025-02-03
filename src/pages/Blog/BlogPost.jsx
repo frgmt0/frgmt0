@@ -14,9 +14,17 @@ const BlogPost = () => {
     const foundPost = allBlogPosts.find((p) => p.id === id);
     if (foundPost) {
       setPost(foundPost.getFullData());
+      // Reset scroll position and enable smooth scrolling after content loads
+      window.scrollTo(0, 0);
+      document.body.style.overflow = 'auto';
     } else {
       navigate("/");
     }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [id, navigate]);
 
   if (!post) return null;
