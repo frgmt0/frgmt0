@@ -2,9 +2,21 @@
 @font-face {
     font-family: "Borela";
     src: url("/fonts/text/BORELA.otf") format("truetype");
-    font-display: block;
+    font-display: swap;
     font-weight: normal;
     font-style: normal;
+}
+
+/* Preload fonts */
+@media screen {
+    @font-face {
+        font-family: "Borela";
+        src: url("/fonts/text/BORELA.otf") format("truetype");
+        font-display: swap;
+        font-weight: normal;
+        font-style: normal;
+        unicode-range: U+000-5FF;
+    }
 }
 
 /* Base styles */

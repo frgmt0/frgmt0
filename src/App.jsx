@@ -2,12 +2,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
+import Preloader from './components/Preloader';
 
 function App() {
   const location = useLocation();
 
   return (
     <div className="min-h-screen flex flex-col relative">
+      <Preloader />
         <main 
           className="flex-1 relative"
           style={{ 
