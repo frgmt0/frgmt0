@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
+import { getRelatedPosts } from "../../utils/postUtils";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -152,6 +153,29 @@ const BlogPost = () => {
                 )}
               </div>
             )}
+          </div>
+
+          {/* Related Posts */}
+          <div className="related-posts">
+            <h2>Related Posts</h2>
+            <div className="related-posts-grid">
+              {getRelatedPosts(post, allBlogPosts).map((relatedPost) => {
+                const postData = relatedPost.getPreviewData();
+                return (
+                  <Link 
+                    key={postData.id} 
+                    to={`/${postData.id}`} 
+                    className="related-post-card"
+                  >
+                    <img src={postData.coverImage} alt={postData.title} />
+                    <div className="related-post-content">
+                      <h3>{postData.title}</h3>
+                      <p>{postData.summary}</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </article>
       </div>
