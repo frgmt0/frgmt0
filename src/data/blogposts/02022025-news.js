@@ -65,6 +65,7 @@ const tariffs = new BlogPost({
   ],
   category: "News",
   authorId: "frgmt0",
+  publishDate: "2025-02-02",
 });
 
 export default tariffs;
