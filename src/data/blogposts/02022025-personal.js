@@ -1,7 +1,7 @@
 import BlogPost from "../../models/BlogPost";
 
-const post = new BlogPost({
-  id: "02022025",
+const selfcare = new BlogPost({
+  id: "02022025-personal",
   title: "Let's Talk About Self-Care",
   content: `# let's talk about self-care
 
@@ -101,4 +101,4 @@ find some friends who actually care about you, hold each other accountable, and 
   authorId: "frgmt0",
 });
 
-export default post;
+export default selfcare;

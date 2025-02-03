@@ -2,7 +2,7 @@ import BlogPost from "../../models/BlogPost";
 
 const tariffs = new BlogPost({
   id: "02022025-news",
-  title: "Tariffs",
+  title: "Tariffs: From Economic Tool to Political Weapon",
   content: `
   # tariffs: from economic tool to political weapon
   ## a deep dive into trump's latest power play against canada and mexico
