@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import allBlogPosts from '../../data/blogposts';
 import SearchBar from '../../components/SearchBar';
-import TagCloud from '../../components/TagCloud';
 
 const CATEGORIES = ['All', 'Technology', 'News', 'Personal'];
 
@@ -33,8 +32,6 @@ const Blog = () => {
         <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>Blog</h1>
         
         <SearchBar posts={allBlogPosts} onSearchResults={handleSearchResults} />
-        
-        <TagCloud posts={allBlogPosts} />
         
         <div className="category-filter">
           {CATEGORIES.map(category => (

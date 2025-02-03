@@ -578,47 +578,6 @@ a:hover {
     opacity: 0.7;
 }
 
-/* Tag Cloud styles */
-.tag-cloud {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 2rem 0;
-    box-shadow:
-        0 4px 24px -1px rgba(0, 0, 0, 0.1),
-        0 6px 10px -2px rgba(0, 0, 0, 0.05),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.tag-cloud h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.tag-cloud-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.tag-cloud-item {
-    color: var(--primary);
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.tag-cloud-item:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-2px);
-}
 
 /* Share buttons styles */
 .share-buttons {
