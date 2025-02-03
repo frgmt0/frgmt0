@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { FontProvider } from './context/FontContext';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
 
@@ -8,8 +7,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <FontProvider>
-      <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-screen flex flex-col relative">
         <main 
           className="flex-1 relative"
           style={{ 
@@ -44,7 +42,6 @@ function App() {
           </AnimatePresence>
         </main>
       </div>
-    </FontProvider>
   );
 }
 
