@@ -8,7 +8,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="app-container">
       <Preloader />
         <main 
           className="flex-1 relative"

@@ -421,3 +421,21 @@ a:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.last-modified {
+    margin-top: 3rem;
+    font-size: 0.875rem;
+    color: rgba(156, 163, 175, 1);
+}
+
+.author-bio {
+    color: rgba(209, 213, 219, 1);
+    margin-bottom: 0.75rem;
+}

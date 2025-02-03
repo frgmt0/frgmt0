@@ -97,7 +97,7 @@ const BlogPost = () => {
 
           {/* Last Modified Date */}
           {post.formattedLastModified && (
-            <div className="mt-12 text-sm text-gray-400">
+            <div className="last-modified">
               Last updated: {post.formattedLastModified}
             </div>
           )}
@@ -114,7 +114,7 @@ const BlogPost = () => {
               <h3 className="text-xl">{post.author.name}</h3>
             </div>
             {post.author.bio && (
-              <p className="text-gray-300 mb-3">{post.author.bio}</p>
+              <p className="author-bio">{post.author.bio}</p>
             )}
             {post.author.social && (
               <div className="author-social">
