@@ -38,7 +38,7 @@ const Blog = () => {
                   <div className="blog-card-date">{postData.formattedPublishDate}</div>
                   <h3>{postData.title}</h3>
                   <p className="blog-card-summary">{postData.summary}</p>
-                  <Link to={`/${postData.id}`} className="cta-button secondary">
+                  <Link to={`/${postData.id}`} className="cta-button secondary" style={{ alignSelf: 'flex-start' }}>
                     Read →
                   </Link>
                 </div>
