@@ -7,7 +7,6 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import { getRelatedPosts } from "../../utils/postUtils";
 import ShareButtons from "../../components/ShareButtons";
-import TableOfContents from "../../components/TableOfContents";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -36,7 +35,6 @@ const BlogPost = () => {
   return (
     <div className="page-background">
       <ReadingProgress />
-      <TableOfContents content={post.content} />
       <div className="blog-post">
         <Link to="/" className="cta-button secondary" style={{ marginBottom: '2rem' }}>
           ← Back to Blog
