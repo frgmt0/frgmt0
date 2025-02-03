@@ -435,7 +435,20 @@ a:hover {
     color: rgba(156, 163, 175, 1);
 }
 
+.author-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow:
+        0 4px 24px -1px rgba(0, 0, 0, 0.1),
+        0 6px 10px -2px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
 .author-bio {
-    color: rgba(209, 213, 219, 1);
+    color: var(--text);
     margin-bottom: 0.75rem;
 }

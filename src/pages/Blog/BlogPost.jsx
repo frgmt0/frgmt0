@@ -103,7 +103,7 @@ const BlogPost = () => {
           )}
 
           {/* Author Section */}
-          <div className="mt-8 p-6 bg-black/30 rounded-lg">
+          <div className="author-section">
             <div className="author-info">
               <div className="author-avatar">
                 <img 
