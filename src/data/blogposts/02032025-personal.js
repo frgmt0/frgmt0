@@ -10,6 +10,7 @@ const grammys = new BlogPost({
     # the grammy awards: a popularity contest in disguise
 
     the grammys and their weird relationship with actually good music. you know what i mean if you've ever been a fan of metal, deathcore, or anything that doesn't fit into their neat little mainstream box.
+
     here's the thing: gojira, one of the most innovative metal bands out there, finally gets some recognition for their olympic performance. it was a massive moment for metal music - millions of people worldwide watching this incredible display of musicianship. but when it comes to the grammys? they get their award backstage, no performance, no spotlight. (*because apparently grinding on the floor is more "appropriate" for primetime tv - looking at you, charli xcx*)
 
     and don't even get me started on the genre confusion. beyonce winning best country album? i mean, i love queen b, but that's like saying i'm a classical pianist because i can play chopsticks. (*i can't even do that*) it's the same energy as when they tried to convince us that post malone was country. next thing you know, they'll be calling drake a jazz artist.
