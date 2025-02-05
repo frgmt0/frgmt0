@@ -3,31 +3,11 @@ import { Link } from "react-router-dom";
 import researchProjects from "../../data/researchProjects";
 import SearchBar from "../../components/SearchBar";
 
-const CATEGORIES = ["All", "AI/ML", "Web3", "Systems", "Graphics"];
-
 const Research = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [displayedProjects, setDisplayedProjects] = useState(researchProjects);
 
   const handleSearchResults = (results) => {
-    setDisplayedProjects(
-      selectedCategory === "All"
-        ? results
-        : results.filter(
-            (project) => project.getPreviewData().category === selectedCategory,
-          ),
-    );
-  };
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-    setDisplayedProjects(
-      category === "All"
-        ? allProjects
-        : allProjects.filter(
-            (project) => project.getPreviewData().category === category,
-          ),
-    );
+    setDisplayedProjects(results);
   };
 
   return (
@@ -37,19 +17,7 @@ const Research = () => {
           Research & Experiments
         </h1>
 
-        <SearchBar posts={allProjects} onSearchResults={handleSearchResults} />
-
-        <div className="category-filter">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => handleCategoryChange(category)}
-              className={`filter-button ${selectedCategory === category ? "active" : ""}`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        <SearchBar posts={researchProjects} onSearchResults={handleSearchResults} />
 
         <div className="research-grid">
           {displayedProjects.map((project) => {
