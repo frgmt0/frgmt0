@@ -4,6 +4,8 @@ import researchProjects from "../../data/researchProjects";
 import SearchBar from "../../components/SearchBar";
 
 const Research = () => {
+  console.log('Research component rendered');
+  console.log('Research projects:', researchProjects);
   const [displayedProjects, setDisplayedProjects] = useState(researchProjects);
 
   const handleSearchResults = (results) => {

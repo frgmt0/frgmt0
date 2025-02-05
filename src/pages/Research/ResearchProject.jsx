@@ -139,30 +139,6 @@ const BlogPost = () => {
             )}
           </div>
 
-          {/* Related Posts */}
-          {getRelatedPosts(post, allBlogPosts).length > 0 && (
-            <div className="related-posts">
-              <h2>Related Posts</h2>
-              <div className="related-posts-grid">
-                {getRelatedPosts(post, allBlogPosts).map((relatedPost) => {
-                  const postData = relatedPost.getPreviewData();
-                  return (
-                    <Link
-                      key={postData.id}
-                      to={`/${postData.id}`}
-                      className="related-post-card"
-                    >
-                      <img src={postData.coverImage} alt={postData.title} />
-                      <div className="related-post-content">
-                        <h3>{postData.title}</h3>
-                        <p>{postData.summary}</p>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          )}
         </article>
       </div>
   );
