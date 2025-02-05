@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import allBlogPosts from '../../data/blogposts';
+import allProjects from '../../data/projects';
 import SearchBar from '../../components/SearchBar';
 
-const CATEGORIES = ['All', 'Technology', 'News', 'Personal'];
+const CATEGORIES = ['All', 'AI/ML', 'Web3', 'Systems', 'Graphics'];
 
-const Blog = () => {
+const Research = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [displayedPosts, setDisplayedPosts] = useState(allBlogPosts);
+  const [displayedProjects, setDisplayedProjects] = useState(allProjects);
 
   const handleSearchResults = (results) => {
-    setDisplayedPosts(
+    setDisplayedProjects(
       selectedCategory === 'All'
         ? results
-        : results.filter(post => post.getPreviewData().category === selectedCategory)
+        : results.filter(project => project.getPreviewData().category === selectedCategory)
     );
   };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setDisplayedPosts(
+    setDisplayedProjects(
       category === 'All'
-        ? allBlogPosts
-        : allBlogPosts.filter(post => post.getPreviewData().category === category)
+        ? allProjects
+        : allProjects.filter(project => project.getPreviewData().category === category)
     );
   };
 
   return (
     <div className="page-background">
       <div className="container">
-        <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>Blog</h1>
+        <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>Research & Experiments</h1>
         
-        <SearchBar posts={allBlogPosts} onSearchResults={handleSearchResults} />
+        <SearchBar posts={allProjects} onSearchResults={handleSearchResults} />
         
         <div className="category-filter">
           {CATEGORIES.map(category => (
@@ -45,18 +45,18 @@ const Blog = () => {
           ))}
         </div>
 
-        <div className="blog-grid">
-          {displayedPosts.map((post) => {
-            const postData = post.getPreviewData();
+        <div className="research-grid">
+          {displayedProjects.map((project) => {
+            const projectData = project.getPreviewData();
             return (
-              <div key={postData.id} className="blog-card">
-                <img src={postData.coverImage} alt={postData.title} />
-                <div className="blog-card-content">
-                  <div className="blog-card-date">{postData.formattedPublishDate}</div>
-                  <h3>{postData.title}</h3>
-                  <p className="blog-card-summary">{postData.summary}</p>
-                  <Link to={`/${postData.id}`} className="cta-button secondary" style={{ alignSelf: 'flex-start' }}>
-                    Read →
+              <div key={projectData.id} className="research-card">
+                <img src={projectData.coverImage} alt={projectData.title} />
+                <div className="research-card-content">
+                  <div className="research-card-date">{projectData.formattedPublishDate}</div>
+                  <h3>{projectData.title}</h3>
+                  <p className="research-card-summary">{projectData.summary}</p>
+                  <Link to={`/${projectData.id}`} className="cta-button secondary" style={{ alignSelf: 'flex-start' }}>
+                    View Project →
                   </Link>
                 </div>
               </div>
