@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Blog from './pages/Blog/Blog';
-import BlogPost from './pages/Blog/BlogPost';
+import Research from './pages/Research/Research';
+import ResearchProject from './pages/Research/ResearchProject';
 import Preloader from './components/Preloader';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
                     document.body.style.overflow = 'auto';
                   }}
                 >
-                  <Blog />
+                  <Research />
                 </motion.div>
               } />
               <Route path="/:id" element={
@@ -40,7 +40,7 @@ function App() {
                   transition={{ duration: 0.5 }}
                   className="min-h-full"
                 >
-                  <BlogPost />
+                  <ResearchProject />
                 </motion.div>
               } />
             </Routes>
