@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import allBlogPosts from "../data/researchProjects";
+import researchProjects from "../data/researchProjects";
 
 const Preloader = () => {
   useEffect(() => {
     // Preload all blog post cover images
-    allBlogPosts.forEach((post) => {
+    researchProjects.forEach((post) => {
       const img = new Image();
       img.src = post.getPreviewData().coverImage;
     });

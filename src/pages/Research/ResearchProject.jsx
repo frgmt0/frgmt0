@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import allBlogPosts from "../../data/researchProjects";
+import researchProjects from "../../data/researchProjects";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -14,7 +14,7 @@ const BlogPost = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const foundPost = allBlogPosts.find((p) => p.id === id);
+    const foundPost = researchProjects.find((p) => p.id === id);
     if (foundPost) {
       setPost(foundPost.getFullData());
       // Reset scroll position and enable smooth scrolling after content loads
@@ -41,7 +41,7 @@ const BlogPost = () => {
           className="cta-button secondary"
           style={{ marginBottom: "2rem" }}
         >
-          ← Back to Blog
+          ← Back to Research
         </Link>
 
         <article>
@@ -186,4 +186,4 @@ const BlogPost = () => {
   );
 };
 
-export default ResearchPaper;
+export default ResearchProject;

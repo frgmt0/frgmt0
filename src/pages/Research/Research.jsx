@@ -48,4 +48,4 @@ const Research = () => {
   );
 };
 
-export default Blog;
+export default Research;

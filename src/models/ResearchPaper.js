@@ -142,4 +142,4 @@ class ResearchPaper {
   }
 }
 
-export default BlogPost;
+export default ResearchPaper;
