@@ -10,12 +10,8 @@ function App() {
   return (
     <div className="app-container">
       <Preloader />
-        <main 
-          className="flex-1 relative"
-          style={{ 
-            minHeight: '100vh'
-          }}
-        >
+      <div className="page-background">
+        <main className="flex-1 relative">
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={
@@ -47,6 +43,7 @@ function App() {
           </AnimatePresence>
         </main>
       </div>
+    </div>
   );
 }
 

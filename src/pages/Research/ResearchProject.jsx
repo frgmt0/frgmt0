@@ -33,9 +33,8 @@ const BlogPost = () => {
   if (!post) return null;
 
   return (
-    <div className="page-background">
+    <div className="blog-post">
       <ReadingProgress />
-      <div className="blog-post">
         <Link
           to="/"
           className="cta-button secondary"

@@ -11,8 +11,7 @@ const Research = () => {
   };
 
   return (
-    <div className="page-background">
-      <div className="container">
+    <div className="container">
         <h1 style={{ textAlign: "center", marginBottom: "3rem" }}>
           Research & Experiments
         </h1>
@@ -50,7 +49,6 @@ const Research = () => {
             })
           )}
         </div>
-      </div>
     </div>
   );
 };
