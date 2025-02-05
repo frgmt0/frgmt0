@@ -181,7 +181,6 @@ const BlogPost = () => {
           )}
         </article>
       </div>
-    </div>
   );
 };
 
