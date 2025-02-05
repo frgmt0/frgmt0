@@ -20,7 +20,13 @@ const Research = () => {
         <SearchBar posts={researchProjects} onSearchResults={handleSearchResults} />
 
         <div className="research-grid">
-          {displayedProjects.map((project) => {
+          {displayedProjects.length === 0 ? (
+            <div className="empty-state">
+              <h2>No research projects yet</h2>
+              <p>Check back soon for updates on my latest research and experiments!</p>
+            </div>
+          ) : (
+            displayedProjects.map((project) => {
             const projectData = project.getPreviewData();
             return (
               <div key={projectData.id} className="research-card">
@@ -41,7 +47,8 @@ const Research = () => {
                 </div>
               </div>
             );
-          })}
+            })
+          )}
         </div>
       </div>
     </div>

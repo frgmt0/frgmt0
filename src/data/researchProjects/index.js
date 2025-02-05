@@ -1,3 +1,3 @@
-const researchProjects = {};
+const researchProjects = [];
 
 export default researchProjects;
