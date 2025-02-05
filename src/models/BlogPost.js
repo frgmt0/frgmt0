@@ -1,36 +1,34 @@
 import { getAuthor } from '../data/authors';
 
-class BlogPost {
+class ResearchPaper {
   constructor({
     id,
     title,
     content,
     summary,
-    coverImage,
     tags = [],
     publishDate,
     lastModified,
     featured = false,
-    readTime,
-    category,
+    paperUrl,
+    githubUrl,
     authorId
   }) {
     this.id = id;
     this.title = title;
     this.content = content;
     this.summary = summary;
-    this.coverImage = coverImage;
     this.tags = tags;
     this.publishDate = publishDate; // Expecting 'YYYY-MM-DD'
     this.lastModified = lastModified; // Optional, same format
     this.featured = featured;
-    this.readTime = readTime || this.calculateReadTime();
-    this.category = category;
+    this.paperUrl = paperUrl; // URL to the research paper PDF or external link
+    this.githubUrl = githubUrl; // URL to the GitHub repository
     this.authorId = authorId;
     this.author = authorId ? getAuthor(authorId) : null;
   }
 
-  // Get blog post preview data
+  // Get research paper preview data
   truncateSummary(length = 140) {
     if (!this.summary) return '';
     if (this.summary.length <= length) return this.summary;
@@ -42,11 +40,10 @@ class BlogPost {
       id: this.id,
       title: this.title,
       summary: this.truncateSummary(),
-      coverImage: this.coverImage,
       tags: this.tags,
       publishDate: this.getFormattedDate(this.publishDate),
-      readTime: this.readTime,
-      category: this.category,
+      paperUrl: this.paperUrl,
+      githubUrl: this.githubUrl,
       featured: this.featured,
       author: this.author ? {
         name: this.author.name,
@@ -55,7 +52,7 @@ class BlogPost {
     };
   }
 
-  // Get full blog post data
+  // Get full research paper data
   getFullData() {
     return {
       ...this,
@@ -81,21 +78,12 @@ class BlogPost {
     });
   }
 
-  // Calculate estimated read time
-  calculateReadTime() {
-    if (!this.content) return '1 min read';
-    const wordsPerMinute = 200;
-    const wordCount = this.content.trim().split(/\s+/).length;
-    const minutes = Math.ceil(wordCount / wordsPerMinute);
-    return `${minutes} min read`;
+  // Method to create a featured research paper
+  static createFeatured(paperData) {
+    return new ResearchPaper({ ...paperData, featured: true });
   }
 
-  // Method to create a featured blog post
-  static createFeatured(postData) {
-    return new BlogPost({ ...postData, featured: true });
-  }
-
-  // Method to check if blog post matches search criteria
+  // Method to check if research paper matches search criteria
   matchesSearch(searchTerm) {
     const searchLower = searchTerm.toLowerCase();
     return (
@@ -107,7 +95,7 @@ class BlogPost {
     );
   }
 
-  // Validate blog post data
+  // Validate research paper data
   validate() {
     const requiredFields = ['id', 'title', 'content', 'summary', 'publishDate', 'authorId'];
     const missingFields = requiredFields.filter(field => !this[field]);
@@ -117,7 +105,7 @@ class BlogPost {
     }
 
     if (this.tags.length === 0) {
-      throw new Error('Blog post must have at least one tag');
+      throw new Error('Research paper must have at least one tag');
     }
 
     // Validate date format
@@ -127,6 +115,14 @@ class BlogPost {
     }
     if (this.lastModified && !dateRegex.test(this.lastModified)) {
       throw new Error('Invalid last modified date format. Use YYYY-MM-DD');
+    }
+
+    // Validate URLs if provided
+    if (this.paperUrl && !this.validateUrl(this.paperUrl)) {
+      throw new Error('Invalid paper URL format');
+    }
+    if (this.githubUrl && !this.validateUrl(this.githubUrl)) {
+      throw new Error('Invalid GitHub URL format');
     }
 
     // Author validation is handled by getAuthor function

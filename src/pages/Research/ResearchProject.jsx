@@ -186,4 +186,4 @@ const BlogPost = () => {
   );
 };
 
-export default BlogPost;
+export default ResearchPaper;
