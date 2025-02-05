@@ -45,24 +45,8 @@ const BlogPost = () => {
 
         <article>
           <div className="blog-post-header">
-            <img
-              src={post.coverImage}
-              alt={post.title}
-              style={{
-                maxWidth: "600px",
-                width: "100%",
-                height: "auto",
-                margin: "0 auto 2rem",
-                borderRadius: "12px",
-                display: "block",
-              }}
-            />
             <h1>{post.title}</h1>
             <div className="blog-post-meta">
-              <span>{post.category}</span>
-              <span>•</span>
-              <span>{post.readTime}</span>
-              <span>•</span>
               <span>{post.formattedPublishDate}</span>
             </div>
           </div>

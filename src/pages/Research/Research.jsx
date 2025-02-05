@@ -29,7 +29,6 @@ const Research = () => {
             const projectData = project.getPreviewData();
             return (
               <div key={projectData.id} className="research-card">
-                <img src={projectData.coverImage} alt={projectData.title} />
                 <div className="research-card-content">
                   <div className="research-card-date">
                     {projectData.formattedPublishDate}
