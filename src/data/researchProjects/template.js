@@ -39,5 +39,6 @@ Summary and implications of your research.`,
   featured: false,
   paperUrl: 'https://arxiv.org/abs/your-paper', // Optional
   githubUrl: 'https://github.com/your-username/your-repo', // Optional
-  authorId: 'frgmt0' // Must match an ID in authors.js
+  authorId: 'frgmt0', // Must match an ID in authors.js
+  type: 'research' // 'research' or 'experiment'
 });

@@ -42,7 +42,7 @@ const Research = () => {
                     className="cta-button secondary"
                     style={{ alignSelf: "flex-start" }}
                   >
-                    View Project →
+                    {project.type === 'research' ? 'Read Paper →' : 'View Project →'}
                   </Link>
                 </div>
               </div>

@@ -12,7 +12,8 @@ class ResearchPaper {
     featured = false,
     paperUrl,
     githubUrl,
-    authorId
+    authorId,
+    type = 'research' // 'research' or 'experiment'
   }) {
     this.id = id;
     this.title = title;
@@ -26,6 +27,7 @@ class ResearchPaper {
     this.githubUrl = githubUrl; // URL to the GitHub repository
     this.authorId = authorId;
     this.author = authorId ? getAuthor(authorId) : null;
+    this.type = type; // 'research' or 'experiment'
   }
 
   // Get research paper preview data

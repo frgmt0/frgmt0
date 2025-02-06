@@ -31,5 +31,6 @@ These findings suggest that quantum-assisted neural network optimization could b
   featured: true,
   paperUrl: 'https://arxiv.org/abs/2502.00000',
   githubUrl: 'https://github.com/frgmt0/quantum-ml',
-  authorId: 'frgmt0'
+  authorId: 'frgmt0',
+  type: 'research'
 });
