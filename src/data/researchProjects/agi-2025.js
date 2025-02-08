@@ -30,7 +30,7 @@ const agi2025 = new ResearchPaper({
       value: 1000
     - label: Full Mouse Brain
       value: 100000
-    - label: Human Brain (estimated)
+    - label: Human Brain (est.)
       value: 1000000
   notes: Values are approximate and logarithmic scale
   \`\`\`s

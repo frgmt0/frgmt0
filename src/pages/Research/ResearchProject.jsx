@@ -128,6 +128,7 @@ const ResearchProject = () => {
                         };
                         break;
                       case 'yAxis':
+                        const [label, unit] = val.split('(');
                         chartData.options.scales.y = {
                           title: {
                             display: true,
@@ -135,7 +136,11 @@ const ResearchProject = () => {
                           },
                           ticks: {
                             callback: function(value) {
-                              return value.toLocaleString() + ' TB';
+                              if (unit) {
+                                const cleanUnit = unit.replace(')', '').trim();
+                                return value.toLocaleString() + ' ' + cleanUnit;
+                              }
+                              return value.toLocaleString();
                             }
                           }
                         };
