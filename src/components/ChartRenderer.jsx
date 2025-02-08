@@ -62,6 +62,32 @@ const ChartRenderer = ({ chartConfig }) => {
           }]
         };
         break;
+      case 'spider':
+        baseConfig.type = 'radar';
+        baseConfig.data = {
+          labels: config.categories,
+          datasets: config.datasets.map((dataset, i) => ({
+            label: dataset.label,
+            data: dataset.values,
+            fill: true,
+            backgroundColor: `rgba(121, 104, 121, ${0.2 + (i * 0.2)})`,
+            borderColor: 'rgba(121, 104, 121, 1)',
+            pointBackgroundColor: 'rgba(121, 104, 121, 1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(121, 104, 121, 1)'
+          }))
+        };
+        baseConfig.options.scales = {
+          r: {
+            min: 0,
+            max: 100,
+            ticks: {
+              stepSize: 20
+            }
+          }
+        };
+        break;
       // Add other chart types here
     }
 
