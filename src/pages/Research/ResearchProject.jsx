@@ -20,7 +20,9 @@ import {
   Tooltip,
   Legend,
   Filler,
-  SubTitle
+  SubTitle,
+  BarController,
+  RadarController
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
@@ -35,7 +37,9 @@ ChartJS.register(
   Tooltip,
   Legend,
   Filler,
-  SubTitle
+  SubTitle,
+  BarController,
+  RadarController
 );
 
 const ResearchProject = () => {
