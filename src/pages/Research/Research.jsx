@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import researchProjects from "../../data/researchProjects";
 import SearchBar from "../../components/SearchBar";
+import LoadingScreen from "../../components/LoadingScreen";
 
 const Research = () => {
   const [displayedProjects, setDisplayedProjects] = useState([]);

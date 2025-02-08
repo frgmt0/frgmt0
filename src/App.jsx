@@ -18,13 +18,18 @@ function App() {
   }, []);
 
   useEffect(() => {
+    console.log('Assets loaded state:', assetsLoaded);
     if (assetsLoaded) {
       console.log('Assets loaded, setting loading to false');
-      setTimeout(() => setIsLoading(false), 100); // Small delay to ensure smooth transition
+      setIsLoading(false);
     }
   }, [assetsLoaded]);
 
-  if (!assetsLoaded || isLoading) {
+  useEffect(() => {
+    console.log('Loading state:', isLoading);
+  }, [isLoading]);
+
+  if (isLoading) {
     console.log('Showing loading screen');
     return <LoadingScreen />;
   }

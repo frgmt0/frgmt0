@@ -70,9 +70,15 @@ const Preloader = ({ onLoadComplete }) => {
 
   // Trigger completion when both assets and charts are ready
   useEffect(() => {
-    if (assetsLoaded && chartsInitialized && onLoadComplete) {
+    console.log('Assets loaded:', assetsLoaded, 'Charts initialized:', chartsInitialized);
+    if (assetsLoaded && chartsInitialized) {
       console.log('All assets and charts initialized');
-      onLoadComplete();
+      if (onLoadComplete) {
+        console.log('Calling onLoadComplete');
+        onLoadComplete();
+      } else {
+        console.log('No onLoadComplete callback provided');
+      }
     }
   }, [assetsLoaded, chartsInitialized, onLoadComplete]);
 
