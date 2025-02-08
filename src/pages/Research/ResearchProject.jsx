@@ -80,6 +80,16 @@ const ResearchProject = () => {
                   style={{ padding: "0.25rem 0.5rem", margin: "0 0.25rem" }}
                 />
               ),
+              table: ({node, ...props}) => (
+                <div className="table-container">
+                  <table {...props} className="markdown-table" />
+                </div>
+              ),
+              thead: ({node, ...props}) => <thead {...props} className="markdown-thead" />,
+              tbody: ({node, ...props}) => <tbody {...props} className="markdown-tbody" />,
+              tr: ({node, ...props}) => <tr {...props} className="markdown-tr" />,
+              th: ({node, ...props}) => <th {...props} className="markdown-th" />,
+              td: ({node, ...props}) => <td {...props} className="markdown-td" />,
             }}
           >
             {post.content}
