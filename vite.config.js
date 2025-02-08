@@ -14,5 +14,17 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'chart-vendor': ['chart.js', 'react-chartjs-2'],
+          'markdown-vendor': ['react-markdown', 'react-syntax-highlighter'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   }
 })
