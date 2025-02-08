@@ -41,25 +41,45 @@ const ResearchProject = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    console.log('ResearchProject mounted, loading post:', id);
+    setIsLoading(true);
+    
     const foundPost = researchProjects.find((p) => p.id === id);
     if (foundPost) {
-      setPost(foundPost.getFullData());
-      // Reset scroll position and enable smooth scrolling after content loads
-      window.scrollTo(0, 0);
-      document.body.style.overflow = "auto";
+      console.log('Found post:', foundPost);
+      try {
+        const postData = foundPost.getFullData();
+        console.log('Post data processed:', postData);
+        setPost(postData);
+        window.scrollTo(0, 0);
+      } catch (error) {
+        console.error('Error processing post data:', error);
+        navigate("/");
+      }
     } else {
+      console.log('Post not found');
       navigate("/");
     }
+    
+    setIsLoading(false);
+    document.body.style.overflow = "auto";
 
-    // Cleanup function
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [id, navigate]);
 
-  if (!post) return null;
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
+  if (!post) {
+    console.log('No post data available');
+    return null;
+  }
 
   return (
     <div className="blog-post">

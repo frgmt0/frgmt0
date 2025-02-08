@@ -17,8 +17,8 @@ function App() {
       <div className="page-background">
         <main className="flex-1 relative">
           <AnimatePresence mode="wait">
-            <Suspense fallback={<LoadingScreen />}>
-              {assetsLoaded ? (
+            {assetsLoaded && (
+              <Suspense fallback={<LoadingScreen />}>
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={
                     <motion.div
@@ -46,10 +46,8 @@ function App() {
                     </motion.div>
                   } />
                 </Routes>
-              ) : (
-                <LoadingScreen />
-              )}
-            </Suspense>
+              </Suspense>
+            )}
           </AnimatePresence>
         </main>
       </div>
