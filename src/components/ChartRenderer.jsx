@@ -4,7 +4,7 @@ import { Chart } from 'react-chartjs-2';
 const ChartRenderer = ({ chartConfig }) => {
   const parseChartData = (config) => {
     const baseConfig = {
-      type: config.type,
+      type: config.type === 'comparison' ? 'bar' : config.type,
       data: {
         labels: [],
         datasets: []
@@ -46,13 +46,17 @@ const ChartRenderer = ({ chartConfig }) => {
 
     // Handle different chart types
     switch (config.type) {
+      case 'comparison':
       case 'bar':
+        baseConfig.options.indexAxis = config.type === 'comparison' ? 'y' : 'x';
         baseConfig.data = {
           labels: config.data.map(item => item.label),
           datasets: [{
             label: config.datasetLabel || '',
             data: config.data.map(item => item.value),
-            backgroundColor: 'rgba(121, 104, 121, 0.5)',
+            backgroundColor: config.data.map((_, i) => 
+              `rgba(121, 104, 121, ${0.3 + (i * 0.2)})`
+            ),
             borderColor: 'rgba(121, 104, 121, 1)',
             borderWidth: 1
           }]
