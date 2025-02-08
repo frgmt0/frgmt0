@@ -70,12 +70,12 @@ const ChartRenderer = ({ chartConfig }) => {
             label: dataset.label,
             data: dataset.values,
             fill: true,
-            backgroundColor: `rgba(121, 104, 121, ${0.2 + (i * 0.2)})`,
-            borderColor: 'rgba(121, 104, 121, 1)',
-            pointBackgroundColor: 'rgba(121, 104, 121, 1)',
+            backgroundColor: i === 0 ? 'rgba(65, 131, 196, 0.2)' : 'rgba(121, 104, 121, 0.2)',
+            borderColor: i === 0 ? 'rgba(65, 131, 196, 1)' : 'rgba(121, 104, 121, 1)',
+            pointBackgroundColor: i === 0 ? 'rgba(65, 131, 196, 1)' : 'rgba(121, 104, 121, 1)',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(121, 104, 121, 1)'
+            pointHoverBorderColor: i === 0 ? 'rgba(65, 131, 196, 1)' : 'rgba(121, 104, 121, 1)'
           }))
         };
         baseConfig.options.scales = {
