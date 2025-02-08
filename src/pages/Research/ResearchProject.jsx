@@ -6,6 +6,33 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import ShareButtons from "../../components/ShareButtons";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  RadialLinearScale,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+} from 'chart.js';
+import { Chart } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  RadialLinearScale,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 const ResearchProject = () => {
   const { id } = useParams();
@@ -56,6 +83,108 @@ const ResearchProject = () => {
             components={{
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
+                
+                // Handle chart blocks
+                if (!inline && match && match[1] === 'chart') {
+                  const lines = String(children).trim().split('\n');
+                  const chartData = {
+                    type: '',
+                    title: '',
+                    data: {
+                      labels: [],
+                      datasets: []
+                    },
+                    options: {
+                      scales: {}
+                    }
+                  };
+
+                  let currentDataset = null;
+                  
+                  lines.forEach(line => {
+                    const [key, ...value] = line.split(':').map(s => s.trim());
+                    const val = value.join(':').trim();
+                    
+                    switch(key) {
+                      case 'type':
+                        chartData.type = val;
+                        break;
+                      case 'title':
+                        chartData.options.plugins = {
+                          title: {
+                            display: true,
+                            text: val
+                          }
+                        };
+                        break;
+                      case 'xAxis':
+                        chartData.options.scales.x = {
+                          title: {
+                            display: true,
+                            text: val
+                          }
+                        };
+                        break;
+                      case 'yAxis':
+                        chartData.options.scales.y = {
+                          title: {
+                            display: true,
+                            text: val.split('(')[0].trim()
+                          }
+                        };
+                        break;
+                      case 'categories':
+                        chartData.data.labels = JSON.parse(val.replace(/\[|\]/g, '')).split(',').map(s => s.trim());
+                        break;
+                      case 'data':
+                        if (chartData.type === 'bar') {
+                          const dataPoints = [];
+                          const labels = [];
+                          lines.slice(lines.indexOf(line) + 1).forEach(dataLine => {
+                            if (dataLine.trim().startsWith('-')) {
+                              const [label, value] = dataLine.replace('-', '').split(':').map(s => s.trim());
+                              labels.push(label.replace('label:', '').trim());
+                              dataPoints.push(parseFloat(value.replace('value:', '').trim()));
+                            }
+                          });
+                          chartData.data.labels = labels;
+                          chartData.data.datasets = [{
+                            data: dataPoints,
+                            backgroundColor: 'rgba(121, 104, 121, 0.5)',
+                            borderColor: 'rgba(121, 104, 121, 1)',
+                            borderWidth: 1
+                          }];
+                        }
+                        break;
+                      case 'datasets':
+                        if (chartData.type === 'radar') {
+                          lines.slice(lines.indexOf(line) + 1).forEach(dataLine => {
+                            if (dataLine.trim().startsWith('-')) {
+                              const [label, values] = dataLine.replace('-', '').split(':').map(s => s.trim());
+                              chartData.data.datasets.push({
+                                label: label.replace('label:', '').trim(),
+                                data: JSON.parse(values.replace('values:', '').trim()),
+                                fill: true,
+                                backgroundColor: `rgba(121, 104, 121, ${0.2 + chartData.data.datasets.length * 0.2})`,
+                                borderColor: 'rgba(121, 104, 121, 1)',
+                                pointBackgroundColor: 'rgba(121, 104, 121, 1)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgba(121, 104, 121, 1)'
+                              });
+                            }
+                          });
+                        }
+                        break;
+                    }
+                  });
+
+                  return (
+                    <div style={{ margin: '2rem 0', padding: '1rem', background: 'rgba(255, 255, 255, 0.4)', borderRadius: '8px' }}>
+                      <Chart type={chartData.type} data={chartData.data} options={chartData.options} />
+                    </div>
+                  );
+                }
                 
                 // Handle table blocks
                 if (!inline && match && match[1] === 'table') {
