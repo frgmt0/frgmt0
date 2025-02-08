@@ -20,6 +20,21 @@ const agi2025 = new ResearchPaper({
   Creating a comprehensive map of the human brain on a computer is a monumental undertaking, presenting numerous challenges. The human brain, with its billions of neurons and trillions of connections, possesses an intricate and complex architecture that surpasses even the most advanced AI systems [3]. Accurately capturing this complexity in a computational model demands immense processing power and sophisticated imaging techniques.
   One major obstacle is the sheer volume of data involved. Studies have shown that reconstructing even a small three-dimensional brain region requires supercomputing power comparable to that used for simulating the universe [3]. Furthermore, a mere 1% of a mouse brain generates 1,000 terabytes of data, underscoring the massive scale of this challenge [3]. This suggests that the key difference between a human brain and a mouse brain might lie not just in the size but also in the intricate pattern of connections and the number of neurons [3].
 
+  \`\`\`chart
+  type: bar
+  title: Data Processing Requirements
+  xAxis: Brain Mapping Scale
+  yAxis: Data Volume (TB)
+  data:
+    - label: 1% Mouse Brain
+      value: 1000
+    - label: Full Mouse Brain
+      value: 100000
+    - label: Human Brain (estimated)
+      value: 1000000
+  notes: Values are approximate and logarithmic scale
+  \`\`\`s
+
   Another challenge stems from the limitations of current neuroimaging techniques. Diffusion Magnetic Resonance Imaging (dMRI) tractography, a widely used method for mapping brain pathways, can sometimes generate biologically implausible pathways, especially in regions with crossing fibers [4]. Validating these observations remains difficult, highlighting the need for new and more reliable approaches.
   Furthermore, accurately interpreting brain imaging data is not straightforward. The concept of "cognitive subtraction," often used in brain mapping research, assumes that brain activation is solely due to the additional processes triggered by an experimental task [5]. However, recent research challenges this assumption, suggesting that brain activity can also increase due to the release of suppression from other brain regions [5]. This complexity adds another layer of difficulty to mapping the brain on a computer.
 
@@ -46,13 +61,17 @@ const agi2025 = new ResearchPaper({
   For example, an object representing "apple" might have relationships with "fruit," "red," "sweet," and "tree." These relationships are not merely factual associations but represent a deeper understanding of the concept of an apple, encompassing its properties, characteristics, and relationships with other objects.
   OONs offer several advantages over traditional neural networks:
 
-  ```table
-  headers: Feature, OONs vs. Traditional Neural Networks
-  row: Connectivity, Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture
-  row: Representation, Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points
-  row: Memory, Can prioritize and retain important relationships, allowing for more natural and efficient memory management
-  row: Explainability, The object-oriented structure can make decision-making processes more transparent and understandable
-  ```
+  \`\`\`table
+  headers: Aspect, Traditional Neural Networks, Object-Oriented Networks (OONs)
+  row: Architecture, Two-dimensional structure with fixed layer connections, Three-dimensional structure with multi-directional object connections
+  row: Knowledge Representation, Based on individual data points and statistical patterns, Based on relationships and concepts between objects with meaningful connections
+  row: Memory Management, Limited context windows and uniform memory treatment, Can prioritize and retain important relationships while allowing less important ones to fade
+  row: Explainability, Often operates as a "black box" with unclear decision processes, More transparent due to traceable object relationships and encapsulated knowledge
+  row: Data Requirements, Requires massive datasets for training, Built on core facts and principles that allow independent learning
+  row: Adaptability, May struggle to generalize beyond training data, Can discover and build new principles from core knowledge
+  row: Resource Efficiency, Computationally expensive with high power requirements, Designed for more efficient processing (though not yet implemented)
+  row: Learning Approach, Learns through statistical correlations in training data, Learns through understanding relationships and discovering principles
+  \`\`\`
 
   OONs can potentially overcome the limitations of traditional neural networks in several ways. By focusing on relationships and concepts, they can capture the complex, multi-directional connections between objects, mirroring the brain's intricate architecture. This three-dimensional connectivity allows for a more accurate representation of knowledge and a deeper understanding of the world.
 
