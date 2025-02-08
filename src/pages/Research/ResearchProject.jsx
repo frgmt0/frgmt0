@@ -56,19 +56,48 @@ const ResearchProject = () => {
             components={{
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
-                // Handle xml-table blocks
-                if (match && match[1] === 'xml-table') {
-                  const parser = new DOMParser();
-                  const doc = parser.parseFromString(String(children), 'text/html');
-                  const table = doc.querySelector('table');
-                  if (table) {
-                    return (
-                      <div className="table-container">
-                        <table className="markdown-table" dangerouslySetInnerHTML={{ __html: table.innerHTML }} />
-                      </div>
-                    );
-                  }
+                
+                // Handle table blocks
+                if (!inline && match && match[1] === 'table') {
+                  const lines = String(children).trim().split('\n');
+                  const tableData = {
+                    headers: [],
+                    rows: []
+                  };
+
+                  lines.forEach(line => {
+                    const [type, ...content] = line.split(':').map(s => s.trim());
+                    if (type === 'headers') {
+                      tableData.headers = content[0].split(',').map(h => h.trim());
+                    } else if (type === 'row') {
+                      tableData.rows.push(content[0].split(',').map(c => c.trim()));
+                    }
+                  });
+
+                  return (
+                    <div className="table-container">
+                      <table className="markdown-table">
+                        <thead>
+                          <tr>
+                            {tableData.headers.map((header, i) => (
+                              <th key={i} className="markdown-th">{header}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {tableData.rows.map((row, i) => (
+                            <tr key={i} className="markdown-tr">
+                              {row.map((cell, j) => (
+                                <td key={j} className="markdown-td">{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  );
                 }
+
                 // Handle regular code blocks
                 return !inline && match ? (
                   <SyntaxHighlighter
