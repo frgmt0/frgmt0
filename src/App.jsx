@@ -19,18 +19,10 @@ function App() {
 
   useEffect(() => {
     console.log('Assets loaded state:', assetsLoaded);
-    if (assetsLoaded) {
-      console.log('Assets loaded, setting loading to false');
-      setIsLoading(false);
-    }
   }, [assetsLoaded]);
 
-  useEffect(() => {
-    console.log('Loading state:', isLoading);
-  }, [isLoading]);
-
-  if (isLoading) {
-    console.log('Showing loading screen');
+  if (!assetsLoaded) {
+    console.log('Showing loading screen - waiting for assets');
     return <LoadingScreen />;
   }
 

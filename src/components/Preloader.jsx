@@ -70,16 +70,21 @@ const Preloader = ({ onLoadComplete }) => {
 
   // Trigger completion when both assets and charts are ready
   useEffect(() => {
-    console.log('Assets loaded:', assetsLoaded, 'Charts initialized:', chartsInitialized);
-    if (assetsLoaded && chartsInitialized) {
-      console.log('All assets and charts initialized');
-      if (onLoadComplete) {
-        console.log('Calling onLoadComplete');
-        onLoadComplete();
-      } else {
-        console.log('No onLoadComplete callback provided');
+    const initialize = async () => {
+      console.log('Assets loaded:', assetsLoaded, 'Charts initialized:', chartsInitialized);
+      if (assetsLoaded && chartsInitialized) {
+        console.log('All assets and charts initialized');
+        // Small delay to ensure everything is ready
+        await new Promise(resolve => setTimeout(resolve, 100));
+        if (onLoadComplete) {
+          console.log('Calling onLoadComplete');
+          onLoadComplete();
+        } else {
+          console.log('No onLoadComplete callback provided');
+        }
       }
-    }
+    };
+    initialize();
   }, [assetsLoaded, chartsInitialized, onLoadComplete]);
 
   return null;
