@@ -10,23 +10,28 @@ const ResearchProject = lazy(() => import('./pages/Research/ResearchProject'));
 function App() {
   const location = useLocation();
   const [assetsLoaded, setAssetsLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     console.log('App mounted');
     return () => console.log('App unmounted');
   }, []);
 
-  useEffect(() => {
-    console.log('Assets loaded state:', assetsLoaded);
-  }, [assetsLoaded]);
+  const handleAssetsLoaded = () => {
+    console.log('Assets loaded callback triggered');
+    setAssetsLoaded(true);
+  };
 
   if (!assetsLoaded) {
-    console.log('Showing loading screen - waiting for assets');
-    return <LoadingScreen />;
+    console.log('Waiting for assets to load...');
+    return (
+      <>
+        <LoadingScreen />
+        <Preloader onLoadComplete={handleAssetsLoaded} />
+      </>
+    );
   }
 
-  console.log('Rendering main app content');
+  console.log('Assets loaded, rendering main content');
 
   return (
     <div className="app-container">

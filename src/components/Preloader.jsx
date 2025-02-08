@@ -29,43 +29,44 @@ const Preloader = ({ onLoadComplete }) => {
 
   // Load assets
   useEffect(() => {
-    const assets = [
-      "/fonts/text/BORELA.otf",
-      "/images/background.jpg",
-      "/images/avatar.jpg"
-    ];
+    console.log('Starting asset loading...');
+    const loadAssets = async () => {
+      try {
+        const font = new FontFace('Borela', `url(/fonts/text/BORELA.otf)`);
+        await font.load();
+        document.fonts.add(font);
+        console.log('Font loaded');
 
-    const loadImage = (src) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
-    };
+        const loadImage = (src) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => {
+              console.log(`Image loaded: ${src}`);
+              resolve();
+            };
+            img.onerror = (e) => {
+              console.error(`Failed to load image: ${src}`, e);
+              reject(e);
+            };
+            img.src = src;
+          });
+        };
 
-    const loadFont = (src) => {
-      return new Promise((resolve, reject) => {
-        const font = new FontFace('Borela', `url(${src})`);
-        font.load().then(() => {
-          document.fonts.add(font);
-          resolve();
-        }).catch(reject);
-      });
-    };
-
-    Promise.all([
-      loadFont('/fonts/text/BORELA.otf'),
-      loadImage('/images/background.jpg'),
-      loadImage('/images/avatar.jpg')
-    ])
-      .then(() => {
+        await Promise.all([
+          loadImage('/images/background.jpg'),
+          loadImage('/images/avatar.jpg')
+        ]);
+        
+        console.log('All assets loaded successfully');
         setAssetsLoaded(true);
-      })
-      .catch(error => {
-        console.error('Failed to load assets:', error);
-        setAssetsLoaded(true); // Continue anyway
-      });
+      } catch (error) {
+        console.error('Asset loading failed:', error);
+        // Even if assets fail, we should continue
+        setAssetsLoaded(true);
+      }
+    };
+
+    loadAssets();
   }, []);
 
   // Trigger completion when both assets and charts are ready
