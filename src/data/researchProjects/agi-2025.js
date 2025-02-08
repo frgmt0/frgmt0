@@ -46,30 +46,30 @@ const agi2025 = new ResearchPaper({
   For example, an object representing "apple" might have relationships with "fruit," "red," "sweet," and "tree." These relationships are not merely factual associations but represent a deeper understanding of the concept of an apple, encompassing its properties, characteristics, and relationships with other objects.
   OONs offer several advantages over traditional neural networks:
 
-  ```xml-table
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>OONs vs. Traditional Neural Networks</th>
-    </tr>
-    <tr>
-      <td>Connectivity</td>
-      <td>Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture</td>
-    </tr>
-    <tr>
-      <td>Representation</td>
-      <td>Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points</td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>Can prioritize and retain important relationships, allowing for more natural and efficient memory management</td>
-    </tr>
-    <tr>
-      <td>Explainability</td>
-      <td>The object-oriented structure can make decision-making processes more transparent and understandable</td>
-    </tr>
-  </table>
-  ```
+  <div class="table-container">
+    <table class="markdown-table">
+      <tr class="markdown-tr">
+        <th class="markdown-th">Feature</th>
+        <th class="markdown-th">OONs vs. Traditional Neural Networks</th>
+      </tr>
+      <tr class="markdown-tr">
+        <td class="markdown-td">Connectivity</td>
+        <td class="markdown-td">Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture</td>
+      </tr>
+      <tr class="markdown-tr">
+        <td class="markdown-td">Representation</td>
+        <td class="markdown-td">Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points</td>
+      </tr>
+      <tr class="markdown-tr">
+        <td class="markdown-td">Memory</td>
+        <td class="markdown-td">Can prioritize and retain important relationships, allowing for more natural and efficient memory management</td>
+      </tr>
+      <tr class="markdown-tr">
+        <td class="markdown-td">Explainability</td>
+        <td class="markdown-td">The object-oriented structure can make decision-making processes more transparent and understandable</td>
+      </tr>
+    </table>
+  </div>
 
   OONs can potentially overcome the limitations of traditional neural networks in several ways. By focusing on relationships and concepts, they can capture the complex, multi-directional connections between objects, mirroring the brain's intricate architecture. This three-dimensional connectivity allows for a more accurate representation of knowledge and a deeper understanding of the world.
 
@@ -90,12 +90,12 @@ const agi2025 = new ResearchPaper({
   For example, if a model is created with Rust, we can prompt it with Rust code. This approach allows for more precise and efficient communication, as we can directly interact with the model's underlying structure and logic. By speaking the model's language, we can provide more specific instructions and guide its behavior more effectively, and ensure consistency across different environments.
 
   Furthermore, as we interact with the model, it can learn faster and faster, adapting to our specific needs and preferences. In desktop solutions, we can simulate sleep by allowing the model to train itself on new facts and add them to its core facts dataset. This continuous learning process can lead to more personalized and efficient AI systems.
-  Effective prompt engineering is crucial for getting the most out of any AI model, including OONs 14. Prompts should be clear, specific, and tailored to the model's capabilities. By understanding the model's strengths and limitations, we can craft prompts that elicit the desired responses and guide the model towards achieving specific goals.
+  Effective prompt engineering is crucial for getting the most out of any AI model, including OONs [14]. Prompts should be clear, specific, and tailored to the model's capabilities. By understanding the model's strengths and limitations, we can craft prompts that elicit the desired responses and guide the model towards achieving specific goals.
 
   # Hardware and Software Improvements
 
   While advancements in AI algorithms and architectures are crucial for achieving AGI, hardware improvements also play a vital role. Current hardware, even with the impressive capabilities of GPUs like the A100 and H100, may not be sufficient for the computational demands of AGI [15].
-  One area of focus is neuromorphic computing, which aims to design computer systems inspired by the human brain 16. Neuromorphic chips, such as Intel's Loihi, simulate the brain's structure and function, allowing for more efficient and parallel processing. These chips could potentially overcome the von Neumann bottleneck, a limitation in traditional computer architecture that restricts data transfer between memory and processing units [16].
+  One area of focus is neuromorphic computing, which aims to design computer systems inspired by the human brain [16]. Neuromorphic chips, such as Intel's Loihi, simulate the brain's structure and function, allowing for more efficient and parallel processing. These chips could potentially overcome the von Neumann bottleneck, a limitation in traditional computer architecture that restricts data transfer between memory and processing units [16].
   Another promising direction is the development of dynamic architectures, which can adapt their computation based on the input [17]. These architectures can potentially improve efficiency by allocating resources only where needed, similar to how the human brain dynamically adjusts its activity based on the task at hand.
 
   # The Future of AGI
@@ -108,7 +108,7 @@ const agi2025 = new ResearchPaper({
 
   Furthermore, the rapid pace of AI development raises concerns about potential misuse and the concentration of power in the hands of a few 20. Establishing clear ethical guidelines, regulations, and governance frameworks is essential to ensure that AGI is developed and used in a way that benefits all of humanity.
 
-  Finally, it's important to recognize that data limitations pose significant challenges to AGI development 15. Current AI models, including LLMs, rely heavily on statistical correlations derived from vast datasets. However, these datasets often lack the nuanced understanding and real-world grounding necessary for true AGI. Developing new approaches to data collection, representation, and integration with AI systems is crucial for overcoming these limitations.
+  Finally, it's important to recognize that data limitations pose significant challenges to AGI development [15]. Current AI models, including LLMs, rely heavily on statistical correlations derived from vast datasets. However, these datasets often lack the nuanced understanding and real-world grounding necessary for true AGI. Developing new approaches to data collection, representation, and integration with AI systems is crucial for overcoming these limitations.
 
   # Conclusion
 
@@ -143,7 +143,7 @@ const agi2025 = new ResearchPaper({
   summary:
     "Object-Oriented Networks could revolutionize AI by mimicking the brain's 3D architecture in ways current neural networks can't, potentially unlocking the path to true artificial general intelligence.",
   tags: [
-    "Artifical Intelligence",
+    "Artificial Intelligence",
     "Machine Learning",
     "Artificial General Intelligence",
     "Neural Networks",
