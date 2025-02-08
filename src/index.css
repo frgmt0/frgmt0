@@ -1,7 +1,7 @@
 /* Font */
 @font-face {
     font-family: "Borela";
-    src: url("/fonts/text/BORELA.otf") format("truetype");
+    src: url("/fonts/text/exo.otf") format("truetype");
     font-display: swap;
     font-weight: normal;
     font-style: normal;
@@ -11,7 +11,7 @@
 @media screen {
     @font-face {
         font-family: "Borela";
-        src: url("/fonts/text/BORELA.otf") format("truetype");
+        src: url("/fonts/text/exo.otf") format("truetype");
         font-display: swap;
         font-weight: normal;
         font-style: normal;
@@ -139,7 +139,6 @@ h3 {
     -webkit-transform: translateZ(0);
     margin-bottom: 1rem;
 }
-
 
 h1 {
     font-size: 2.5em;
@@ -419,7 +418,7 @@ a:hover {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 12px;
-    box-shadow: 
+    box-shadow:
         0 4px 24px -1px rgba(0, 0, 0, 0.1),
         0 6px 10px -2px rgba(0, 0, 0, 0.05),
         inset 0 0 0 1px rgba(255, 255, 255, 0.2);
@@ -801,53 +800,53 @@ a:hover {
 
 /* Loading Screen */
 .loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #1a1a1a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
 .loading-dots {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--primary);
-  animation: bounce 0.5s ease-in-out infinite;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    animation: bounce 0.5s ease-in-out infinite;
 }
 
 .dot:nth-child(2) {
-  animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 
 .dot:nth-child(3) {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .dot:nth-child(4) {
-  animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Small Mobile Styles (up to 480px) */

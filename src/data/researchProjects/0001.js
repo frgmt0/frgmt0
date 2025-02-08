@@ -8,8 +8,8 @@ Instructions:
 4. Import and add to index.js
 */
 
-const bluesky = new ResearchPaper({
-  id: "bluesky", // Use kebab-case, e.g., 'quantum-ml-2025'
+const a0001 = new ResearchPaper({
+  id: "a0001", // Use kebab-case, e.g., 'quantum-ml-2025'
   title:
     "Social Media's Evolving Landscape: Navigating Data Security, User Responsibility, and the Future of Online Platforms",
   content: `
@@ -174,4 +174,4 @@ const bluesky = new ResearchPaper({
   type: "research", // 'research' or 'experiment'
 });
 
-export default bluesky;
+export default a0001;
