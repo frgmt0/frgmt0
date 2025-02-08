@@ -44,30 +44,41 @@ const ResearchProject = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('ResearchProject mounted, loading post:', id);
-    setIsLoading(true);
+    let mounted = true;
     
-    const foundPost = researchProjects.find((p) => p.id === id);
-    if (foundPost) {
-      console.log('Found post:', foundPost);
+    const loadPost = async () => {
+      console.log('ResearchProject mounted, loading post:', id);
+      setIsLoading(true);
+      
       try {
+        const foundPost = researchProjects.find((p) => p.id === id);
+        if (!foundPost) {
+          console.log('Post not found');
+          navigate("/");
+          return;
+        }
+
+        console.log('Found post:', foundPost);
         const postData = foundPost.getFullData();
         console.log('Post data processed:', postData);
-        setPost(postData);
-        window.scrollTo(0, 0);
+        
+        if (mounted) {
+          setPost(postData);
+          window.scrollTo(0, 0);
+          setIsLoading(false);
+        }
       } catch (error) {
         console.error('Error processing post data:', error);
-        navigate("/");
+        if (mounted) {
+          navigate("/");
+        }
       }
-    } else {
-      console.log('Post not found');
-      navigate("/");
-    }
-    
-    setIsLoading(false);
-    document.body.style.overflow = "auto";
+    };
+
+    loadPost();
 
     return () => {
+      mounted = false;
       document.body.style.overflow = "auto";
     };
   }, [id, navigate]);

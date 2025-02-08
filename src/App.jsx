@@ -10,6 +10,22 @@ const ResearchProject = lazy(() => import('./pages/Research/ResearchProject'));
 function App() {
   const location = useLocation();
   const [assetsLoaded, setAssetsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    console.log('App mounted');
+    return () => console.log('App unmounted');
+  }, []);
+
+  useEffect(() => {
+    if (assetsLoaded) {
+      setIsLoading(false);
+    }
+  }, [assetsLoaded]);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="app-container">
@@ -17,37 +33,38 @@ function App() {
       <div className="page-background">
         <main className="flex-1 relative">
           <AnimatePresence mode="wait">
-            {assetsLoaded && (
-              <Suspense fallback={<LoadingScreen />}>
-                <Routes location={location} key={location.pathname}>
-                  <Route path="/" element={
+            <Routes location={location} key={location.pathname}>
+              <Route 
+                path="/" 
+                element={
+                  <Suspense fallback={<LoadingScreen />}>
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="min-h-full"
-                      onAnimationComplete={() => {
-                        document.body.style.overflow = 'auto';
-                      }}
                     >
                       <Research />
                     </motion.div>
-                  } />
-                  <Route path="/:id" element={
+                  </Suspense>
+                } 
+              />
+              <Route 
+                path="/:id" 
+                element={
+                  <Suspense fallback={<LoadingScreen />}>
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.5 }}
-                      className="min-h-full"
                     >
                       <ResearchProject />
                     </motion.div>
-                  } />
-                </Routes>
-              </Suspense>
-            )}
+                  </Suspense>
+                } 
+              />
+            </Routes>
           </AnimatePresence>
         </main>
       </div>
