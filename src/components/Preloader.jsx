@@ -1,8 +1,33 @@
 import React, { useEffect, useState } from "react";
+import { Chart as ChartJS } from 'chart.js';
 
 const Preloader = ({ onLoadComplete }) => {
   const [assetsLoaded, setAssetsLoaded] = useState(false);
+  const [chartsInitialized, setChartsInitialized] = useState(false);
 
+  // Initialize Chart.js
+  useEffect(() => {
+    const initCharts = async () => {
+      try {
+        // Force Chart.js to initialize its canvas context
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const chart = new ChartJS(ctx, {
+          type: 'bar',
+          data: { labels: [], datasets: [] },
+          options: { responsive: true }
+        });
+        chart.destroy();
+        setChartsInitialized(true);
+      } catch (error) {
+        console.error('Failed to initialize charts:', error);
+        setChartsInitialized(true); // Continue anyway
+      }
+    };
+    initCharts();
+  }, []);
+
+  // Load assets
   useEffect(() => {
     const assets = [
       "/fonts/text/BORELA.otf",
@@ -36,15 +61,20 @@ const Preloader = ({ onLoadComplete }) => {
     ])
       .then(() => {
         setAssetsLoaded(true);
-        if (onLoadComplete) onLoadComplete();
       })
       .catch(error => {
         console.error('Failed to load assets:', error);
-        // Still mark as loaded to prevent infinite loading screen
-        setAssetsLoaded(true);
-        if (onLoadComplete) onLoadComplete();
+        setAssetsLoaded(true); // Continue anyway
       });
-  }, [onLoadComplete]);
+  }, []);
+
+  // Trigger completion when both assets and charts are ready
+  useEffect(() => {
+    if (assetsLoaded && chartsInitialized && onLoadComplete) {
+      console.log('All assets and charts initialized');
+      onLoadComplete();
+    }
+  }, [assetsLoaded, chartsInitialized, onLoadComplete]);
 
   return null;
 };
