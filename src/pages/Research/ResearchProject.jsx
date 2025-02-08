@@ -82,14 +82,18 @@ const ResearchProject = () => {
               ),
               table: ({node, ...props}) => (
                 <div className="table-container">
-                  <table {...props} className="markdown-table" />
+                  <table className="markdown-table" {...props} />
                 </div>
               ),
-              thead: ({node, ...props}) => <thead {...props} className="markdown-thead" />,
-              tbody: ({node, ...props}) => <tbody {...props} className="markdown-tbody" />,
-              tr: ({node, ...props}) => <tr {...props} className="markdown-tr" />,
-              th: ({node, ...props}) => <th {...props} className="markdown-th" />,
-              td: ({node, ...props}) => <td {...props} className="markdown-td" />,
+              tr: ({node, ...props}) => (
+                <tr className="markdown-tr" {...props} />
+              ),
+              th: ({node, ...props}) => (
+                <th className="markdown-th" {...props} />
+              ),
+              td: ({node, ...props}) => (
+                <td className="markdown-td" {...props} />
+              ),
             }}
           >
             {post.content}

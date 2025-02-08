@@ -46,12 +46,28 @@ const agi2025 = new ResearchPaper({
   For example, an object representing "apple" might have relationships with "fruit," "red," "sweet," and "tree." These relationships are not merely factual associations but represent a deeper understanding of the concept of an apple, encompassing its properties, characteristics, and relationships with other objects.
   OONs offer several advantages over traditional neural networks:
 
-  | Feature | OONs vs. Traditional Neural Networks |
-  |---------|-------------------------------------|
-  | Connectivity | Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture |
-  | Representation | Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points |
-  | Memory | Can prioritize and retain important relationships, allowing for more natural and efficient memory management |
-  | Explainability | The object-oriented structure can make decision-making processes more transparent and understandable |
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>OONs vs. Traditional Neural Networks</th>
+    </tr>
+    <tr>
+      <td>Connectivity</td>
+      <td>Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture</td>
+    </tr>
+    <tr>
+      <td>Representation</td>
+      <td>Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points</td>
+    </tr>
+    <tr>
+      <td>Memory</td>
+      <td>Can prioritize and retain important relationships, allowing for more natural and efficient memory management</td>
+    </tr>
+    <tr>
+      <td>Explainability</td>
+      <td>The object-oriented structure can make decision-making processes more transparent and understandable</td>
+    </tr>
+  </table>
 
   OONs can potentially overcome the limitations of traditional neural networks in several ways. By focusing on relationships and concepts, they can capture the complex, multi-directional connections between objects, mirroring the brain's intricate architecture. This three-dimensional connectivity allows for a more accurate representation of knowledge and a deeper understanding of the world.
 
