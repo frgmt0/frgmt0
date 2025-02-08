@@ -1,7 +1,5 @@
-import quantumML from './quantum-ml-2025';
+import agi2025 from "./agi-2025";
 
-const researchProjects = [
-  quantumML
-];
+const researchProjects = [agi2025];
 
 export default researchProjects;

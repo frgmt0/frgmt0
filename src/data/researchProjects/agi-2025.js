@@ -53,6 +53,7 @@ const agi2025 = new ResearchPaper({
   Neural networks also face limitations in their ability to handle 3D object recognition. Studies have shown that they can be easily fooled by adversarial attacks, where subtle changes to an image can lead to misclassification [10]. For example, a neural network might misidentify an overturned school bus as a snowplow, highlighting its limitations in understanding spatial relationships and object permanence.
 
   Moreover, neural networks are computationally expensive, requiring significant processing power and large datasets for training [8]. This can be a barrier to their widespread adoption, especially for resource-constrained applications. In contrast, the human brain operates with remarkable energy efficiency, consuming only about 20 watts of power [3]. This stark difference highlights the need for more efficient AI architectures.
+
   Finally, it's important to recognize that the brain is not a monolithic entity but a complex system with multiple levels of organization. Integrating different levels of brain structure and function, from single neurons to global brain networks, is crucial for accurately modeling human cognition [11]. Current neural networks often fall short in capturing this multi-level organization.
 
   # Object-Oriented Networks: A Novel Approach
@@ -72,6 +73,25 @@ const agi2025 = new ResearchPaper({
   row: Adaptability, May struggle to generalize beyond training data, Can discover and build new principles from core knowledge
   row: Resource Efficiency, Computationally expensive with high power requirements, Designed for more efficient processing (though not yet implemented)
   row: Learning Approach, Learns through statistical correlations in training data, Learns through understanding relationships and discovering principles
+  \`\`\`
+  \`\`\`chart
+  {
+     "type": "spider",
+     "title": "Architecture Comparison Matrix",
+     "categories": ["Connection Flexibility", "Memory Efficiency",
+   "Processing Speed", "Adaptability", "Knowledge Representation"],
+     "datasets": [
+       {
+         "label": "Traditional Neural Networks",
+         "values": [40, 45, 75, 35, 30]
+       },
+       {
+         "label": "OONs (Theoretical)",
+         "values": [85, 80, 60, 90, 95]
+       }
+     ],
+     "notes": "Based on theoretical capabilities and current limitations"
+   }
   \`\`\`
 
   OONs can potentially overcome the limitations of traditional neural networks in several ways. By focusing on relationships and concepts, they can capture the complex, multi-directional connections between objects, mirroring the brain's intricate architecture. This three-dimensional connectivity allows for a more accurate representation of knowledge and a deeper understanding of the world.
