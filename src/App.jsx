@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import Preloader from './components/Preloader';
 import LoadingScreen from './components/LoadingScreen';
 
@@ -19,13 +19,17 @@ function App() {
 
   useEffect(() => {
     if (assetsLoaded) {
-      setIsLoading(false);
+      console.log('Assets loaded, setting loading to false');
+      setTimeout(() => setIsLoading(false), 100); // Small delay to ensure smooth transition
     }
   }, [assetsLoaded]);
 
-  if (isLoading) {
+  if (!assetsLoaded || isLoading) {
+    console.log('Showing loading screen');
     return <LoadingScreen />;
   }
+
+  console.log('Rendering main app content');
 
   return (
     <div className="app-container">

@@ -4,9 +4,22 @@ import researchProjects from "../../data/researchProjects";
 import SearchBar from "../../components/SearchBar";
 
 const Research = () => {
-  console.log('Research component rendered');
-  console.log('Research projects:', researchProjects);
-  const [displayedProjects, setDisplayedProjects] = useState(researchProjects);
+  const [displayedProjects, setDisplayedProjects] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    console.log('Research component mounted');
+    console.log('Research projects:', researchProjects);
+    setDisplayedProjects(researchProjects);
+    setIsLoaded(true);
+  }, []);
+
+  if (!isLoaded) {
+    console.log('Research still loading');
+    return <LoadingScreen />;
+  }
+
+  console.log('Research component fully loaded');
 
   const handleSearchResults = (results) => {
     setDisplayedProjects(results);
