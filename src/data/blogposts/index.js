@@ -2,6 +2,7 @@ import selfcare from "./02022025-personal";
 import tariffs from "./02022025-news";
 import newAIRelease from "./02022025-tech";
 import grammys from "./02032025-personal";
+import fplangs from "./02082025-tech-fp";
 // import webPerformance from './webPerformance';
 
 // Add all blog posts to this array
@@ -11,6 +12,7 @@ const allBlogPosts = [
   tariffs,
   newAIRelease,
   grammys,
+  fplangs,
   // webPerformance,
   // Add new blog posts here
 ].sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
