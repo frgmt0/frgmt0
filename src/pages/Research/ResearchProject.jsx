@@ -56,6 +56,20 @@ const ResearchProject = () => {
             components={{
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
+                // Handle xml-table blocks
+                if (match && match[1] === 'xml-table') {
+                  const parser = new DOMParser();
+                  const doc = parser.parseFromString(String(children), 'text/html');
+                  const table = doc.querySelector('table');
+                  if (table) {
+                    return (
+                      <div className="table-container">
+                        <table className="markdown-table" dangerouslySetInnerHTML={{ __html: table.innerHTML }} />
+                      </div>
+                    );
+                  }
+                }
+                // Handle regular code blocks
                 return !inline && match ? (
                   <SyntaxHighlighter
                     style={atomDark}
@@ -79,20 +93,6 @@ const ResearchProject = () => {
                   className="cta-button secondary"
                   style={{ padding: "0.25rem 0.5rem", margin: "0 0.25rem" }}
                 />
-              ),
-              table: ({node, ...props}) => (
-                <div className="table-container">
-                  <table className="markdown-table" {...props} />
-                </div>
-              ),
-              tr: ({node, ...props}) => (
-                <tr className="markdown-tr" {...props} />
-              ),
-              th: ({node, ...props}) => (
-                <th className="markdown-th" {...props} />
-              ),
-              td: ({node, ...props}) => (
-                <td className="markdown-td" {...props} />
               ),
             }}
           >
