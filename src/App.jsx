@@ -13,13 +13,12 @@ function App() {
 
   return (
     <div className="app-container">
-      {!assetsLoaded && <LoadingScreen />}
       <Preloader onLoadComplete={() => setAssetsLoaded(true)} />
       <div className="page-background">
         <main className="flex-1 relative">
           <AnimatePresence mode="wait">
-            {assetsLoaded && (
-              <Suspense fallback={<LoadingScreen />}>
+            <Suspense fallback={<LoadingScreen />}>
+              {assetsLoaded ? (
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={
                     <motion.div
@@ -47,8 +46,10 @@ function App() {
                     </motion.div>
                   } />
                 </Routes>
-              </Suspense>
-            )}
+              ) : (
+                <LoadingScreen />
+              )}
+            </Suspense>
           </AnimatePresence>
         </main>
       </div>
