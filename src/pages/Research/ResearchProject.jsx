@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import ShareButtons from "../../components/ShareButtons";
+import ChartRenderer from "../../components/ChartRenderer";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -88,127 +89,13 @@ const ResearchProject = () => {
                 
                 // Handle chart blocks
                 if (!inline && match && match[1] === 'chart') {
-                  const lines = String(children).trim().split('\n');
-                  const chartData = {
-                    type: '',
-                    title: '',
-                    data: {
-                      labels: [],
-                      datasets: []
-                    },
-                    options: {
-                      scales: {}
-                    }
-                  };
-
-                  let currentDataset = null;
-                  
-                  lines.forEach(line => {
-                    const [key, ...value] = line.split(':').map(s => s.trim());
-                    const val = value.join(':').trim();
-                    
-                    switch(key) {
-                      case 'type':
-                        chartData.type = val;
-                        break;
-                      case 'title':
-                        chartData.options.plugins = {
-                          title: {
-                            display: true,
-                            text: val
-                          }
-                        };
-                        break;
-                      case 'xAxis':
-                        chartData.options.scales.x = {
-                          title: {
-                            display: true,
-                            text: val
-                          }
-                        };
-                        break;
-                      case 'yAxis':
-                        const [label, unit] = val.split('(');
-                        chartData.options.scales.y = {
-                          title: {
-                            display: true,
-                            text: val
-                          },
-                          ticks: {
-                            callback: function(value) {
-                              if (unit) {
-                                const cleanUnit = unit.replace(')', '').trim();
-                                return value.toLocaleString() + ' ' + cleanUnit;
-                              }
-                              return value.toLocaleString();
-                            }
-                          }
-                        };
-                        break;
-                      case 'categories':
-                        chartData.data.labels = JSON.parse(val.replace(/\[|\]/g, '')).split(',').map(s => s.trim());
-                        break;
-                      case 'data':
-                        if (chartData.type === 'bar') {
-                          const dataPoints = [];
-                          const labels = [];
-                          lines.slice(lines.indexOf(line) + 1).forEach(dataLine => {
-                            if (dataLine.trim().startsWith('-')) {
-                              const [label, value] = dataLine.replace('-', '').split(':').map(s => s.trim());
-                              labels.push(label.replace('label:', '').trim());
-                              dataPoints.push(parseFloat(value.replace('value:', '').trim()));
-                            }
-                          });
-                          chartData.data.labels = labels;
-                          chartData.data.datasets = [{
-                            data: dataPoints,
-                            backgroundColor: 'rgba(121, 104, 121, 0.5)',
-                            borderColor: 'rgba(121, 104, 121, 1)',
-                            borderWidth: 1,
-                            label: 'Data Volume'
-                          }];
-                          
-                          // Add any notes as a subtitle
-                          const notes = lines.find(l => l.startsWith('notes:'));
-                          if (notes) {
-                            chartData.options.plugins.subtitle = {
-                              display: true,
-                              text: notes.split(':')[1].trim(),
-                              padding: {
-                                bottom: 10
-                              }
-                            };
-                          }
-                        }
-                        break;
-                      case 'datasets':
-                        if (chartData.type === 'radar') {
-                          lines.slice(lines.indexOf(line) + 1).forEach(dataLine => {
-                            if (dataLine.trim().startsWith('-')) {
-                              const [label, values] = dataLine.replace('-', '').split(':').map(s => s.trim());
-                              chartData.data.datasets.push({
-                                label: label.replace('label:', '').trim(),
-                                data: JSON.parse(values.replace('values:', '').trim()),
-                                fill: true,
-                                backgroundColor: `rgba(121, 104, 121, ${0.2 + chartData.data.datasets.length * 0.2})`,
-                                borderColor: 'rgba(121, 104, 121, 1)',
-                                pointBackgroundColor: 'rgba(121, 104, 121, 1)',
-                                pointBorderColor: '#fff',
-                                pointHoverBackgroundColor: '#fff',
-                                pointHoverBorderColor: 'rgba(121, 104, 121, 1)'
-                              });
-                            }
-                          });
-                        }
-                        break;
-                    }
-                  });
-
-                  return (
-                    <div style={{ margin: '2rem 0', padding: '1rem', background: 'rgba(255, 255, 255, 0.4)', borderRadius: '8px' }}>
-                      <Chart type={chartData.type} data={chartData.data} options={chartData.options} />
-                    </div>
-                  );
+                  try {
+                    const chartConfig = JSON.parse(String(children));
+                    return <ChartRenderer chartConfig={chartConfig} />;
+                  } catch (error) {
+                    console.error('Failed to parse chart configuration:', error);
+                    return <div className="error">Invalid chart configuration</div>;
+                  }
                 }
                 
                 // Handle table blocks

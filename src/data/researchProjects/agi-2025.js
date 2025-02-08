@@ -21,19 +21,20 @@ const agi2025 = new ResearchPaper({
   One major obstacle is the sheer volume of data involved. Studies have shown that reconstructing even a small three-dimensional brain region requires supercomputing power comparable to that used for simulating the universe [3]. Furthermore, a mere 1% of a mouse brain generates 1,000 terabytes of data, underscoring the massive scale of this challenge [3]. This suggests that the key difference between a human brain and a mouse brain might lie not just in the size but also in the intricate pattern of connections and the number of neurons [3].
 
   \`\`\`chart
-  type: bar
-  title: Data Processing Requirements
-  xAxis: Brain Mapping Scale
-  yAxis: Data Volume (TB)
-  data:
-    - label: 1% Mouse Brain
-      value: 1000
-    - label: Full Mouse Brain
-      value: 100000
-    - label: Human Brain (est.)
-      value: 1000000
-  notes: Values are approximate and logarithmic scale
-  \`\`\`s
+  {
+    "type": "bar",
+    "title": "Data Processing Requirements",
+    "xAxis": "Brain Mapping Scale",
+    "yAxis": "Data Volume (TB)",
+    "datasetLabel": "Data Volume",
+    "data": [
+      { "label": "1% Mouse Brain", "value": 1000 },
+      { "label": "Full Mouse Brain", "value": 100000 },
+      { "label": "Human Brain (est.)", "value": 1000000 }
+    ],
+    "notes": "Values are approximate and logarithmic scale"
+  }
+  \`\`\`
 
   Another challenge stems from the limitations of current neuroimaging techniques. Diffusion Magnetic Resonance Imaging (dMRI) tractography, a widely used method for mapping brain pathways, can sometimes generate biologically implausible pathways, especially in regions with crossing fibers [4]. Validating these observations remains difficult, highlighting the need for new and more reliable approaches.
   Furthermore, accurately interpreting brain imaging data is not straightforward. The concept of "cognitive subtraction," often used in brain mapping research, assumes that brain activation is solely due to the additional processes triggered by an experimental task [5]. However, recent research challenges this assumption, suggesting that brain activity can also increase due to the release of suppression from other brain regions [5]. This complexity adds another layer of difficulty to mapping the brain on a computer.
