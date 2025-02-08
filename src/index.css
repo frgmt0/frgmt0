@@ -257,6 +257,43 @@ a:hover {
     padding: 0;
 }
 
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.markdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.markdown-th,
+.markdown-td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid rgba(121, 104, 121, 0.2);
+}
+
+.markdown-th {
+    background: rgba(121, 104, 121, 0.1);
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.markdown-tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.markdown-tr:hover {
+    background: rgba(121, 104, 121, 0.1);
+}
+
 .author-avatar {
     width: 48px;
     height: 48px;
