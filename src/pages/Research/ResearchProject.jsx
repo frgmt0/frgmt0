@@ -17,7 +17,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  Filler
+  Filler,
+  SubTitle
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
@@ -31,7 +32,8 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Filler
+  Filler,
+  SubTitle
 );
 
 const ResearchProject = () => {
@@ -129,7 +131,12 @@ const ResearchProject = () => {
                         chartData.options.scales.y = {
                           title: {
                             display: true,
-                            text: val.split('(')[0].trim()
+                            text: val
+                          },
+                          ticks: {
+                            callback: function(value) {
+                              return value.toLocaleString() + ' TB';
+                            }
                           }
                         };
                         break;
@@ -152,8 +159,21 @@ const ResearchProject = () => {
                             data: dataPoints,
                             backgroundColor: 'rgba(121, 104, 121, 0.5)',
                             borderColor: 'rgba(121, 104, 121, 1)',
-                            borderWidth: 1
+                            borderWidth: 1,
+                            label: 'Data Volume'
                           }];
+                          
+                          // Add any notes as a subtitle
+                          const notes = lines.find(l => l.startsWith('notes:'));
+                          if (notes) {
+                            chartData.options.plugins.subtitle = {
+                              display: true,
+                              text: notes.split(':')[1].trim(),
+                              padding: {
+                                bottom: 10
+                              }
+                            };
+                          }
                         }
                         break;
                       case 'datasets':
