@@ -46,30 +46,13 @@ const agi2025 = new ResearchPaper({
   For example, an object representing "apple" might have relationships with "fruit," "red," "sweet," and "tree." These relationships are not merely factual associations but represent a deeper understanding of the concept of an apple, encompassing its properties, characteristics, and relationships with other objects.
   OONs offer several advantages over traditional neural networks:
 
-  <div class="table-container">
-    <table class="markdown-table">
-      <tr class="markdown-tr">
-        <th class="markdown-th">Feature</th>
-        <th class="markdown-th">OONs vs. Traditional Neural Networks</th>
-      </tr>
-      <tr class="markdown-tr">
-        <td class="markdown-td">Connectivity</td>
-        <td class="markdown-td">Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture</td>
-      </tr>
-      <tr class="markdown-tr">
-        <td class="markdown-td">Representation</td>
-        <td class="markdown-td">Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points</td>
-      </tr>
-      <tr class="markdown-tr">
-        <td class="markdown-td">Memory</td>
-        <td class="markdown-td">Can prioritize and retain important relationships, allowing for more natural and efficient memory management</td>
-      </tr>
-      <tr class="markdown-tr">
-        <td class="markdown-td">Explainability</td>
-        <td class="markdown-td">The object-oriented structure can make decision-making processes more transparent and understandable</td>
-      </tr>
-    </table>
-  </div>
+  ```table
+  headers: Feature, OONs vs. Traditional Neural Networks
+  row: Connectivity, Three-dimensional, multi-directional connections between objects, mirroring the brain's intricate architecture
+  row: Representation, Represents knowledge in a more abstract and flexible way by focusing on relationships rather than individual data points
+  row: Memory, Can prioritize and retain important relationships, allowing for more natural and efficient memory management
+  row: Explainability, The object-oriented structure can make decision-making processes more transparent and understandable
+  ```
 
   OONs can potentially overcome the limitations of traditional neural networks in several ways. By focusing on relationships and concepts, they can capture the complex, multi-directional connections between objects, mirroring the brain's intricate architecture. This three-dimensional connectivity allows for a more accurate representation of knowledge and a deeper understanding of the world.
 
