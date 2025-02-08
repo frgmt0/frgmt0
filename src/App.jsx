@@ -3,17 +3,22 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Research from './pages/Research/Research';
 import ResearchProject from './pages/Research/ResearchProject';
 import Preloader from './components/Preloader';
+import LoadingScreen from './components/LoadingScreen';
+import { useState } from 'react';
 
 function App() {
   const location = useLocation();
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
 
   return (
     <div className="app-container">
-      <Preloader />
+      {!assetsLoaded && <LoadingScreen />}
+      <Preloader onLoadComplete={() => setAssetsLoaded(true)} />
       <div className="page-background">
         <main className="flex-1 relative">
           <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
+            {assetsLoaded && (
+              <Routes location={location} key={location.pathname}>
               <Route path="/" element={
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -39,7 +44,8 @@ function App() {
                   <ResearchProject />
                 </motion.div>
               } />
-            </Routes>
+              </Routes>
+            )}
           </AnimatePresence>
         </main>
       </div>
