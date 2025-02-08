@@ -7,6 +7,7 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import ShareButtons from "../../components/ShareButtons";
 import ChartRenderer from "../../components/ChartRenderer";
+import LoadingScreen from "../../components/LoadingScreen";
 import {
   Chart as ChartJS,
   CategoryScale,
