@@ -62,7 +62,7 @@ const TiltedCard = ({
         width: containerWidth,
         perspective: "1000px"
       }}
-      className="relative"
+      className="tilted-card-wrapper"
     >
       {showMobileWarning && isMobile && (
         <div className="mobile-warning">

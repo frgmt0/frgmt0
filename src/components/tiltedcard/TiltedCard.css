@@ -1,3 +1,7 @@
+.tilted-card-wrapper {
+  position: relative;
+}
+
 .tilted-card-container {
   position: relative;
   width: 100%;
