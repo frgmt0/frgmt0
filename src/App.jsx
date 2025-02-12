@@ -19,11 +19,11 @@ function App() {
     <div className="app-container">
       <div className="background-container">
         <MagnetLines
-          rows={30}
-          columns={30}
+          rows={15}
+          columns={15}
           lineColor="rgba(121, 104, 121, 0.5)"
-          lineWidth="1px"
-          lineHeight="15px"
+          lineWidth="20px"
+          lineHeight="20px"
           baseAngle={0}
           containerSize="100vw"
           style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}

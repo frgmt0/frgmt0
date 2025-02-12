@@ -56,10 +56,16 @@ export default function MagnetLines({
       key={i}
       style={{
         "--rotate": `${baseAngle}deg`,
-        backgroundColor: lineColor,
+        color: lineColor,
         width: lineWidth,
         height: lineHeight,
+        fontSize: lineWidth,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
       }}
+    >
+      +
     />
   ));
 
