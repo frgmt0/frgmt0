@@ -57,28 +57,26 @@ const TiltedCard = ({
 
   return (
     <figure
+      className="tilted-card-figure"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
       style={{
         height: containerHeight,
-        width: containerWidth,
-        perspective: "800px"
+        width: containerWidth
       }}
-      className="tilted-card-figure"
     >
       {showMobileWarning && isMobile && (
-        <div className="tilted-card-mobile-alert">
+        <div className="mobile-warning">
           Tilt effect is disabled on mobile devices
         </div>
       )}
       <div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
+        className="tilted-card-inner"
         style={{
           transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(${isHovered ? scaleOnHover : 1})`,
-          transition: "transform 0.1s ease-out",
-          transformStyle: "preserve-3d"
+          transition: "transform 0.1s ease-out"
         }}
-        className="tilted-card-inner"
       >
         <div
           style={{
