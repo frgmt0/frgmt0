@@ -5,7 +5,7 @@ import './Navbar.css';
 
 const navItems = [
   { name: "Projects", path: "/projects" },
-  { name: "Research", path: "/research" },
+  { name: "Research", path: "/research", external: true },
   { name: "About", path: "/about" },
   { name: "Art", path: "/art" },
   { name: "Blog", path: "https://blog.frgmt.xyz", external: true },

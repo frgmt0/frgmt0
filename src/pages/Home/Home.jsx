@@ -38,7 +38,7 @@ const Home = () => {
             {featuredProjects.map((project) => (
               <Link 
                 key={project.id}
-                to={project.liveUrl || `/portfolio#${project.id}`}
+                to={project.liveUrl || `/projects#${project.id}`}
               >
                 <TiltedCard
                   altText={project.prevText || project.title}

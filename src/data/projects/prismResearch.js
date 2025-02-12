@@ -16,7 +16,7 @@ const prism = new Project({
     "Neural Networks",
   ],
   //githubUrl: 'https://github.com/frgmt0/prism-research.git',
-  liveUrl: "/portfolio/research", // Added link to research page
+  liveUrl: "https://research.frgmt.xyz", // External research page
   category: "Research",
   featured: true,
   completionDate: "2024-12-17",
