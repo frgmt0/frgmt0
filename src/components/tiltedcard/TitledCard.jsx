@@ -84,7 +84,7 @@ export default function TiltedCard({
       onMouseLeave={handleMouseLeave}
     >
       {showMobileWarning && (
-        <div className="absolute top-4 text-center text-sm block sm:hidden">
+        <div className="mobile-warning">
           This effect is not optimized for mobile. Check on desktop.
         </div>
       )}
