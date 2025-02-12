@@ -56,16 +56,16 @@ const TiltedCard = ({
   };
 
   return (
-    <div
+    <figure
       style={{
         height: containerHeight,
         width: containerWidth,
-        perspective: "1000px"
+        perspective: "800px"
       }}
-      className="tilted-card-wrapper"
+      className="tilted-card-figure"
     >
       {showMobileWarning && isMobile && (
-        <div className="mobile-warning">
+        <div className="tilted-card-mobile-alert">
           Tilt effect is disabled on mobile devices
         </div>
       )}
@@ -78,7 +78,7 @@ const TiltedCard = ({
           transition: "transform 0.1s ease-out",
           transformStyle: "preserve-3d"
         }}
-        className="tilted-card-container"
+        className="tilted-card-inner"
       >
         <div
           style={{

@@ -1,8 +1,14 @@
-.tilted-card-wrapper {
+.tilted-card-figure {
   position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.tilted-card-container {
+.tilted-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
