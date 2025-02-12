@@ -35,18 +35,20 @@ const Projects = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <div className="projects-grid">
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
+                className="project-card"
               >
                 <a 
                   href={project.githubUrl || project.liveUrl}
                   target={project.githubUrl ? "_blank" : "_self"}
                   rel="noopener noreferrer"
+                  className="project-link"
                 >
                   <TiltedCard
                     altText={project.prevText || project.title}
@@ -58,15 +60,12 @@ const Projects = () => {
                     rotateAmplitude={8}
                     displayOverlayContent={true}
                     overlayContent={
-                      <div className="p-6 text-center">
-                        <h3 className="text-2xl mb-4">{project.title}</h3>
-                        <p className="text-sm opacity-80">{project.shortDescription}</p>
-                        <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                      <div className="project-overlay">
+                        <h3>{project.title}</h3>
+                        <p className="project-description">{project.shortDescription}</p>
+                        <div className="tech-tags">
                           {project.technologies.map((tech, index) => (
-                            <span 
-                              key={index}
-                              className="px-2 py-1 bg-white/10 rounded-full text-xs"
-                            >
+                            <span key={index} className="tech-tag">
                               {tech}
                             </span>
                           ))}
