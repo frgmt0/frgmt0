@@ -66,7 +66,7 @@ export default function MagnetLines({
       }}
     >
       +
-    />
+    </span>
   ));
 
   return (
