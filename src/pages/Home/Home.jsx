@@ -98,48 +98,6 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                <TiltedCard
-                  imageSrc={project.imageSrc}
-                  altText={project.title}
-                  captionText={project.shortDescription}
-                  containerHeight="400px"
-                  containerWidth="100%"
-                  imageHeight="100%"
-                  imageWidth="100%"
-                  rotateAmplitude={8}
-                  displayOverlayContent={true}
-                  overlayContent={
-                    <div className="tilted-card-content">
-                      <div className="project-content">
-                        <div className="project-header">
-                          <h3>{project.title}</h3>
-                          <a
-                            href={project.githubUrl || project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="learn-more-btn"
-                          >
-                            learn more →
-                          </a>
-                        </div>
-                        <p className="project-description">
-                          {project.shortDescription}
-                        </p>
-                      </div>
-                    </div>
-                  }
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
     </div>
   );
 };
