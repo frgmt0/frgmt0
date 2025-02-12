@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import MagnetLines from './components/MagnetLines/MagnetLines';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
 import CustomCursor from './components/common/CustomCursor';
-import Banner from './components/common/Banner';
 import Home from './pages/Home/Home';
 import Projects from './pages/Projects/Projects';
 import Research from './pages/Projects/Research';
@@ -17,16 +17,20 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col relative parallax">
+    <div className="app-container">
       <CustomCursor />
+      <div className="background-container">
+        <MagnetLines 
+          rows={15}
+          columns={15}
+          lineColor="rgba(121, 104, 121, 0.1)"
+          lineWidth="2px"
+          lineHeight="20px"
+          baseAngle={0}
+        />
+      </div>
       <Navbar />
-      <Banner />
-      <main 
-        className="flex-1 relative"
-        style={{ 
-          minHeight: '100vh'
-        }}
-      >
+      <main className="main-content">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={
