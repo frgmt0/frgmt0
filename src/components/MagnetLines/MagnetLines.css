@@ -6,8 +6,8 @@
     justify-items: center;
     align-items: center;
 
-    width: 80vmin;
-    height: 80vmin;
+    width: 100%;
+    height: 100%;
 }
 
 .magnetLines-container span {
