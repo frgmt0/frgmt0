@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import TiltedCard from '../../components/tiltedcard/TitledCard';
-import allProjects from '../../data/projects';
+import allProjects from '../../data/projects/index.js';
 
 const Projects = () => {
+  console.log('Projects component rendering');
   const [filter, setFilter] = useState('all');
   
-  const categories = ['all', ...new Set(allProjects.map(project => project.category))];
+  if (!allProjects) {
+    console.error('allProjects is undefined');
+    return null;
+  }
   
-  console.log('All projects:', allProjects);
+  console.log('allProjects:', allProjects);
+  const categories = ['all', ...new Set(allProjects.map(project => project.category))];
   
   const filteredProjects = filter === 'all' 
     ? allProjects
