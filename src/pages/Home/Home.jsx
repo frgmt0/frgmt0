@@ -14,11 +14,15 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1>Welcome</h1>
+          <h1>frgmt_</h1>
           <p>
-            Hi, I'm frgmt_. I'm a software engineer and researcher focused on AI systems 
-            and computational frameworks. Here you'll find my projects, research, and thoughts 
-            on technology and its future.
+            Software engineer and researcher focused on AI systems and computational frameworks. 
+            Building tools that bridge the gap between human cognition and machine intelligence.
+          </p>
+          <p>
+            Currently working on PRISM, a novel AI architecture that combines pattern recognition 
+            with principled reasoning. Exploring new approaches to knowledge representation and 
+            neural processing.
           </p>
         </motion.div>
       </section>

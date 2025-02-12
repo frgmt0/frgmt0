@@ -4,8 +4,8 @@ import { useState } from "react";
 import './Navbar.css';
 
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "Portfolio", path: "/portfolio" },
+  { name: "Projects", path: "/projects" },
+  { name: "Research", path: "/research" },
   { name: "About", path: "/about" },
   { name: "Art", path: "/art" },
   { name: "Blog", path: "https://blog.frgmt.xyz", external: true },

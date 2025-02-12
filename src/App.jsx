@@ -48,7 +48,7 @@ function App() {
               }
             />
             <Route
-              path="/portfolio"
+              path="/projects"
               element={
                 <motion.div
                   initial={{ opacity: 0 }}
