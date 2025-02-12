@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="page-container">
-      <section className="content-section">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1>About Me</h1>
-          <div className="about-content">
+    <div style={{
+      color: 'white',
+      padding: '100px 20px',
+      position: 'relative',
+      zIndex: 999,
+      backgroundColor: 'rgba(0,0,0,0.5)'
+    }}>
+      <h1>Test About Page</h1>
+      <p>If you can see this, basic rendering is working.</p>
             <div className="profile-section">
               {/* Optional image rendering */}
               <div
