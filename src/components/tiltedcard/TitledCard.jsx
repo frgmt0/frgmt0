@@ -84,9 +84,9 @@ const TiltedCard = ({
             height: imageHeight,
             width: imageWidth,
           }}
-          className="rounded-lg shadow-xl bg-black/30 flex items-center justify-center p-12"
+          className="tilted-card-content"
         >
-          <h2 className="text-3xl md:text-4xl font-borela tracking-wider text-gradient text-center">
+          <h2 className="tilted-card-title">
             {altText}
           </h2>
         </div>
