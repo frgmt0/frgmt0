@@ -688,6 +688,68 @@ a:hover {
         inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
+.about-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.profile-section {
+    text-align: center;
+}
+
+.bio-section {
+    padding: 1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.skill-category h4 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    margin: 0.5rem 0;
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    padding: 0.5rem 1rem;
+    background: rgba(121, 104, 121, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    background: rgba(121, 104, 121, 0.3);
+}
+
 .research-card-content {
     padding: 1.5rem;
     flex: 1;
