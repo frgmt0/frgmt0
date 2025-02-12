@@ -12,7 +12,6 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  const { fontStyle, toggleFontStyle } = useFont();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -61,16 +60,6 @@ const Navbar = () => {
                 )}
               </motion.div>
             ))}
-
-            <select
-              value={fontStyle}
-              onChange={(e) => toggleFontStyle(e.target.value)}
-              className="font-select"
-            >
-              <option value="" disabled>Select Font</option>
-              <option value="Default">Default</option>
-              <option value="EasyRead">EasyRead</option>
-            </select>
           </div>
 
           {/* Mobile menu button */}
@@ -139,16 +128,6 @@ const Navbar = () => {
             )}
           </motion.div>
         ))}
-
-        <select
-          value={fontStyle}
-          onChange={(e) => toggleFontStyle(e.target.value)}
-          className="mobile-font-select"
-        >
-          <option value="" disabled>Select Font</option>
-          <option value="Default">Default</option>
-          <option value="EasyRead">EasyRead</option>
-        </select>
       </motion.div>
     </nav>
   );
