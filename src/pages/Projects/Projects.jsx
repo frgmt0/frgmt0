@@ -18,6 +18,7 @@ const Projects = () => {
     : allProjects.filter((project) => project.category === filter);
 
   return (
+    <div className="page-container">
       <section className="content-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
