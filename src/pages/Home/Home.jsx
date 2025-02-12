@@ -38,7 +38,7 @@ const Home = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h2>Featured Projects</h2>
-          <div className="featured-projects-grid">
+          <div className="featured-projects-container">
             {featuredProjects.map((project) => (
               <motion.div
                 key={project.id}
