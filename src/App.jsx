@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="background-container" style={{ zIndex: -1 }}>
+      <div className="background-container">
         <MagnetLines
           rows={15}
           columns={15}
@@ -30,8 +30,7 @@ function App() {
             top: 0,
             left: 0,
             width: "100vw",
-            height: "100vh",
-            zIndex: -1
+            height: "100vh"
           }}
         />
       </div>
