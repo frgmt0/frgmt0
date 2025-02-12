@@ -3,7 +3,7 @@ import TiltedCard from "../../components/tiltedcard/TitledCard";
 import allProjects from "../../data/projects";
 
 const Home = () => {
-  const featuredProjects = allProjects.filter(project => project.featured);
+  const featuredProjects = allProjects.filter((project) => project.featured);
 
   return (
     <div className="page-container">
@@ -15,13 +15,14 @@ const Home = () => {
         >
           <h1>frgmt_</h1>
           <p>
-            Software engineer and researcher focused on AI systems and computational frameworks. 
-            Building tools that bridge the gap between human cognition and machine intelligence.
+            Software engineer and researcher focused on AI systems and
+            computational frameworks. Building tools that bridge the gap between
+            human cognition and machine intelligence.
           </p>
           <p>
-            Currently working on PRISM, a novel AI architecture that combines pattern recognition 
-            with principled reasoning. Exploring new approaches to knowledge representation and 
-            neural processing.
+            Currently working on PRISM, a novel AI architecture that combines
+            pattern recognition with principled reasoning. Exploring new
+            approaches to knowledge representation and neural processing.
           </p>
         </motion.div>
       </section>
