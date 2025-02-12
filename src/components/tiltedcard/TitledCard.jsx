@@ -110,7 +110,7 @@ const TiltedCard = ({
           </div>
         )}
       </div>
-    </div>
+    </figure>
   );
 };
 
