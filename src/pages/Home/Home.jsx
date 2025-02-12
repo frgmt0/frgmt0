@@ -5,6 +5,8 @@ import allProjects from '../../data/projects';
 
 const Home = () => {
   const featuredProjects = allProjects.filter(project => project.featured);
+  
+  console.log('Home rendering with featured projects:', featuredProjects);
 
   return (
     <div className="container">

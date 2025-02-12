@@ -12,9 +12,8 @@ const About = () => {
           <h1>About Me</h1>
           <div className="about-content">
             <div className="profile-section">
-              <img 
-                src="/images/avatar.jpg" 
-                alt="frgmt_" 
+              {/* Optional image rendering */}
+              <div 
                 className="profile-image"
                 style={{
                   width: '200px',
@@ -22,9 +21,17 @@ const About = () => {
                   borderRadius: '50%',
                   marginBottom: '2rem',
                   border: '4px solid rgba(121, 104, 121, 0.3)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+                  background: 'rgba(121, 104, 121, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '2rem',
+                  color: 'white'
                 }}
-              />
+              >
+                frgmt_
+              </div>
               <h2>frgmt_</h2>
               <p className="subtitle">Software Engineer & AI Researcher</p>
             </div>
