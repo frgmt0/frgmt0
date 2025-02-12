@@ -45,6 +45,7 @@ const Home = () => {
                   <div className="tilted-card-content">
                     <div className="project-content">
                       <div className="project-header">
+                        <h3 className="project-title">{featuredProjects[0].title}</h3>
                         <a
                           href={featuredProjects[0].githubUrl || featuredProjects[0].liveUrl}
                           target="_blank"
@@ -53,7 +54,6 @@ const Home = () => {
                         >
                           learn more →
                         </a>
-                        <h3 className="project-title">{featuredProjects[0].title}</h3>
                       </div>
                       <p className="project-description">
                         {featuredProjects[0].shortDescription}
