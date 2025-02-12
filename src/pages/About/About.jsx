@@ -3,15 +3,14 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div style={{
-      color: 'white',
-      padding: '100px 20px',
-      position: 'relative',
-      zIndex: 999,
-      backgroundColor: 'rgba(0,0,0,0.5)'
-    }}>
-      <h1>Test About Page</h1>
-      <p>If you can see this, basic rendering is working.</p>
+    <div className="page-container">
+      <section className="content-section">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="about-content">
             <div className="profile-section">
               {/* Optional image rendering */}
               <div
@@ -86,41 +85,6 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="content-section">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <h2>Current Focus</h2>
-          <p>
-            I'm currently working on PRISM, a novel AI architecture that aims to
-            bridge the gap between pattern matching and principled reasoning.
-            The project explores new approaches to knowledge representation and
-            neural processing.
-          </p>
-
-          <div className="contact-section">
-            <h3>Get in Touch</h3>
-            <div className="social-links">
-              <a
-                href="https://github.com/frgmt0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://bsky.app/profile/frgmt.xyz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Bluesky
-              </a>
             </div>
           </div>
         </motion.div>
