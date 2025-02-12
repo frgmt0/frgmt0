@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import './TiltedCard.css';
 
 const TiltedCard = ({
   imageSrc,
@@ -103,10 +104,7 @@ const TiltedCard = ({
 
         {showTooltip && (
           <div 
-            className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-75 text-white text-center rounded-b-lg"
-            style={{
-              transform: "translateZ(20px)"
-            }}
+            className="tilted-card-tooltip"
           >
             {captionText}
           </div>
