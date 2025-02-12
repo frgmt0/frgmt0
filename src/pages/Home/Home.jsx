@@ -6,24 +6,28 @@ const Home = () => {
   const featuredProjects = allProjects.filter((project) => project.featured);
 
   return (
-    <div className="main-content">
-      <section>
+    <div className="container">
+      <section className="content-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1>frgmt_</h1>
-          <p>
-            Software engineer and researcher focused on AI systems and
-            computational frameworks. Building tools that bridge the gap between
-            human cognition and machine intelligence.
-          </p>
-          <p>
-            Currently working on PRISM, a novel AI architecture that combines
-            pattern recognition with principled reasoning. Exploring new
-            approaches to knowledge representation and neural processing.
-          </p>
+          <div className="home-intro">
+            <h1>frgmt_</h1>
+            <div className="intro-content">
+              <p className="intro-text">
+                Software engineer and researcher focused on AI systems and
+                computational frameworks. Building tools that bridge the gap between
+                human cognition and machine intelligence.
+              </p>
+              <p className="current-work">
+                Currently working on <span className="highlight">PRISM</span>, a novel AI 
+                architecture that combines pattern recognition with principled reasoning. 
+                Exploring new approaches to knowledge representation and neural processing.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </section>
 
