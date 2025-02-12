@@ -1,14 +1,13 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { useFont } from '../../context/FontContext';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Portfolio', path: '/portfolio' },
-  { name: 'About', path: '/about' },
-  { name: 'Art', path: '/art' },
-  { name: 'Blog', path: 'https://blog.frgmt.xyz' },
+  { name: "Home", path: "/" },
+  { name: "Portfolio", path: "/portfolio" },
+  { name: "About", path: "/about" },
+  { name: "Art", path: "/art" },
+  { name: "Blog", path: "https://blog.frgmt.xyz" },
 ];
 
 const Navbar = () => {
@@ -33,11 +32,14 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Link to="/" className="font-logo2 text-3xl text-gradient tracking-wider navbar-container">
+            <Link
+              to="/"
+              className="font-logo2 text-3xl text-gradient tracking-wider navbar-container"
+            >
               frgmt_
             </Link>
           </motion.div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-10">
@@ -66,25 +68,34 @@ const Navbar = () => {
                   )}
                 </motion.div>
               ))}
-              
+
               {/* Desktop Font Style Dropdown */}
               <select
                 value={fontStyle}
                 onChange={(e) => toggleFontStyle(e.target.value)}
                 className="bg-transparent text-gray-300 font-['Arial'] text-lg tracking-wide border-none outline-none cursor-pointer hover:text-white transition-colors duration-300 appearance-none px-3 py-1"
                 style={{
-                  WebkitAppearance: 'none',
-                  MozAppearance: 'none',
+                  WebkitAppearance: "none",
+                  MozAppearance: "none",
                   backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'right 0.5rem center',
-                  backgroundSize: '1em',
-                  paddingRight: '2rem'
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right 0.5rem center",
+                  backgroundSize: "1em",
+                  paddingRight: "2rem",
                 }}
               >
-                <option value="" disabled selected>Select Font</option>
-                <option value="Default" className="bg-[#111111] font-['Arial']">Default</option>
-                <option value="EasyRead" className="bg-[#111111] font-['Arial']">EasyRead</option>
+                <option value="" disabled selected>
+                  Select Font
+                </option>
+                <option value="Default" className="bg-[#111111] font-['Arial']">
+                  Default
+                </option>
+                <option
+                  value="EasyRead"
+                  className="bg-[#111111] font-['Arial']"
+                >
+                  EasyRead
+                </option>
               </select>
             </div>
           </div>
@@ -110,9 +121,10 @@ const Navbar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d={isMobileMenuOpen 
-                    ? "M6 18L18 6M6 6l12 12" // X icon when open
-                    : "M4 6h16M4 12h16M4 18h16" // Hamburger icon when closed
+                  d={
+                    isMobileMenuOpen
+                      ? "M6 18L18 6M6 6l12 12" // X icon when open
+                      : "M4 6h16M4 12h16M4 18h16" // Hamburger icon when closed
                   }
                 />
               </svg>
@@ -122,12 +134,12 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <motion.div 
-        className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}
+      <motion.div
+        className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}
         initial={{ opacity: 0, y: -20 }}
-        animate={{ 
+        animate={{
           opacity: isMobileMenuOpen ? 1 : 0,
-          y: isMobileMenuOpen ? 0 : -20
+          y: isMobileMenuOpen ? 0 : -20,
         }}
         transition={{ duration: 0.2 }}
       >
@@ -159,7 +171,7 @@ const Navbar = () => {
               )}
             </motion.div>
           ))}
-          
+
           {/* Mobile Font Style Dropdown */}
           <div className="px-4 py-3">
             <select
@@ -167,18 +179,24 @@ const Navbar = () => {
               onChange={(e) => toggleFontStyle(e.target.value)}
               className="w-full bg-gray-800/50 text-gray-300 font-['Arial'] text-lg tracking-wide rounded-md cursor-pointer hover:text-white transition-colors duration-300 appearance-none px-4 py-2 border border-gray-700 focus:outline-none focus:border-gray-500"
               style={{
-                WebkitAppearance: 'none',
-                MozAppearance: 'none',
+                WebkitAppearance: "none",
+                MozAppearance: "none",
                 backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right 1rem center',
-                backgroundSize: '1em',
-                paddingRight: '2.5rem'
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right 1rem center",
+                backgroundSize: "1em",
+                paddingRight: "2.5rem",
               }}
             >
-              <option value="" disabled selected>Select Font</option>
-              <option value="Default" className="bg-[#111111] font-['Arial']">Default</option>
-              <option value="EasyRead" className="bg-[#111111] font-['Arial']">EasyRead</option>
+              <option value="" disabled selected>
+                Select Font
+              </option>
+              <option value="Default" className="bg-[#111111] font-['Arial']">
+                Default
+              </option>
+              <option value="EasyRead" className="bg-[#111111] font-['Arial']">
+                EasyRead
+              </option>
             </select>
           </div>
         </div>
