@@ -585,18 +585,21 @@ a:hover {
 
 .project-content {
     padding: 2rem;
+    text-align: left;
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
 }
 
 .project-title {
     font-size: 1.5rem;
     margin: 0;
+    text-align: right;
 }
 
 .learn-more-btn {
