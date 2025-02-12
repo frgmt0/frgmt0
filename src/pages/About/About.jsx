@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="page-container">
       <section className="content-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,21 +14,21 @@ const About = () => {
           <div className="about-content">
             <div className="profile-section">
               {/* Optional image rendering */}
-              <div 
+              <div
                 className="profile-image"
                 style={{
-                  width: '200px',
-                  height: '200px',
-                  borderRadius: '50%',
-                  marginBottom: '2rem',
-                  border: '4px solid rgba(121, 104, 121, 0.3)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
-                  background: 'rgba(121, 104, 121, 0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '2rem',
-                  color: 'white'
+                  width: "200px",
+                  height: "200px",
+                  borderRadius: "50%",
+                  marginBottom: "2rem",
+                  border: "4px solid rgba(121, 104, 121, 0.3)",
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+                  background: "rgba(121, 104, 121, 0.2)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "2rem",
+                  color: "white",
                 }}
               >
                 frgmt_
@@ -38,11 +39,12 @@ const About = () => {
 
             <div className="bio-section">
               <p>
-                I'm a software engineer and researcher focused on artificial intelligence 
-                and computational frameworks. My work spans across various domains, from 
-                developing innovative AI architectures to creating practical software solutions.
+                I'm a software engineer and researcher focused on artificial
+                intelligence and computational frameworks. My work spans across
+                various domains, from developing innovative AI architectures to
+                creating practical software solutions.
               </p>
-              
+
               <h3>Research Interests</h3>
               <ul>
                 <li>Artificial Intelligence & Machine Learning</li>
@@ -62,7 +64,7 @@ const About = () => {
                     <li>C++</li>
                   </ul>
                 </div>
-                
+
                 <div className="skill-category">
                   <h4>Frameworks</h4>
                   <ul>
@@ -72,7 +74,7 @@ const About = () => {
                     <li>Node.js</li>
                   </ul>
                 </div>
-                
+
                 <div className="skill-category">
                   <h4>Tools</h4>
                   <ul>
@@ -96,18 +98,27 @@ const About = () => {
         >
           <h2>Current Focus</h2>
           <p>
-            I'm currently working on PRISM, a novel AI architecture that aims to bridge 
-            the gap between pattern matching and principled reasoning. The project 
-            explores new approaches to knowledge representation and neural processing.
+            I'm currently working on PRISM, a novel AI architecture that aims to
+            bridge the gap between pattern matching and principled reasoning.
+            The project explores new approaches to knowledge representation and
+            neural processing.
           </p>
-          
+
           <div className="contact-section">
             <h3>Get in Touch</h3>
             <div className="social-links">
-              <a href="https://github.com/frgmt0" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/frgmt0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
               </a>
-              <a href="https://bsky.app/profile/frgmt.xyz" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://bsky.app/profile/frgmt.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Bluesky
               </a>
             </div>
