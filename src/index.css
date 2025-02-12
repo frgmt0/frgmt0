@@ -660,15 +660,21 @@ a:hover {
 }
 
 .quick-links-card {
-    grid-column: 1;
+    grid-column: 1 / span 2;
     grid-row: 3;
 }
 
 .quick-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: space-between;
+}
+
+.flip-container {
+    perspective: 1000px;
+    flex: 1;
 }
 
 .quick-links a {
@@ -677,10 +683,12 @@ a:hover {
     border-radius: 8px;
     transition: all 0.3s ease;
     text-align: center;
+    display: block;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
 .quick-links a:hover {
-    transform: translateY(-2px);
     background: rgba(121, 104, 121, 0.3);
 }
 

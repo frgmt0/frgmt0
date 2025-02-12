@@ -91,10 +91,18 @@ const Home = () => {
         >
           <h2>Quick Links</h2>
           <div className="quick-links">
-            <a href="/projects">Projects</a>
-            <a href="https://research.frgmt.xyz">Research</a>
-            <a href="/about">About</a>
-            <a href="https://blog.frgmt.xyz">Blog</a>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="/projects">Projects</a>
+            </motion.div>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="https://research.frgmt.xyz">Research</a>
+            </motion.div>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="/about">About</a>
+            </motion.div>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="https://blog.frgmt.xyz">Blog</a>
+            </motion.div>
           </div>
         </motion.div>
       </div>
