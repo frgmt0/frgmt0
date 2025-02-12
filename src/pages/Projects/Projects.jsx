@@ -42,26 +42,30 @@ const Projects = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="project-card"
               >
-                <a 
-                  href={project.githubUrl || project.liveUrl}
-                  target={project.githubUrl ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <TiltedCard
-                    altText={project.prevText || project.title}
-                    captionText={project.shortDescription}
-                    containerHeight="250px"
-                    containerWidth="100%"
-                    imageHeight="100%"
-                    imageWidth="100%"
-                    rotateAmplitude={8}
-                    displayOverlayContent={true}
-                    overlayContent={
-                      <div className="project-overlay">
-                        <h3>{project.title}</h3>
+                <TiltedCard
+                  altText={project.prevText || project.title}
+                  captionText={project.shortDescription}
+                  containerHeight="400px"
+                  containerWidth="100%"
+                  imageHeight="100%"
+                  imageWidth="100%"
+                  rotateAmplitude={8}
+                  displayOverlayContent={true}
+                  overlayContent={
+                    <div className="project-card">
+                      <div className="project-content">
+                        <div className="project-header">
+                          <h3 className="project-title">{project.title}</h3>
+                          <a 
+                            href={project.githubUrl || project.liveUrl}
+                            target={project.githubUrl ? "_blank" : "_self"}
+                            rel="noopener noreferrer"
+                            className="learn-more-btn"
+                          >
+                            learn more →
+                          </a>
+                        </div>
                         <p className="project-description">{project.shortDescription}</p>
                         <div className="tech-tags">
                           {project.technologies.map((tech, index) => (
@@ -71,9 +75,9 @@ const Projects = () => {
                           ))}
                         </div>
                       </div>
-                    }
-                  />
-                </a>
+                    </div>
+                  }
+                />
               </motion.div>
             ))}
           </div>
