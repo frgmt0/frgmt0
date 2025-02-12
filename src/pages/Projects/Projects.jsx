@@ -5,29 +5,16 @@ import TiltedCard from "../../components/tiltedcard/TitledCard";
 import allProjects from "../../data/projects/index.js";
 
 const Projects = () => {
-  console.log("Projects component rendering");
-  const [filter, setFilter] = useState("all");
-
-  if (!allProjects) {
-    console.error("allProjects is undefined");
-    return null;
-  }
-
-  console.log("allProjects:", allProjects);
-  const categories = [
-    "all",
-    ...new Set(allProjects.map((project) => project.category)),
-  ];
-
-  const filteredProjects =
-    filter === "all"
-      ? allProjects
-      : allProjects.filter((project) => project.category === filter);
-
-  console.log("Filtered projects:", filteredProjects);
-
   return (
-    <div className="page-container">
+    <div style={{
+      color: 'white',
+      padding: '100px 20px',
+      position: 'relative',
+      zIndex: 999,
+      backgroundColor: 'rgba(0,0,0,0.5)'
+    }}>
+      <h1>Test Projects Page</h1>
+      <p>If you can see this, basic rendering is working.</p>
       <section className="content-section">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
