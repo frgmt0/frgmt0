@@ -13,21 +13,39 @@ import Blog from "./pages/Blog/Blog";
 import BlogPost from "./pages/Blog/BlogPost";
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="app-container">
+      <div className="background-container">
+        <MagnetLines
+          rows={15}
+          columns={15}
+          lineColor="rgba(121, 104, 121, 0.5)"
+          lineWidth="20px"
+          lineHeight="20px"
+          baseAngle={0}
+          containerSize="100vw"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh"
+          }}
+        />
+      </div>
       <Navbar />
-      <main
-        style={{
-          position: "relative",
-          zIndex: 10,
-          color: "white",
-        }}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+      <main className="main-content">
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+          </Routes>
+        </AnimatePresence>
       </main>
     </div>
   );
