@@ -21,7 +21,7 @@ function App() {
         <MagnetLines
           rows={30}
           columns={30}
-          lineColor="rgba(121, 104, 121, 0.3)"
+          lineColor="rgba(121, 104, 121, 0.5)"
           lineWidth="1px"
           lineHeight="15px"
           baseAngle={0}
