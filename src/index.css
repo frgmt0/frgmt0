@@ -87,6 +87,16 @@ body {
     margin-inline: auto;
     padding: 2rem;
     font-size: 16pt;
+    z-index: 999;
+}
+
+.page-container {
+    width: min(1200px, 100% - 4rem);
+    margin-inline: auto;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    z-index: 999;
 }
 
 /* Sections */
