@@ -6,7 +6,7 @@ const Home = () => {
   const featuredProjects = allProjects.filter((project) => project.featured);
 
   return (
-    <div className="container">
+    <div className="main-content">
       <section>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
