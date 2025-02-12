@@ -6,8 +6,8 @@ const Home = () => {
   const featuredProjects = allProjects.filter((project) => project.featured);
 
   return (
-    <div className="page-container">
-      <section className="content-section">
+    <div className="container">
+      <section>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,10 +53,10 @@ const Home = () => {
                   rotateAmplitude={8}
                   displayOverlayContent={true}
                   overlayContent={
-                    <div className="project-card">
+                    <div className="tilted-card-content">
                       <div className="project-content">
                         <div className="project-header">
-                          <h3 className="project-title">{project.title}</h3>
+                          <h3>{project.title}</h3>
                           <a
                             href={project.githubUrl || project.liveUrl}
                             target="_blank"
