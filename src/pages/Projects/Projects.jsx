@@ -8,9 +8,13 @@ const Projects = () => {
   
   const categories = ['all', ...new Set(allProjects.map(project => project.category))];
   
+  console.log('All projects:', allProjects);
+  
   const filteredProjects = filter === 'all' 
     ? allProjects
     : allProjects.filter(project => project.category === filter);
+    
+  console.log('Filtered projects:', filteredProjects);
 
   return (
     <div className="container">

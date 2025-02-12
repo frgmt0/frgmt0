@@ -77,7 +77,7 @@ const TiltedCard = ({
           transition: "transform 0.1s ease-out",
           transformStyle: "preserve-3d"
         }}
-        className="w-full h-full relative"
+        className="tilted-card-container"
       >
         <div
           style={{
