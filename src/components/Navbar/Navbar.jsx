@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import './Navbar.css';
+import "./Navbar.css";
 
 const navItems = [
   { name: "Projects", path: "/projects" },
-  { name: "Research", path: "/research", external: true },
+  { name: "Research", path: "https://research.frgmt.xyz", external: true },
   { name: "About", path: "/about" },
-  { name: "Art", path: "/art" },
   { name: "Blog", path: "https://blog.frgmt.xyz", external: true },
 ];
 
@@ -27,10 +26,7 @@ const Navbar = () => {
       <div className="navbar-border"></div>
       <div className="navbar-container">
         <div className="navbar-content">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <Link to="/" className="navbar-logo">
               frgmt_
             </Link>
@@ -93,7 +89,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <motion.div
-        className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}
+        className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}
         initial={{ opacity: 0, y: -20 }}
         animate={{
           opacity: isMobileMenuOpen ? 1 : 0,

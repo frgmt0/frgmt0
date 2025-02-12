@@ -8,7 +8,6 @@ import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import Research from "./pages/Research/Research";
 import About from "./pages/About/About";
-import Art from "./pages/Art/Art";
 import Blog from "./pages/Blog/Blog";
 import BlogPost from "./pages/Blog/BlogPost";
 
@@ -26,7 +25,13 @@ function App() {
           lineHeight="20px"
           baseAngle={0}
           containerSize="100vw"
-          style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+          }}
         />
       </div>
       <Navbar />
@@ -86,20 +91,6 @@ function App() {
                   className="min-h-full"
                 >
                   <About />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/art"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <Art />
                 </motion.div>
               }
             />
