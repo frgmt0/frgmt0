@@ -35,7 +35,7 @@ const Projects = () => {
             ))}
           </div>
 
-          <div className="projects-grid">
+          <div className="featured-projects-grid">
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}

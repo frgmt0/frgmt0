@@ -37,91 +37,13 @@ function App() {
       <Navbar />
       <main className="main-content">
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <Home />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <Projects />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/research"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <Research />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <About />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <Blog />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/blog/:id"
-              element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="min-h-full"
-                >
-                  <BlogPost />
-                </motion.div>
-              }
-            />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
           </Routes>
         </AnimatePresence>
       </main>
