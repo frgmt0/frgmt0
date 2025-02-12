@@ -1,29 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import TiltedCard from "../../components/tiltedcard/TitledCard";
-import allProjects from "../../data/projects/index.js";
 
 const Projects = () => {
-  const [filter, setFilter] = useState("all");
-  
-  if (!allProjects) {
-    console.error("allProjects is undefined");
-    return null;
-  }
-
-  const categories = ["all", ...new Set(allProjects.map((project) => project.category))];
-  const filteredProjects = filter === "all" 
-    ? allProjects 
-    : allProjects.filter((project) => project.category === filter);
-
   return (
-    <div className="page-container">
-      <section className="content-section">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+    <div style={{
+      color: 'white',
+      padding: '100px 20px',
+      position: 'relative',
+      zIndex: 999,
+      backgroundColor: 'rgba(0,0,0,0.5)'
+    }}>
+      <h1>Test Projects Page</h1>
+      <p>If you can see this, basic rendering is working.</p>
           <h1>Projects</h1>
           <p>
             A collection of my work in software development, research, and AI
