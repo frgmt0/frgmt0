@@ -6,7 +6,7 @@ import MagnetLines from "./components/MagnetLines/MagnetLines";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
-import Research from "./pages/Projects/Research";
+import Research from "./pages/Research/Research";
 import About from "./pages/About/About";
 import Art from "./pages/Art/Art";
 import Blog from "./pages/Blog/Blog";
