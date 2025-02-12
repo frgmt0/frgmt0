@@ -64,7 +64,7 @@ const TiltedCard = ({
       className="relative"
     >
       {showMobileWarning && isMobile && (
-        <div className="absolute top-0 left-0 w-full bg-yellow-500 text-black p-2 text-sm z-50">
+        <div className="mobile-warning">
           Tilt effect is disabled on mobile devices
         </div>
       )}

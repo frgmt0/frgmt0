@@ -499,6 +499,19 @@ a:hover {
     display: none;
 }
 
+.mobile-warning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #eab308;
+    color: black;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    z-index: 50;
+    text-align: center;
+}
+
 @media (max-width: 640px) {
     .tilted-card-mobile-alert {
         display: block;
