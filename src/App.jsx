@@ -1,6 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
-import MagnetLines from "./components/MagnetLines/MagnetLines";
 import "./App.css";
 
 // Components
@@ -17,24 +15,6 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="background-container">
-        <MagnetLines
-          rows={15}
-          columns={15}
-          lineColor="rgba(121, 104, 121, 0.5)"
-          lineWidth="20px"
-          lineHeight="20px"
-          baseAngle={0}
-          containerSize="100vw"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh"
-          }}
-        />
-      </div>
       <Navbar />
       <main className="main-content">
         <Routes>
