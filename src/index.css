@@ -293,6 +293,20 @@ a:hover {
     background: rgba(121, 104, 121, 0.1);
 }
 
+.featured-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 .author-avatar {
     width: 48px;
     height: 48px;

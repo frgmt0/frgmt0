@@ -34,7 +34,7 @@ const Home = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h2>Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="featured-projects-grid">
             {featuredProjects.map((project) => (
               <Link 
                 key={project.id}

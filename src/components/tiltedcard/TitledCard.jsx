@@ -117,7 +117,7 @@ const TiltedCard = ({
 };
 
 TiltedCard.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string,
   altText: PropTypes.string.isRequired,
   captionText: PropTypes.string,
   containerHeight: PropTypes.string,

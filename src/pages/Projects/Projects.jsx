@@ -44,6 +44,7 @@ const Projects = () => {
                 transition={{ duration: 0.3 }}
               >
                 <TiltedCard
+                  imageSrc={`/images/${project.id}.jpg`}
                   altText={project.prevText || project.title}
                   captionText={project.shortDescription}
                   containerHeight="400px"
