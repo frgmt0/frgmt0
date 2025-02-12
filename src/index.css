@@ -41,7 +41,7 @@ body {
     background: #1a1a1a;
     color: var(--text);
     min-height: 100vh;
-    font-family: "Borela";
+    font-family: "exo";
 }
 
 .page-background {
@@ -481,182 +481,184 @@ a:hover {
 }
 
 .tilted-card-figure {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  perspective: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tilted-card-mobile-alert {
-  position: absolute;
-  top: 1rem;
-  text-align: center;
-  font-size: 0.875rem;
-  display: none;
+    position: absolute;
+    top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    display: none;
 }
 
 @media (max-width: 640px) {
-  .tilted-card-mobile-alert {
-    display: block;
-  }
-  .tilted-card-caption {
-    display: none;
-  }
+    .tilted-card-mobile-alert {
+        display: block;
+    }
+    .tilted-card-caption {
+        display: none;
+    }
 }
 
 .tilted-card-inner {
-  position: relative;
-  transform-style: preserve-3d;
+    position: relative;
+    transform-style: preserve-3d;
 }
 
 .tilted-card-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  border-radius: 15px;
-  will-change: transform;
-  transform: translateZ(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    border-radius: 15px;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .tilted-card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  will-change: transform;
-  transform: translateZ(30px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    will-change: transform;
+    transform: translateZ(30px);
 }
 
 .tilted-card-caption {
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 4px;
-  background-color: #fff;
-  padding: 4px 10px;
-  font-size: 10px;
-  color: #2d2d2d;
-  opacity: 0;
-  z-index: 3;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 4px 10px;
+    font-size: 10px;
+    color: #2d2d2d;
+    opacity: 0;
+    z-index: 3;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
 }
 
 .project-content {
-  padding: 2rem;
+    padding: 2rem;
 }
 
 .project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .project-title {
-  font-size: 1.5rem;
-  margin: 0;
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 .learn-more-btn {
-  background: rgba(121, 104, 121, 0.2);
-  color: var(--primary);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+    background: rgba(121, 104, 121, 0.2);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .learn-more-btn:hover {
-  background: rgba(121, 104, 121, 0.3);
-  transform: translateY(-2px);
+    background: rgba(121, 104, 121, 0.3);
+    transform: translateY(-2px);
 }
 
 .project-description {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
 }
 
 .tilted-card-content {
-  border-radius: 0.5rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
 }
 
 .tilted-card-title {
-  font-size: 2rem;
-  font-family: 'Borela', sans-serif;
-  letter-spacing: 0.05em;
-  background: linear-gradient(90deg, #796879, #aa9aa9, #796879);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-align: center;
+    font-size: 2rem;
+    font-family: "Borela", sans-serif;
+    letter-spacing: 0.05em;
+    background: linear-gradient(90deg, #796879, #aa9aa9, #796879);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
 }
 
 .tilted-card-overlay-content {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  overflow: hidden;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
 }
 
 .tilted-card-overlay-content:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .project-overlay-content {
-  padding: 1.5rem;
-  text-align: center;
-  color: white;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
 }
 
 .project-overlay-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-overlay-content p {
-  font-size: 0.875rem;
-  opacity: 0.8;
-  margin-bottom: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
 }
 
 .project-tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .research-card:hover {
