@@ -50,14 +50,14 @@ const Home = () => {
                   rotateAmplitude={8}
                   displayOverlayContent={true}
                   overlayContent={
-                    <div className="p-6 text-center">
-                      <h3 className="text-2xl mb-4">{project.title}</h3>
-                      <p className="text-sm opacity-80">{project.shortDescription}</p>
-                      <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                    <div className="project-overlay-content">
+                      <h3>{project.title}</h3>
+                      <p>{project.shortDescription}</p>
+                      <div className="project-tech-tags">
                         {project.technologies.slice(0, 3).map((tech, index) => (
                           <span 
                             key={index}
-                            className="px-2 py-1 bg-white/10 rounded-full text-xs"
+                            className="tech-tag"
                           >
                             {tech}
                           </span>
