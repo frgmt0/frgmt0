@@ -992,6 +992,39 @@ a:hover {
     line-height: 1.6;
 }
 
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.education-item {
+    text-align: left;
+    padding: 1rem;
+}
+
+.education-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-item .school {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-item .degree {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+}
+
+.education-item .year {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
     .expertise-grid {
         grid-template-columns: 1fr;

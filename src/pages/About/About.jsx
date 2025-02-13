@@ -68,10 +68,54 @@ const About = () => {
           </div>
         </div>
       )
+    },
+    {
+      id: 'education',
+      content: (
+        <div className="glass-card education-section">
+          <h2>Education</h2>
+          <div className="education-grid">
+            <div className="education-item">
+              <h3>Master of Science</h3>
+              <p className="school">University of California, Berkeley</p>
+              <p className="degree">Computer Science</p>
+              <p className="year">2024 - Present</p>
+            </div>
+            <div className="education-item">
+              <h3>Bachelor of Science</h3>
+              <p className="school">University of California, Berkeley</p>
+              <p className="degree">Computer Science & Mathematics</p>
+              <p className="year">2020 - 2024</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'current',
+      content: (
+        <div className="glass-card current-section">
+          <h2>Current Focus</h2>
+          <p>
+            Currently working on PRISM, a novel AI architecture that aims to bridge 
+            the gap between pattern matching and principled reasoning. The project 
+            explores new approaches to knowledge representation and neural processing.
+          </p>
+          <div className="social-links">
+            <a href="https://github.com/frgmt0" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href="https://bsky.app/profile/frgmt.xyz" target="_blank" rel="noopener noreferrer">
+              Bluesky
+            </a>
+          </div>
+        </div>
+      )
     }
   ];
 
   const handleScroll = (e) => {
+    e.preventDefault();
     if (e.deltaY > 0 && currentSection < sections.length - 1) {
       setCurrentSection(prev => prev + 1);
     } else if (e.deltaY < 0 && currentSection > 0) {
