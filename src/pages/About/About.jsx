@@ -133,24 +133,46 @@ const About = () => {
           the gap between pattern matching and principled reasoning. The project 
           explores new approaches to knowledge representation and neural processing.
         </p>
-        <div className="social-links">
+      </motion.div>
+
+      <motion.div 
+        className="glass-card contact-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <h2>Contact Me</h2>
+        <div className="contact-grid">
+          <motion.a 
+            href="mailto:jason.awz2005@gmail.com"
+            className="contact-item"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <h3>Email</h3>
+            <p>jason.awz2005@gmail.com</p>
+          </motion.a>
           <motion.a 
             href="https://github.com/frgmt0" 
             target="_blank" 
             rel="noopener noreferrer"
+            className="contact-item"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            GitHub
+            <h3>GitHub</h3>
+            <p>@frgmt0</p>
           </motion.a>
           <motion.a 
             href="https://bsky.app/profile/frgmt.xyz" 
             target="_blank" 
             rel="noopener noreferrer"
+            className="contact-item"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            Bluesky
+            <h3>Bluesky</h3>
+            <p>@frgmt.xyz</p>
           </motion.a>
         </div>
       </motion.div>
