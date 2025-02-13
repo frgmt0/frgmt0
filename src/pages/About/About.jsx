@@ -103,20 +103,20 @@ const About = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3>Master of Science</h3>
-            <p className="school">University of California, Berkeley</p>
+            <h3>College</h3>
+            <p className="school">Mt. San Antonio College</p>
             <p className="degree">Computer Science</p>
-            <p className="year">2024 - Present</p>
+            <p className="year">2023 - Present</p>
           </motion.div>
           <motion.div 
             className="education-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3>Bachelor of Science</h3>
-            <p className="school">University of California, Berkeley</p>
-            <p className="degree">Computer Science & Mathematics</p>
-            <p className="year">2020 - 2024</p>
+            <h3>High School</h3>
+            <p className="school">eSTEM Academy</p>
+            <p className="degree">High School Diploma</p>
+            <p className="year">2019 - 2023</p>
           </motion.div>
         </div>
       </motion.div>
