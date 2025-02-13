@@ -2,12 +2,12 @@ import { useRef, useEffect } from "react";
 import "./MagnetLines.css";
 
 export default function MagnetLines({
-  rows = 9,
-  columns = 9,
-  containerSize = "80vmin",
+  rows = 20,
+  columns = 20,
+  containerSize = "100vw",
   lineColor = "#efefef",
-  lineWidth = "1vmin",
-  lineHeight = "6vmin",
+  lineWidth = "30px",
+  lineHeight = "30px",
   baseAngle = -10,
   className = "",
   style = {},

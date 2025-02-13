@@ -10,11 +10,11 @@ const Home = () => {
     <div className="container">
       <div className="background-container">
         <MagnetLines
-          rows={15}
-          columns={15}
+          rows={20}
+          columns={20}
           lineColor="rgba(121, 104, 121, 0.5)"
-          lineWidth="20px"
-          lineHeight="20px"
+          lineWidth="30px"
+          lineHeight="30px"
           baseAngle={0}
           containerSize="100vw"
           style={{
