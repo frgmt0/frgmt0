@@ -19,7 +19,7 @@ function App() {
       <div className="background-container">
         <Waves
           lineColor="#fff"
-          backgroundColor="rgba(255, 255, 255, 0.2)"
+          backgroundColor="#000"
           waveSpeedX={0.02}
           waveSpeedY={0.01}
           waveAmpX={40}
