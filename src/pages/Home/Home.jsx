@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MagnetLines from "../../components/MagnetLines/MagnetLines";
 import TiltedCard from "../../components/tiltedcard/TitledCard";
 import allProjects from "../../data/projects";
 
@@ -7,6 +8,24 @@ const Home = () => {
 
   return (
     <div className="container">
+      <div className="background-container">
+        <MagnetLines
+          rows={15}
+          columns={15}
+          lineColor="rgba(121, 104, 121, 0.5)"
+          lineWidth="20px"
+          lineHeight="20px"
+          baseAngle={0}
+          containerSize="100vw"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh"
+          }}
+        />
+      </div>
       <div className="home-hero">
         <motion.div
           className="hero-content"
