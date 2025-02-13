@@ -9,10 +9,7 @@ const About = () => {
 
   return (
     <div className="container">
-      <motion.div 
-        className="about-hero"
-        style={{ opacity, scale, y }}
-      >
+      <motion.div className="about-hero" style={{ opacity, scale, y }}>
         <div className="hero-content">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +18,7 @@ const About = () => {
           >
             frgmt_
           </motion.h1>
-          <motion.div 
+          <motion.div
             className="hero-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,7 +30,7 @@ const About = () => {
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="glass-card about-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -41,13 +38,14 @@ const About = () => {
       >
         <h2>About Me</h2>
         <p>
-          I'm a software engineer and researcher focused on artificial intelligence 
-          and computational frameworks. My work spans across various domains, from 
-          developing innovative AI architectures to creating practical software solutions.
+          I'm a software engineer and researcher focused on artificial
+          intelligence and computational frameworks. My work spans across
+          various domains, from developing innovative AI architectures to
+          creating practical software solutions.
         </p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="glass-card expertise-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -55,15 +53,18 @@ const About = () => {
       >
         <h2>Areas of Expertise</h2>
         <div className="expertise-grid">
-          <motion.div 
+          <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3>AI Research</h3>
-            <p>Developing novel architectures and approaches in artificial intelligence</p>
+            <p>
+              Developing novel architectures and approaches in artificial
+              intelligence
+            </p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -71,7 +72,7 @@ const About = () => {
             <h3>Software Engineering</h3>
             <p>Building robust and scalable applications</p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -79,7 +80,7 @@ const About = () => {
             <h3>Neural Networks</h3>
             <p>Designing and implementing advanced neural architectures</p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -90,7 +91,7 @@ const About = () => {
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="glass-card education-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -98,17 +99,17 @@ const About = () => {
       >
         <h2>Education</h2>
         <div className="education-grid">
-          <motion.div 
+          <motion.div
             className="education-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3>College</h3>
             <p className="school">Mt. San Antonio College</p>
-            <p className="degree">Computer Science</p>
+            <p className="degree">Electrical Engineering</p>
             <p className="year">2023 - Present</p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="education-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -121,7 +122,7 @@ const About = () => {
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="glass-card current-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -129,13 +130,14 @@ const About = () => {
       >
         <h2>Current Focus</h2>
         <p>
-          Currently working on PRISM, a novel AI architecture that aims to bridge 
-          the gap between pattern matching and principled reasoning. The project 
-          explores new approaches to knowledge representation and neural processing.
+          Currently working on PRISM, a novel AI architecture that aims to
+          bridge the gap between pattern matching and principled reasoning. The
+          project explores new approaches to knowledge representation and neural
+          processing.
         </p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="glass-card contact-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -143,7 +145,7 @@ const About = () => {
       >
         <h2>Contact Me</h2>
         <div className="contact-grid">
-          <motion.a 
+          <motion.a
             href="mailto:jason.awz2005@gmail.com"
             className="contact-item"
             whileHover={{ scale: 1.1 }}
@@ -152,9 +154,9 @@ const About = () => {
             <h3>Email</h3>
             <p>jason.awz2005@gmail.com</p>
           </motion.a>
-          <motion.a 
-            href="https://github.com/frgmt0" 
-            target="_blank" 
+          <motion.a
+            href="https://github.com/frgmt0"
+            target="_blank"
             rel="noopener noreferrer"
             className="contact-item"
             whileHover={{ scale: 1.1 }}
@@ -163,9 +165,9 @@ const About = () => {
             <h3>GitHub</h3>
             <p>@frgmt0</p>
           </motion.a>
-          <motion.a 
-            href="https://bsky.app/profile/frgmt.xyz" 
-            target="_blank" 
+          <motion.a
+            href="https://bsky.app/profile/frgmt.xyz"
+            target="_blank"
             rel="noopener noreferrer"
             className="contact-item"
             whileHover={{ scale: 1.1 }}
