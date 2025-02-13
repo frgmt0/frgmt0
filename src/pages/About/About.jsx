@@ -127,10 +127,8 @@ const About = () => {
       >
         <h2>Current Focus</h2>
         <p>
-          Currently working on PRISM, a novel AI architecture that aims to
-          bridge the gap between pattern matching and principled reasoning. The
-          project explores new approaches to knowledge representation and neural
-          processing.
+          Currently writing a programming language called Crater which transpiles to C. 
+          Also working on game engines for chess based on pure RL (reinforcement learning).
         </p>
       </motion.div>
 
