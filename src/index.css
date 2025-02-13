@@ -920,11 +920,58 @@ a:hover {
         inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
-.about-content {
+.about-section {
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.intro-section,
+.expertise-section,
+.current-section {
+    opacity: 0.95;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.expertise-grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+}
+
+.expertise-item {
+    text-align: left;
+}
+
+.expertise-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.expertise-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-section {
+        gap: 3rem;
+    }
 }
 
 .profile-section {
