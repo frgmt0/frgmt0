@@ -4,7 +4,7 @@ import TiltedCard from "../../components/tiltedcard/TitledCard";
 import allProjects from "../../data/projects";
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("All Projects");
   const categories = ["All Projects", "Research", "Coding"];
   
   const filteredProjects = selectedCategory === "All Projects" 
