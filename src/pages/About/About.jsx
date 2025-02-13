@@ -24,8 +24,11 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <p>Software Engineer & AI Systems Architect</p>
-            <p>Crafting innovative solutions at the intersection of human intelligence and machine learning</p>
+            <p>Software Engineer & Machine Learning Systems Architect</p>
+            <p>
+              Crafting innovative solutions at the intersection of human
+              intelligence and machine learning
+            </p>
           </motion.div>
         </div>
       </motion.div>
@@ -38,9 +41,10 @@ const About = () => {
       >
         <h2>About Me</h2>
         <p>
-          As a software engineer with a passion for artificial intelligence and systems architecture, 
-          I thrive on creating elegant solutions to complex problems. My work seamlessly bridges 
-          the gap between theoretical computer science and practical engineering, focusing on 
+          As a software engineer with a passion for artificial intelligence and
+          systems architecture, I thrive on creating elegant solutions to
+          complex problems. My work seamlessly bridges the gap between
+          theoretical computer science and practical engineering, focusing on
           building robust systems that push the boundaries of what's possible.
         </p>
       </motion.div>
@@ -75,7 +79,10 @@ const About = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3>Professional Certifications</h3>
-            <p>Adobe Certified Professional (2023) • Cisco Certified Support Technician (2022)</p>
+            <p>
+              Adobe Certified Professional (2023) • Cisco Certified Support
+              Technician (2022)
+            </p>
           </motion.div>
           <motion.div
             className="expertise-item"
@@ -83,7 +90,10 @@ const About = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <h3>Additional Certifications</h3>
-            <p>IC3 Master (2022) • MTA: Java Programming (2022) • HackerRank Python (2023)</p>
+            <p>
+              IC3 Master (2022) • MTA: Java Programming (2022) • HackerRank
+              Python (2023)
+            </p>
           </motion.div>
         </div>
       </motion.div>
@@ -127,10 +137,12 @@ const About = () => {
       >
         <h2>Current Focus</h2>
         <p>
-          Currently developing Crater, an innovative programming language that transpiles to C, 
-          designed to combine low-level performance with high-level expressiveness. In parallel, 
-          I'm exploring the frontiers of game AI through the development of chess engines powered 
-          by pure reinforcement learning, pushing the boundaries of strategic decision-making systems.
+          Currently developing Crater, an innovative programming language that
+          transpiles to C, designed to combine low-level performance with
+          high-level expressiveness. In parallel, I'm exploring the frontiers of
+          game AI through the development of chess engines powered by pure
+          reinforcement learning, pushing the boundaries of strategic
+          decision-making systems.
         </p>
       </motion.div>
 
