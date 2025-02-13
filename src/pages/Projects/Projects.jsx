@@ -5,11 +5,11 @@ import allProjects from "../../data/projects";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const categories = ["all", ...new Set(allProjects.map(project => project.category))];
+  const categories = ["All Projects", "Research", "Coding"];
   
-  const filteredProjects = selectedCategory === "all" 
+  const filteredProjects = selectedCategory === "All Projects" 
     ? allProjects 
-    : allProjects.filter(project => project.category === selectedCategory);
+    : allProjects.filter(project => project.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
     <div className="container">
