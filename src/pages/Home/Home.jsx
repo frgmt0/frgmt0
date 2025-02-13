@@ -15,11 +15,13 @@ const Home = () => {
           transition={{ duration: 0.5 }}
         >
           <h1>frgmt_</h1>
-          <p className="hero-text">
-            Software engineer and researcher focused on AI systems and
-            computational frameworks. Building tools that bridge the gap between
-            human cognition and machine intelligence.
-          </p>
+          <div className="glass-card">
+            <p className="hero-text">
+              Software engineer and researcher focused on AI systems and
+              computational frameworks. Building tools that bridge the gap between
+              human cognition and machine intelligence.
+            </p>
+          </div>
         </motion.div>
         
         <motion.div 
