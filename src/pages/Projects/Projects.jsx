@@ -58,10 +58,10 @@ const Projects = () => {
               <TiltedCard
                 altText={project.title}
                 captionText={project.shortDescription}
-                containerHeight="600px"
-                containerWidth="100%"
-                imageHeight="100%"
-                imageWidth="100%"
+                containerHeight="400px"
+                containerWidth="400px"
+                imageHeight="400px"
+                imageWidth="400px"
                 rotateAmplitude={8}
                 displayOverlayContent={true}
                 overlayContent={
