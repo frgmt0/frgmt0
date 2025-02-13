@@ -51,42 +51,39 @@ const About = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2>Areas of Expertise</h2>
+        <h2>Skills & Certifications</h2>
         <div className="expertise-grid">
           <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3>AI Research</h3>
-            <p>
-              Developing novel architectures and approaches in artificial
-              intelligence
-            </p>
+            <h3>Programming Languages</h3>
+            <p>Python • JavaScript • Rust (Learning) • Java</p>
           </motion.div>
           <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3>Software Engineering</h3>
-            <p>Building robust and scalable applications</p>
+            <h3>Technologies</h3>
+            <p>Database Management • Web Development • System Administration</p>
           </motion.div>
           <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3>Neural Networks</h3>
-            <p>Designing and implementing advanced neural architectures</p>
+            <h3>Professional Certifications</h3>
+            <p>Adobe Certified Professional (2023) • Cisco Certified Support Technician (2022)</p>
           </motion.div>
           <motion.div
             className="expertise-item"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3>Systems Design</h3>
-            <p>Creating efficient and maintainable system architectures</p>
+            <h3>Additional Certifications</h3>
+            <p>IC3 Master (2022) • MTA: Java Programming (2022) • HackerRank Python (2023)</p>
           </motion.div>
         </div>
       </motion.div>
