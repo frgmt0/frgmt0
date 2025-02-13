@@ -19,34 +19,68 @@ export default function MagnetLines({
     if (!container) return;
 
     const items = container.querySelectorAll("span");
+    let rafId;
+    let lastPointer = { x: 0, y: 0 };
+    let isMoving = false;
 
-    const onPointerMove = (pointer) => {
-      items.forEach((item) => {
-        const rect = item.getBoundingClientRect();
-        const centerX = rect.x + rect.width / 2;
-        const centerY = rect.y + rect.height / 2;
+    const calculateRotation = (item, pointer) => {
+      const rect = item.getBoundingClientRect();
+      const centerX = rect.x + rect.width / 2;
+      const centerY = rect.y + rect.height / 2;
 
-        const b = pointer.x - centerX;
-        const a = pointer.y - centerY;
-        const c = Math.sqrt(a * a + b * b) || 1;
-        const r =
-          ((Math.acos(b / c) * 180) / Math.PI) * (pointer.y > centerY ? 1 : -1);
-
-        item.style.setProperty("--rotate", `${r}deg`);
-      });
+      const b = pointer.x - centerX;
+      const a = pointer.y - centerY;
+      const c = Math.sqrt(a * a + b * b) || 1;
+      return ((Math.acos(b / c) * 180) / Math.PI) * (pointer.y > centerY ? 1 : -1);
     };
 
-    window.addEventListener("pointermove", onPointerMove);
+    const updateRotations = () => {
+      if (!isMoving) return;
 
+      items.forEach((item) => {
+        const distance = Math.hypot(
+          item.offsetLeft - lastPointer.x,
+          item.offsetTop - lastPointer.y
+        );
+
+        // Only update items within a certain radius of the pointer
+        if (distance < 300) {
+          const r = calculateRotation(item, lastPointer);
+          item.style.setProperty("--rotate", `${r}deg`);
+        }
+      });
+
+      rafId = requestAnimationFrame(updateRotations);
+    };
+
+    const onPointerMove = (e) => {
+      lastPointer = { x: e.clientX, y: e.clientY };
+      if (!isMoving) {
+        isMoving = true;
+        rafId = requestAnimationFrame(updateRotations);
+      }
+    };
+
+    const onPointerLeave = () => {
+      isMoving = false;
+      cancelAnimationFrame(rafId);
+    };
+
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerleave", onPointerLeave);
+
+    // Initial position
     if (items.length) {
       const middleIndex = Math.floor(items.length / 2);
       const rect = items[middleIndex].getBoundingClientRect();
-      onPointerMove({ x: rect.x, y: rect.y });
+      lastPointer = { x: rect.x, y: rect.y };
+      requestAnimationFrame(updateRotations);
     }
 
-    // Cleanup
     return () => {
       window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
