@@ -11,8 +11,8 @@ const soFragment = new Project({
   shortDescription: "Open Source AI Framework and Model",
   technologies: ["Python", "Machine Learning", "Artificial Intelligence"],
   githubUrl: "https://github.com/sofragment",
-  category: "Machine Learning",
-  featured: false,
+  category: "Coding",
+  featured: true,
   completionDate: "2024-11-16",
 });
 

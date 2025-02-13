@@ -18,7 +18,7 @@ const prism = new Project({
   //githubUrl: 'https://github.com/frgmt0/prism-research.git',
   liveUrl: "https://research.frgmt.xyz", // External research page
   category: "Research",
-  featured: true,
+  featured: false,
   completionDate: "2024-12-17",
 });
 
