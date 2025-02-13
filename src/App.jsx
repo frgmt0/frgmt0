@@ -18,8 +18,8 @@ function App() {
     <div className="app-container">
       <div className="background-container">
         <Waves
-          lineColor="#fff"
-          backgroundColor="#000"
+          lineColor="rgba(121, 104, 121, 0.8)"
+          backgroundColor="rgba(0, 0, 0, 0.95)"
           waveSpeedX={0.02}
           waveSpeedY={0.01}
           waveAmpX={40}
