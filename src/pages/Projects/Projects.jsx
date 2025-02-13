@@ -58,7 +58,7 @@ const Projects = () => {
               <TiltedCard
                 altText={project.title}
                 captionText={project.shortDescription}
-                containerHeight="400px"
+                containerHeight="600px"
                 containerWidth="100%"
                 imageHeight="100%"
                 imageWidth="100%"
