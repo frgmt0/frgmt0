@@ -18,13 +18,13 @@ const Home = () => {
           <div className="glass-card">
             <p className="hero-text">
               Software engineer and researcher focused on AI systems and
-              computational frameworks. Building tools that bridge the gap between
-              human cognition and machine intelligence.
+              computational frameworks. Building tools that bridge the gap
+              between human cognition and machine intelligence.
             </p>
           </div>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="skills-section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,28 +47,6 @@ const Home = () => {
               <h3>Tools</h3>
               <p>Git • Docker • AWS • Linux</p>
             </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="quick-links-card"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <div className="quick-links">
-            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
-              <a href="/projects">Projects</a>
-            </motion.div>
-            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
-              <a href="https://research.frgmt.xyz">Research</a>
-            </motion.div>
-            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
-              <a href="/about">About</a>
-            </motion.div>
-            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
-              <a href="https://blog.frgmt.xyz">Blog</a>
-            </motion.div>
           </div>
         </motion.div>
       </div>
