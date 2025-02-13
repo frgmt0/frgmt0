@@ -637,9 +637,9 @@ a:hover {
 }
 
 .project-content {
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: left;
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -674,8 +674,10 @@ a:hover {
 
 .project-description {
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    padding: 0 1rem;
+    line-height: 1.4;
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 .home-hero {
