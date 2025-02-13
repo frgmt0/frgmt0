@@ -31,19 +31,19 @@ const Home = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="skills-grid">
-            <div className="skill-item">
+            <div className="glass-card skill-item">
               <h3>Languages</h3>
               <p>Python • JavaScript • Rust • C++</p>
             </div>
-            <div className="skill-item">
+            <div className="glass-card skill-item">
               <h3>AI/ML</h3>
               <p>PyTorch • TensorFlow • Neural Networks</p>
             </div>
-            <div className="skill-item">
+            <div className="glass-card skill-item">
               <h3>Web</h3>
               <p>React • Node.js • Three.js</p>
             </div>
-            <div className="skill-item">
+            <div className="glass-card skill-item">
               <h3>Tools</h3>
               <p>Git • Docker • AWS • Linux</p>
             </div>
@@ -51,15 +51,25 @@ const Home = () => {
         </motion.div>
 
         <motion.div
-          className="nav-links"
+          className="quick-links-card"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <a href="/projects">Projects</a>
-          <a href="https://research.frgmt.xyz">Research</a>
-          <a href="/about">About</a>
-          <a href="https://blog.frgmt.xyz">Blog</a>
+          <div className="quick-links">
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="/projects">Projects</a>
+            </motion.div>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="https://research.frgmt.xyz">Research</a>
+            </motion.div>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="/about">About</a>
+            </motion.div>
+            <motion.div whileHover={{ rotateX: 180 }} className="flip-container">
+              <a href="https://blog.frgmt.xyz">Blog</a>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>

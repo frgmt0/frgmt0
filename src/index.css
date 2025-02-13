@@ -677,7 +677,12 @@ a:hover {
 
 .skill-item {
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-4px);
 }
 
 .skill-item h3 {
