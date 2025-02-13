@@ -405,11 +405,10 @@ a:hover {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
     padding: 1rem;
-    justify-content: center;
 }
 
 .category-filter {
@@ -640,7 +639,7 @@ a:hover {
 .project-content {
     padding: 1.5rem;
     text-align: left;
-    height: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
 }
