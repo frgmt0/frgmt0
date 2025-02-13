@@ -17,7 +17,7 @@
         <meta property="og:description" content="i do things." />
         <meta property="og:type" content="website" />
 
-        <!-- Preload fonts -->
+        <!-- Preload critical resources -->
         <link
             rel="preload"
             href="/fonts/text/exo.otf"
@@ -25,6 +25,9 @@
             type="font/otf"
             crossorigin
         />
+        <link rel="modulepreload" href="/src/main.jsx" />
+        <link rel="modulepreload" href="/src/App.jsx" />
+        <link rel="modulepreload" href="/src/components/Navbar/Navbar.jsx" />
     </head>
     <body>
         <div id="root"></div>
