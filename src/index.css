@@ -391,11 +391,64 @@ a:hover {
 }
 
 /* Projects Page Styles */
+.projects-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.projects-intro {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 1rem auto;
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.filter-button {
+    background: rgba(121, 104, 121, 0.2);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.filter-button:hover {
+    background: rgba(121, 104, 121, 0.3);
+}
+
+.filter-button.active {
+    background: var(--primary);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-intro {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
 }
 
 .project-card {
