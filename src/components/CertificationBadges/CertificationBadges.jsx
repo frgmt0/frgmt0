@@ -10,7 +10,7 @@ const CertificationBadges = () => {
         <div className="badge-card">
           <div className="badge-image">
             <img
-              src="public/images/cisco-certified-support-technician-cybersecurity-cc.png"
+              src="images/cisco-certified-support-technician-cybersecurity-cc.png"
               alt="Cisco Certified Support Technician (CCST)"
             />
           </div>
