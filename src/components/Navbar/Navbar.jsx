@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-content">
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <Link to="/" className="navbar-logo">
+            <Link to="/" className="navbar-logo" data-text="frgmt_">
               frgmt_
             </Link>
           </motion.div>

@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import "./App.css";
 
 // Components
@@ -10,6 +11,7 @@ import About from "./pages/About/About.jsx";
 import Blog from "./pages/Blog/Blog";
 import BlogPost from "./pages/Blog/BlogPost";
 import Waves from "./components/Waves/Waves";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 
 function App() {
   const location = useLocation();
@@ -18,7 +20,7 @@ function App() {
     <div className="app-container">
       <div className="background-container">
         <Waves
-          lineColor="rgba(121, 104, 121, 0.8)"
+          lineColor="rgba(5, 217, 232, 0.5)"
           backgroundColor="rgba(0, 0, 0, 0.95)"
           waveSpeedX={0.02}
           waveSpeedY={0.01}
@@ -33,13 +35,15 @@ function App() {
       </div>
       <Navbar />
       <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+          </Routes>
+        </AnimatePresence>
       </main>
     </div>
   );

@@ -1,0 +1,129 @@
+.cursor {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--neon-blue);
+  box-shadow: 
+    0 0 8px var(--neon-blue),
+    0 0 12px rgba(5, 217, 232, 0.4);
+  transition: transform 0.2s ease-out;
+}
+
+.cursor-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--neon-pink);
+  border-radius: 50%;
+  box-shadow:
+    0 0 5px var(--neon-pink),
+    0 0 10px rgba(255, 42, 109, 0.3);
+  transition: all 0.2s ease-out;
+  animation: pulse 2s infinite;
+}
+
+.cursor.hidden {
+  opacity: 0;
+}
+
+.cursor.clicked::after {
+  transform: scale(1.5);
+  background-color: var(--neon-yellow);
+  box-shadow: 
+    0 0 8px var(--neon-yellow),
+    0 0 16px var(--neon-yellow),
+    0 0 24px var(--neon-yellow);
+}
+
+.cursor.clicked .cursor-ring {
+  transform: scale(0.8);
+  border-color: var(--neon-yellow);
+  box-shadow:
+    0 0 8px var(--neon-yellow),
+    0 0 16px rgba(247, 239, 0, 0.5);
+}
+
+.cursor.link-hovered::after {
+  transform: scale(1.2);
+  background-color: var(--neon-teal);
+  box-shadow: 
+    0 0 8px var(--neon-teal),
+    0 0 16px var(--neon-teal),
+    0 0 24px var(--neon-teal);
+}
+
+.cursor.link-hovered .cursor-ring {
+  transform: scale(1.5);
+  border-color: var(--neon-teal);
+  box-shadow:
+    0 0 8px var(--neon-teal),
+    0 0 16px rgba(0, 255, 198, 0.5);
+}
+
+.cursor-trail {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  background-color: var(--neon-purple);
+  box-shadow: 
+    0 0 6px var(--neon-purple),
+    0 0 12px var(--neon-purple);
+  transition: opacity 0.15s, transform 0.15s;
+  animation: fadeOut 0.5s linear forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Disable custom cursor on mobile/touch devices */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  
+  .cursor, .cursor-trail {
+    display: none;
+  }
+}

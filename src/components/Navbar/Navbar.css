@@ -4,9 +4,11 @@
     left: 0;
     width: 100%;
     z-index: 50;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(5, 217, 232, 0.3);
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.2);
 }
 
 .navbar-border {
@@ -18,9 +20,26 @@
     background: linear-gradient(
         to right,
         transparent,
-        rgba(128, 128, 128, 0.2),
+        var(--neon-blue),
+        var(--neon-purple),
+        var(--neon-blue),
         transparent
     );
+    opacity: 0.7;
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        opacity: 0.7;
+        box-shadow: 0 0 5px var(--neon-blue);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 
+            0 0 10px var(--neon-blue),
+            0 0 20px rgba(5, 217, 232, 0.5);
+    }
 }
 
 .navbar-container {
@@ -39,18 +58,44 @@
 .navbar-logo {
     font-family: "exo", sans-serif;
     font-size: 1.875rem;
-    background: linear-gradient(90deg, #796879, #aa9aa9, #796879);
+    background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-purple));
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     letter-spacing: 0.05em;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    text-shadow: 
+        0 0 5px rgba(255, 42, 109, 0.3),
+        0 0 10px rgba(255, 42, 109, 0.1);
+    position: relative;
+    padding: 0 5px;
+}
+
+.navbar-logo::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-purple));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.3;
+    filter: blur(8px);
+    animation: shine 8s linear infinite;
 }
 
 .navbar-logo:hover {
     transform: scale(1.1);
+    text-shadow: 
+        0 0 5px rgba(255, 42, 109, 0.5),
+        0 0 10px rgba(255, 42, 109, 0.3);
 }
 
 .navbar-links {
@@ -66,15 +111,39 @@
 .nav-link {
     font-family: "exo", sans-serif;
     font-size: 1.5rem;
-    color: rgba(209, 213, 219, 1);
+    color: var(--neon-blue);
     text-decoration: none;
     transition: all 0.3s ease;
     letter-spacing: 0.05em;
+    text-shadow: 0 0 5px rgba(5, 217, 232, 0.3);
+    position: relative;
+    padding: 0.3em 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-teal));
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px var(--neon-blue);
+    opacity: 0;
 }
 
 .nav-link:hover {
     color: white;
-    transform: translateY(-2px) scale(1.1);
+    transform: translateY(-2px);
+    text-shadow: 
+        0 0 5px var(--neon-blue),
+        0 0 10px var(--neon-blue);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    opacity: 1;
 }
 
 .mobile-menu-button {
