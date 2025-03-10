@@ -233,3 +233,72 @@
 .research-paper-link svg {
   color: var(--primary-color);
 }
+
+/* Share buttons styling */
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.share-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.share-button svg {
+  color: #333;
+}
+
+.copied-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.copied-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .share-button {
+    background-color: #2a2a2a;
+  }
+  
+  .share-button:hover {
+    background-color: #3a3a3a;
+  }
+  
+  .share-button svg {
+    color: #e0e0e0;
+  }
+}

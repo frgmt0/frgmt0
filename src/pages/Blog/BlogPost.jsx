@@ -7,6 +7,7 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import { getRelatedPosts } from "../../utils/postUtils";
 import ShareButtons from "../../components/ShareButtons";
+import Metadata from "../../components/Metadata";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -31,9 +32,26 @@ const BlogPost = () => {
   }, [id, navigate]);
 
   if (!post) return null;
+  
+  // Construct the full URL for sharing
+  const postUrl = `${window.location.origin}/${post.id}`;
 
   return (
     <div className="page-background">
+      {/* Add metadata for the blog post */}
+      <Metadata 
+        title={post.title}
+        description={post.summary}
+        image={post.coverImage}
+        url={postUrl}
+        type="article"
+        tags={post.tags}
+        author={post.author ? {
+          name: post.author.name,
+          url: post.author.url
+        } : null}
+      />
+      
       <ReadingProgress />
       <div className="blog-post">
         <Link to="/" className="cta-button secondary" style={{ marginBottom: '2rem' }}>

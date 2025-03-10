@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import allBlogPosts from '../../data/blogposts';
 import SearchBar from '../../components/SearchBar';
+import Metadata from '../../components/Metadata';
 
 const CATEGORIES = ['All', 'Technology', 'News', 'Personal'];
 
@@ -26,8 +27,23 @@ const Blog = () => {
     );
   };
 
+  // Get the latest blog post for the description
+  const latestPost = allBlogPosts[0]?.getPreviewData();
+  const blogDescription = latestPost 
+    ? `Latest: ${latestPost.title}. ${latestPost.summary}`
+    : 'Thoughts on technology, programming, and more';
+
   return (
     <div className="page-background">
+      {/* Add metadata for the blog homepage */}
+      <Metadata 
+        title="frgmt blog"
+        description={blogDescription}
+        url={window.location.origin}
+        type="website"
+        tags={['blog', 'technology', 'programming', 'news', 'personal']}
+      />
+      
       <div className="container">
         <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>Blog</h1>
         
