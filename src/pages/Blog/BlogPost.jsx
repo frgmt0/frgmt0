@@ -1,18 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import allBlogPosts from "../../data/blogposts";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReadingProgress from "../../components/ReadingProgress";
 import { getRelatedPosts } from "../../utils/postUtils";
 import ShareButtons from "../../components/ShareButtons";
 import Metadata from "../../components/Metadata";
+import LazyImage from "../../components/LazyImage";
+
+// Lazy load the syntax highlighter components
+const SyntaxHighlighter = lazy(() => import('react-syntax-highlighter').then(module => ({
+  default: module.Prism
+})));
+const atomDarkStyle = lazy(() => import('react-syntax-highlighter/dist/esm/styles/prism/atom-dark').then(module => ({
+  default: module.default
+})));
+
+// Loading fallback for code blocks
+const CodeBlockLoading = () => (
+  <div className="code-block-loading" style={{ 
+    background: '#282c34', 
+    padding: '1rem', 
+    borderRadius: '0.5rem',
+    color: '#abb2bf',
+    fontFamily: 'monospace',
+    minHeight: '50px'
+  }}>
+    Loading code...
+  </div>
+);
 
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
+  const [isStyleLoaded, setIsStyleLoaded] = useState(false);
 
   useEffect(() => {
     const foundPost = allBlogPosts.find((p) => p.id === id);
@@ -21,6 +43,13 @@ const BlogPost = () => {
       // Reset scroll position and enable smooth scrolling after content loads
       window.scrollTo(0, 0);
       document.body.style.overflow = 'auto';
+      
+      // Preload the syntax highlighter if the post contains code blocks
+      if (foundPost.getFullData().content.includes('```')) {
+        import('react-syntax-highlighter/dist/esm/styles/prism/atom-dark')
+          .then(() => setIsStyleLoaded(true))
+          .catch(err => console.error('Failed to preload syntax highlighter:', err));
+      }
     } else {
       navigate("/");
     }
@@ -60,17 +89,17 @@ const BlogPost = () => {
 
         <article>
           <div className="blog-post-header">
-            <img 
+            <LazyImage 
               src={post.coverImage} 
               alt={post.title} 
               style={{ 
                 maxWidth: '600px', 
                 width: '100%', 
-                height: 'auto', 
-                margin: '0 auto 2rem',
-                borderRadius: '12px',
-                display: 'block'
-              }} 
+                height: 'auto',
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+              }}
+              threshold={0.01}
             />
             <h1>{post.title}</h1>
             <div className="blog-post-meta">
@@ -92,29 +121,45 @@ const BlogPost = () => {
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || '');
                   return !inline && match ? (
-                    <SyntaxHighlighter
-                      style={atomDark}
-                      language={match[1]}
-                      PreTag="div"
-                      {...props}
-                    >
-                      {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
+                    <Suspense fallback={<CodeBlockLoading />}>
+                      <SyntaxHighlighter
+                        style={atomDarkStyle}
+                        language={match[1]}
+                        PreTag="div"
+                        {...props}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
+                    </Suspense>
                   ) : (
                     <code className={className} {...props}>
                       {children}
                     </code>
                   );
                 },
-                a: ({ node, ...props }) => (
-                  <a 
-                    {...props} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="cta-button secondary"
-                    style={{ padding: '0.25rem 0.5rem', margin: '0 0.25rem' }}
-                  />
-                )
+                img({ node, ...props }) {
+                  return (
+                    <LazyImage
+                      {...props}
+                      style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        margin: '1.5rem 0',
+                      }}
+                    />
+                  );
+                },
+                // Add optimized rendering for other markdown elements
+                a({ node, ...props }) {
+                  return (
+                    <a 
+                      {...props} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    />
+                  );
+                }
               }}
             >
               {post.content}

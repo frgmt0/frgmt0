@@ -1,7 +1,7 @@
 /* Font */
 @font-face {
     font-family: "Borela";
-    src: url("/fonts/text/exo.otf") format("truetype");
+    src: url("/fonts/text/exo.otf") format("opentype");
     font-display: swap;
     font-weight: normal;
     font-style: normal;
@@ -41,7 +41,84 @@ body {
     background: #1a1a1a;
     color: var(--text);
     min-height: 100vh;
-    font-family: "Borela";
+    font-family: "Borela", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Image loading animations */
+.image-loading {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.image-loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.6; }
+}
+
+/* Content loading animations */
+.content-loading {
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.content-loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Dark mode adjustments for content loading */
+@media (prefers-color-scheme: dark) {
+    .content-loading {
+        background-color: #2a2a2a;
+    }
+    
+    .content-loading::after {
+        background-image: linear-gradient(
+            90deg,
+            rgba(30, 30, 30, 0) 0,
+            rgba(30, 30, 30, 0.2) 20%,
+            rgba(30, 30, 30, 0.5) 60%,
+            rgba(30, 30, 30, 0)
+        );
+    }
+}
+
+/* Optimize for mobile performance */
+@media (max-width: 768px) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .image-loading, .image-loaded {
+        transition: none;
+    }
 }
 
 .page-background {

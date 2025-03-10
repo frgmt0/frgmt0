@@ -1,0 +1,17 @@
+{
+  "name": "frgmt blog",
+  "short_name": "frgmt",
+  "description": "Thoughts on technology, programming, and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+} 

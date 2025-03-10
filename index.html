@@ -5,10 +5,68 @@
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>frgmt blog</title>
+        
+        <!-- Web App Manifest -->
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="frgmt blog" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
+        
+        <!-- Preload critical resources -->
+        <link rel="preload" href="/fonts/text/exo.otf" as="font" type="font/otf" crossorigin />
+        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/images/background.jpg" as="image" fetchpriority="high" />
+        
+        <!-- Resource hints -->
+        <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+        <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin />
+        
+        <!-- Meta tags for better SEO and sharing -->
+        <meta name="description" content="Thoughts on technology, programming, and more" />
+        <meta name="theme-color" content="#1A1A1A" />
+        
+        <!-- Add inline critical CSS to prevent render blocking -->
+        <style>
+            /* Critical CSS for initial render */
+            body {
+                margin: 0;
+                padding: 0;
+                background: #1a1a1a;
+                color: #333;
+                font-family: sans-serif; /* Fallback font */
+            }
+            .page-background {
+                min-height: 100vh;
+            }
+            @font-face {
+                font-family: "Borela";
+                src: url("/fonts/text/exo.otf") format("opentype");
+                font-display: swap;
+                font-weight: normal;
+                font-style: normal;
+            }
+        </style>
     </head>
     <body>
         <div id="root"></div>
         <script type="module" src="/src/main.jsx"></script>
+        
+        <!-- Service Worker Registration -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => {
+                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        })
+                        .catch(error => {
+                            console.log('ServiceWorker registration failed: ', error);
+                        });
+                });
+            }
+        </script>
+        
         <!-- Cloudflare Web Analytics -->
         <script
             defer

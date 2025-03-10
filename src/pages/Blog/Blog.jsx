@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import allBlogPosts from '../../data/blogposts';
 import SearchBar from '../../components/SearchBar';
 import Metadata from '../../components/Metadata';
+import LazyImage from '../../components/LazyImage';
 
 const CATEGORIES = ['All', 'Technology', 'News', 'Personal'];
 
@@ -66,7 +67,19 @@ const Blog = () => {
             const postData = post.getPreviewData();
             return (
               <div key={postData.id} className="blog-card">
-                <img src={postData.coverImage} alt={postData.title} />
+                <Link to={`/${postData.id}`}>
+                  <LazyImage 
+                    src={postData.coverImage} 
+                    alt={postData.title}
+                    threshold={0.01}
+                    style={{
+                      width: '100%',
+                      height: '200px',
+                      objectFit: 'cover',
+                      borderRadius: '8px 8px 0 0'
+                    }}
+                  />
+                </Link>
                 <div className="blog-card-content">
                   <div className="blog-card-date">{postData.formattedPublishDate}</div>
                   <h3>{postData.title}</h3>
