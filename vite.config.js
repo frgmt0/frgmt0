@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { splitVendorChunkPlugin } from 'vite'
 import { compression } from 'vite-plugin-compression2'
 
 // https://vite.dev/config/
@@ -17,7 +16,6 @@ export default defineConfig({
       // Use Fast Refresh instead of full reload
       fastRefresh: true
     }),
-    splitVendorChunkPlugin(),
     compression({
       algorithm: 'gzip',
       exclude: [/\.(br)$/, /\.(gz)$/],
@@ -66,10 +64,30 @@ export default defineConfig({
     // Optimize chunk size
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'markdown-vendor': ['react-markdown', 'react-syntax-highlighter'],
-          'ui-vendor': ['framer-motion', '@heroicons/react'],
+        manualChunks(id) {
+          // Create a chunk for React and related packages
+          if (id.includes('node_modules/react') || 
+              id.includes('node_modules/react-dom') || 
+              id.includes('node_modules/react-router-dom')) {
+            return 'react-vendor';
+          }
+          
+          // Create a chunk for markdown-related packages
+          if (id.includes('node_modules/react-markdown') || 
+              id.includes('node_modules/react-syntax-highlighter')) {
+            return 'markdown-vendor';
+          }
+          
+          // Create a chunk for UI-related packages
+          if (id.includes('node_modules/framer-motion') || 
+              id.includes('node_modules/@heroicons')) {
+            return 'ui-vendor';
+          }
+          
+          // Create a chunk for other node_modules
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
         // Optimize chunk size
         chunkFileNames: 'assets/js/[name]-[hash].js',
