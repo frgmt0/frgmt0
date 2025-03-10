@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>frgmt blog</title>
         
+        <!-- Connection preloading for faster initial load -->
+        <link rel="preconnect" href="https://blog.frgmt.xyz" crossorigin />
+        
         <!-- Web App Manifest -->
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -17,6 +20,8 @@
         <link rel="preload" href="/fonts/text/exo.otf" as="font" type="font/otf" crossorigin />
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/images/background.jpg" as="image" fetchpriority="high" />
+        <link rel="modulepreload" href="/src/main.jsx" />
+        <link rel="modulepreload" href="/src/App.jsx" />
         
         <!-- Resource hints -->
         <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
@@ -38,6 +43,10 @@
             }
             .page-background {
                 min-height: 100vh;
+                background-image: url("/images/background.jpg");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
             }
             @font-face {
                 font-family: "Borela";
@@ -46,28 +55,69 @@
                 font-weight: normal;
                 font-style: normal;
             }
+            #root {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .app-loading {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: #1a1a1a;
+                color: #f5f5f5;
+                font-family: sans-serif;
+            }
         </style>
     </head>
     <body>
-        <div id="root"></div>
+        <div id="root">
+            <!-- Initial loading state to show before JS loads -->
+            <div class="app-loading">
+                <div style="text-align: center">
+                    <h2>Loading frgmt blog...</h2>
+                    <p>Just a moment while we prepare your experience</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Inline script to measure and log page load time -->
+        <script>
+            // Record the start time
+            window.pageLoadStart = Date.now();
+            
+            // Listen for when the page is fully loaded
+            window.addEventListener('load', () => {
+                const loadTime = Date.now() - window.pageLoadStart;
+                console.log(`Page fully loaded in ${loadTime}ms`);
+                
+                // Send the load time to analytics if needed
+                if (navigator.sendBeacon) {
+                    const data = new FormData();
+                    data.append('loadTime', loadTime);
+                    navigator.sendBeacon('/api/analytics/pageload', data);
+                }
+            });
+        </script>
+        
         <script type="module" src="/src/main.jsx"></script>
         
         <!-- Service Worker Registration -->
         <script>
             if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/sw.js')
-                        .then(registration => {
-                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                        })
-                        .catch(error => {
-                            console.log('ServiceWorker registration failed: ', error);
-                        });
-                });
+                // Register service worker as soon as possible
+                navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
             }
         </script>
         
-        <!-- Cloudflare Web Analytics -->
+        <!-- Cloudflare Web Analytics - Load after critical content -->
         <script
             defer
             src="https://static.cloudflareinsights.com/beacon.min.js"
