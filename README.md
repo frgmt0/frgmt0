@@ -23,35 +23,20 @@
 </div>
 
 ## 💻 skill levels
+
 <div align="center">
-<!-- SVG Progress Bars -->
-<div align="center">
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    <div style="width: 100px; text-align: right; margin-right: 15px; font-weight: bold;">Python</div>
-    <img src="https://progress-bar.dev/90/?width=400&color=4CAF50" alt="Python 90%" />
-  </div>
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    <div style="width: 100px; text-align: right; margin-right: 15px; font-weight: bold;">JavaScript</div>
-    <img src="https://progress-bar.dev/65/?width=400&color=FF9800" alt="JavaScript 65%" />
-  </div>
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    <div style="width: 100px; text-align: right; margin-right: 15px; font-weight: bold;">TypeScript</div>
-    <img src="https://progress-bar.dev/45/?width=400&color=FF9800" alt="TypeScript 45%" />
-  </div>
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    <div style="width: 100px; text-align: right; margin-right: 15px; font-weight: bold;">Rust</div>
-    <img src="https://progress-bar.dev/60/?width=400&color=FF9800" alt="Rust 60%" />
-  </div>
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    <div style="width: 100px; text-align: right; margin-right: 15px; font-weight: bold;">C</div>
-    <img src="https://progress-bar.dev/30/?width=400&color=F44336" alt="C 30%" />
-  </div>
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    <div style="width: 100px; text-align: right; margin-right: 15px; font-weight: bold;">C++</div>
-    <img src="https://progress-bar.dev/25/?width=400&color=F44336" alt="C++ 25%" />
-  </div>
+
+| Language   | Proficiency           | Progress |
+|------------|------------------------|----------|
+| Python     | Extensive              | ![](https://geps.dev/progress/90?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+| JavaScript | Intermediate           | ![](https://geps.dev/progress/65?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+| TypeScript | Beginner/Intermediate  | ![](https://geps.dev/progress/45?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+| Rust       | Intermediate           | ![](https://geps.dev/progress/60?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+| C          | Beginner               | ![](https://geps.dev/progress/30?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+| C++        | Beginner               | ![](https://geps.dev/progress/25?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+
 </div>
-</div>
+
 
 ## 📊 github stats
 
