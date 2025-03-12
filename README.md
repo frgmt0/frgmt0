@@ -1,11 +1,65 @@
-This is my personal portfolio website, built to showcase my work, skills, and journey as a developer and digital creator. The site is a mix of professionalism and creativity, featuring:
+# 👋 hey there, i'm j
 
-- **Projects**: A collection of the things I've built, with details on each project.
+<div align="center">
+  
+  ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F70000&random=false&width=435&lines=smol+dev+from+LA;ice+cream+enthusiast;bookworm;tv+%26+movie+buff;fluffball+appreciator)
 
-- **About Me**: An overview of my background, skills, and the fun things that make me who I am.
+  <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50">
+  
+  *just a dev trying to make cool stuff happen*
+</div>
 
-- **Art & Photography**: A gallery of my digital art and photography, presented in a visually engaging layout.
+## 🛠️ tech stack
 
-- **Blog**: A space where I share updates on what I’m working on and what I’m learning.
+<div align="center">
 
-The website uses clean, modern design principles and includes interactive animations and responsive layouts for a great user experience. It reflects who I am as both a developer and a creative thinker.
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
+![C](https://img.shields.io/badge/C-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+</div>
+
+## 💻 skill levels
+
+| Language   | Proficiency           | Progress Bar                                                            |
+|------------|------------------------|------------------------------------------------------------------------|
+| Python     | Extensive              | ![Python](https://progress-bar.dev/90/ "Python")                       |
+| JavaScript | Intermediate           | ![JavaScript](https://progress-bar.dev/65/ "JavaScript")               |
+| TypeScript | Beginner/Intermediate  | ![TypeScript](https://progress-bar.dev/45/ "TypeScript")               |
+| Rust       | Intermediate           | ![Rust](https://progress-bar.dev/60/ "Rust")                           |
+| C          | Beginner               | ![C](https://progress-bar.dev/30/ "C")                                 |
+| C++        | Beginner               | ![C++](https://progress-bar.dev/25/ "C++")                             |
+
+## 📊 github stats
+
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=frgmt0&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=frgmt0&layout=compact&langs_count=7&theme=radical"/>
+</div>
+
+## 🏆 github trophies
+
+<div align="center">
+  
+  ![Trophy](https://github-profile-trophy.vercel.app/?username=frgmt0&theme=onedark&no-frame=false&no-bg=true&margin-w=4)
+  
+</div>
+
+## 🔍 currently exploring
+
+- 🌱 learning more about **advanced rust patterns**
+- 🔭 working on **[pearl](https://github.com/frgmt0/pearl.git) & [pocket](https://github.com/frgmt0/pocket-cli.git)**
+- 👯 looking to collaborate on **open source tools for devs**
+- 💬 ask me about **python, ice cream flavors, or cute animals**
+
+---
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=frgmt0&label=Profile%20views&color=0e75b6&style=flat" alt="frgmt0" />
+  <br>
+  
+  *thanks for stopping by! have a cookie 🍪*
+</div>
