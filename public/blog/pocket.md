@@ -1,4 +1,4 @@
-# Pocket: What it and where it's at
+# Pocket: What it is and where it's at
 
 I've always had a problem with code. Not writing it (that part I enjoy... for now) but keeping track of all the clever little solutions I come up with.
 
