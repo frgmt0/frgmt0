@@ -36,15 +36,22 @@ const BlogPage = () => {
     if (!slug && blogPosts.length > 0) {
       const options = {
         root: null,
-        rootMargin: '100px', // Start loading when within 100px of viewport
-        threshold: 0.1
+        rootMargin: '0px', // Changed from 100px to 0px to trigger immediately in viewport
+        threshold: 0
       };
       
       const observer = new IntersectionObserver(observerCallback, options);
       
-      blogCardsRef.current.forEach(card => {
-        if (card) observer.observe(card);
-      });
+      // Set a small timeout to ensure DOM is fully rendered
+      setTimeout(() => {
+        blogCardsRef.current.forEach(card => {
+          if (card) {
+            observer.observe(card);
+            // Make cards visible immediately in case observer fails to trigger
+            card.classList.add('visible');
+          }
+        });
+      }, 100);
       
       return () => {
         blogCardsRef.current.forEach(card => {
@@ -200,14 +207,14 @@ const BlogPage = () => {
       <div className="blog-list">
         {blogPosts.map((post, index) => (
           <div 
-            className="blog-card fade-in-card" 
+            className="blog-card fade-in-card visible" 
             key={post.slug}
             ref={el => blogCardsRef.current[index] = el}
           >
             <div 
               className="blog-image" 
               data-src={post.image}
-              style={index < 2 && post.image ? { backgroundImage: `url(${post.image})` } : {}}
+              style={post.image ? { backgroundImage: `url(${post.image})` } : {}}
             >
             </div>
             <div className="blog-content">

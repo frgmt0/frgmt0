@@ -17,6 +17,7 @@ function App() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [blogLoading, setBlogLoading] = useState(true);
   const [blogCache, setBlogCache] = useState({});
+  const [initialDataLoaded, setInitialDataLoaded] = useState(false);
 
   // Preload blog data when app loads
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
           setBlogPosts(data);
           
           // Start preloading the content of the first few blog posts
-          data.slice(0, 2).forEach(async (post) => {
+          const preloadPromises = data.slice(0, 2).map(async (post) => {
             try {
               const contentResponse = await fetch(`/blog/${post.file}`);
               if (contentResponse.ok) {
@@ -43,9 +44,17 @@ function App() {
               console.error(`Error preloading blog post ${post.slug}:`, error);
             }
           });
+          
+          // Wait for initial preload to complete
+          await Promise.all(preloadPromises);
+          
+          // Mark initial data as loaded
+          setInitialDataLoaded(true);
         }
       } catch (error) {
         console.error('Error preloading blog data:', error);
+        // Even on error, consider data loaded to not block rendering
+        setInitialDataLoaded(true);
       } finally {
         setBlogLoading(false);
       }
@@ -53,6 +62,18 @@ function App() {
 
     preloadBlogData();
   }, []);
+
+  // If initial data is still loading, show a minimal loading indicator
+  if (!initialDataLoaded) {
+    return (
+      <div className="app initial-loading">
+        <div className="loading-container">
+          <div className="loader"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <BlogContext.Provider value={{ blogPosts, blogLoading, blogCache, setBlogCache }}>
