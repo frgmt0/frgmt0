@@ -1,11 +1,51 @@
-import React from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import '../styles/Footer.css';
+import CookieRain from './CookieRain';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const [cookieCount, setCookieCount] = useState(0);
+  const [shouldAddCookies, setShouldAddCookies] = useState(false);
+  
+  // Use useCallback to prevent function recreation on every render
+  const handleCookieClick = useCallback(() => {
+    // Batch state updates for better performance
+    setCookieCount(prevCount => {
+      const newCount = prevCount + 1;
+      // Only trigger cookie rain if we're not already adding cookies
+      // This prevents rapid clicks from causing too many state updates
+      setShouldAddCookies(true);
+      
+      // Schedule reset of the flag
+      setTimeout(() => {
+        setShouldAddCookies(false);
+      }, 100);
+      
+      return newCount;
+    });
+  }, []);
+  
+  // Memoize the cookie message to prevent recalculation on every render
+  const cookieMessage = useMemo(() => {
+    if (cookieCount === 0) return "have a cookie";
+    if (cookieCount === 1) return "have another cookie";
+    if (cookieCount === 2) return "okay, one more cookie";
+    if (cookieCount === 3) return "that's a lot of cookies...";
+    if (cookieCount === 4) return "are you still hungry?";
+    if (cookieCount >= 5 && cookieCount < 10) return `you've had ${cookieCount} cookies!`;
+    return "🍪 cookie monster 🍪";
+  }, [cookieCount]);
+  
+  // Memoize this calculation
+  const isCookieMonster = useMemo(() => cookieCount >= 10, [cookieCount]);
   
   return (
     <footer className="footer">
+      <CookieRain 
+        addCookies={shouldAddCookies}
+        cookieCount={cookieCount}
+        isCookieMonster={isCookieMonster}
+      />
       <div className="container footer-container">
         <div className="footer-content">
           <div className="footer-section">
@@ -51,11 +91,13 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <p>&copy; {year} frgmt. All Rights Reserved.</p>
-          <p>have a cookie</p>
+          <p className="cookie-text" onClick={handleCookieClick}>
+            {cookieMessage}
+          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default React.memo(Footer); 

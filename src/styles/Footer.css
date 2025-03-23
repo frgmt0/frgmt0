@@ -105,4 +105,34 @@
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+.cookie-text {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cookie-text:hover {
+  color: var(--text-color-primary);
+  transform: scale(1.05);
+}
+
+.cookie-text:active {
+  transform: scale(0.95);
+}
+
+.cookie-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-color-primary);
+  transition: width 0.3s ease;
+}
+
+.cookie-text:hover::after {
+  width: 100%;
 } 
