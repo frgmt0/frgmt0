@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Building Pocket",
+    "slug": "pocket",
+    "date": "2025-03-23",
+    "excerpt": "My journey into building Pocket, a tool that helps you save, manage and extend your coding workflows",
+    "file": "pocket.md",
+    "image": "/images/img3.jpg",
+    "tags": ["React", "Markdown", "Web Development"]
+  }
+] 

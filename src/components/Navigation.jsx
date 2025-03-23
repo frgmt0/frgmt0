@@ -57,6 +57,9 @@ const Navigation = () => {
           <li className={location.pathname === '/projects' ? 'active' : ''}>
             <Link to="/projects">projects</Link>
           </li>
+          <li className={location.pathname.startsWith('/blog') ? 'active' : ''}>
+            <Link to="/blog">blog</Link>
+          </li>
         </ul>
       </div>
     </nav>
