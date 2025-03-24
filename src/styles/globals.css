@@ -74,7 +74,7 @@ button, .btn {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 500;
   border-radius: 4px;
-  /*cursor: pointer;*/
+  cursor: pointer;
   transition: all var(--transition-speed) ease;
 }
 

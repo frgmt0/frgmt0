@@ -8,5 +8,15 @@
     "file": "pocket.md",
     "image": "/images/img3.jpg",
     "tags": ["React", "Markdown", "Web Development"]
+  },
+  {
+    "id": 2,
+    "title": "Zed",
+    "slug": "zed",
+    "date": "2025-03-25",
+    "excerpt": "My journey into Zed, a modern, feature-rich text editor built in Rust",
+    "file": "zed.md",
+    "image": "blog/images/zed.jpg",
+    "tags": ["Rust", "Text Editor", "Programming"]
   }
 ] 
