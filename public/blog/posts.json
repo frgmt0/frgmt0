@@ -11,12 +11,22 @@
   },
   {
     "id": 2,
-    "title": "Zed",
+    "title": "My Journey into Zed",
     "slug": "zed",
     "date": "2025-03-25",
     "excerpt": "My journey into Zed, a modern, feature-rich text editor built in Rust",
     "file": "zed.md",
     "image": "blog/images/zed.jpg",
     "tags": ["Rust", "Text Editor", "Programming"]
+  },
+  {
+    "id": 3,
+    "title": "Risks and Rewards of Vibe Coding",
+    "slug": "vibe-coding",
+    "date": "2025-03-26",
+    "excerpt": "A discussion on the pros and cons of vibe coding",
+    "file": "vibe_coding.md",
+    "image": "blog/images/vibe_coding.jpg",
+    "tags": ["AI", "Programming", "Development"]
   }
 ] 
