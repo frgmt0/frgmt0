@@ -77,6 +77,20 @@ function App() {
     );
   }
 
+  const BlogRoutes = () => (
+    <Suspense fallback={
+      <div className="loading-container">
+        <div className="loader"></div>
+        <p>Loading blog...</p>
+      </div>
+    }>
+      <Routes>
+        <Route index element={<BlogPage />} />
+        <Route path=":slug" element={<BlogPage />} />
+      </Routes>
+    </Suspense>
+  );
+
   return (
     <BlogContext.Provider value={{ blogPosts, blogLoading, blogCache, setBlogCache }}>
       <Router>
@@ -87,19 +101,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
-              <Route 
-                path="/blog/*" 
-                element={
-                  <Suspense fallback={
-                    <div className="loading-container">
-                      <div className="loader"></div>
-                      <p>Loading blog...</p>
-                    </div>
-                  }>
-                    <BlogPage />
-                  </Suspense>
-                } 
-              />
+              <Route path="/blog/*" element={<BlogRoutes />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

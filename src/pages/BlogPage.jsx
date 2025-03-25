@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import { BlogContext } from '../App';
 import '../styles/BlogPage.css';
@@ -9,6 +9,7 @@ const BlogPage = () => {
   const [loading, setLoading] = useState(true);
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   
   // Get preloaded blog data from context
   const { blogPosts, blogLoading, blogCache, setBlogCache } = useContext(BlogContext);
@@ -36,7 +37,7 @@ const BlogPage = () => {
     if (!slug && blogPosts.length > 0) {
       const options = {
         root: null,
-        rootMargin: '0px', // Changed from 100px to 0px to trigger immediately in viewport
+        rootMargin: '0px',
         threshold: 0
       };
       
@@ -101,6 +102,9 @@ const BlogPage = () => {
             // Post not found, redirect to blog index
             navigate('/blog');
           }
+        } else {
+          // Reset current post when viewing the index
+          setCurrentPost(null);
         }
         
         setLoading(false);
@@ -145,7 +149,10 @@ const BlogPage = () => {
     return (
       <div className="blog-post">
         <div className="blog-cta">
-          <Link to="/blog" className="btn back-button">
+          <Link to="/blog" className="btn back-button" onClick={(e) => {
+            e.preventDefault();
+            navigate('/blog');
+          }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
@@ -236,7 +243,14 @@ const BlogPage = () => {
               </div>
               <p className="blog-description">{post.excerpt}</p>
               <div className="blog-cta">
-                <Link to={`/blog/${post.slug}`} className="btn btn-primary">
+                <Link 
+                  to={`/blog/${post.slug}`} 
+                  className="btn btn-primary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(`/blog/${post.slug}`);
+                  }}
+                >
                   Read Article
                 </Link>
               </div>
