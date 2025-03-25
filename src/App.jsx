@@ -1,17 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect, createContext, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
-import BlogPage from './pages/BlogPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './styles/globals.css';
 import './styles/App.css';
 
 // Create context for blog data
 export const BlogContext = createContext();
+
+// Lazy load the blog page
+const BlogPage = lazy(() => import('./pages/BlogPage'));
 
 function App() {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -85,8 +87,19 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:slug" element={<BlogPage />} />
+              <Route 
+                path="/blog/*" 
+                element={
+                  <Suspense fallback={
+                    <div className="loading-container">
+                      <div className="loader"></div>
+                      <p>Loading blog...</p>
+                    </div>
+                  }>
+                    <BlogPage />
+                  </Suspense>
+                } 
+              />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
