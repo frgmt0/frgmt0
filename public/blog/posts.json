@@ -28,5 +28,15 @@
     "file": "vibe_coding.md",
     "image": "blog/images/vibe_coding.jpg",
     "tags": ["AI", "Programming", "Development"]
+  },
+  {
+    "id": 4,
+    "title": "Gemini 2.5 Pro: A New Era in AI Coding",
+    "slug": "gemini-2-5-pro",
+    "date": "2025-03-27",
+    "excerpt": "A benchmark of Gemini 2.5 Pro's performance against other AI coding assistants",
+    "file": "gemini.md",
+    "image": "blog/images/gemini.jpg",
+    "tags": ["AI", "Programming", "Development"]
   }
 ] 

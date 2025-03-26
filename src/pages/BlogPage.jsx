@@ -210,9 +210,14 @@ const BlogPage = () => {
     // Reset refs array
     blogCardsRef.current = [];
 
+    // Sort posts by date, newest first
+    const sortedPosts = [...blogPosts].sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);
+    });
+
     return (
       <div className="blog-list">
-        {blogPosts.map((post, index) => (
+        {sortedPosts.map((post, index) => (
           <div 
             className="blog-card fade-in-card visible" 
             key={post.slug}
