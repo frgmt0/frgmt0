@@ -1,4 +1,4 @@
-# Gemini 2.5 Pro Experimental: An Impressive New Contender in Systems Programming
+# An Impressive New Contender in Systems Programming
 
 Gemini 2.5 Pro Experimental was recently released, and after putting it through its paces in a series of rigorous tests focusing on systems programming languages, I am genuinely impressed by what this model brings to the table. (Just on the surface Gemini has shown its colors, but further testing is needed).
 

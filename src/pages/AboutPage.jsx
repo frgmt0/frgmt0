@@ -26,10 +26,21 @@ const AboutPage = () => {
                 <div className="blob"></div>
                 <div className="avatar">
                   <div className="avatar-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                  <div className="avatar">
+                  <div className="avatar-image-container avatar-placeholder" style={{ position: 'relative', width: '150px', height: '150px', margin: '0 auto' }}>
+                    <img 
+                      src="/image.jpg" 
+                      alt="Jason's avatar" 
+                      className="avatar-image" 
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'cover',
+                        borderRadius: '50%'
+                      }} 
+                    />
+                  </div>
+              </div>
                   </div>
                 </div>
               </div>
