@@ -59,6 +59,9 @@ const Footer = () => {
               <li><a href="/">home</a></li>
               <li><a href="/about">about</a></li>
               <li><a href="/projects">projects</a></li>
+              <li><a href="/hosting">hosting</a></li>
+              <li><a href="/tos">terms of service</a></li>
+              <li><a href="/privacy">privacy policy</a></li>
             </ul>
           </div>
           

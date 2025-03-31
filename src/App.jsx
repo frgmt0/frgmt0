@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
+import HostingPage from './pages/HostingPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './styles/globals.css';
 import './styles/App.css';
@@ -102,6 +105,9 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/blog/*" element={<BlogRoutes />} />
+              <Route path="/hosting" element={<HostingPage />} />
+              <Route path="/tos" element={<TermsOfServicePage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

@@ -38,5 +38,15 @@
     "file": "gemini.md",
     "image": "blog/images/gemini.jpg",
     "tags": ["AI", "Programming", "Development"]
+  },
+  {
+    "id": 5,
+    "title": "An Offering",
+    "slug": "announcement",
+    "date": "2025-03-28",
+    "excerpt": "Something Speical for you...",
+    "file": "announcement.md",
+    "image": "blog/images/announcement.jpg",
+    "tags": ["Hosting", "Announcement"]
   }
 ] 
