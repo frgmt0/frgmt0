@@ -29,7 +29,7 @@ const AboutPage = () => {
                   <div className="avatar">
                   <div className="avatar-image-container avatar-placeholder" style={{ position: 'relative', width: '150px', height: '150px', margin: '0 auto' }}>
                     <img 
-                      src="/image.jpg" 
+                      src="/avatar.jpg" 
                       alt="Jason's avatar" 
                       className="avatar-image" 
                       style={{ 
