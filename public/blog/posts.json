@@ -48,5 +48,15 @@
     "file": "announcement.md",
     "image": "blog/images/announcement.jpg",
     "tags": ["Hosting", "Announcement"]
+  },
+  {
+    "id": 6,
+    "title": "My Return to Art",
+    "slug": "my-return-to-art",
+    "date": "2025-04-07",
+    "excerpt": "A reflection on my artistic style",
+    "file": "myart.md",
+    "image": "blog/images/wallpaper-3.jpg",
+    "tags": ["Art", "Reflection"]
   }
 ] 
