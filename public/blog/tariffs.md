@@ -1,4 +1,4 @@
-# The Double-Edged Sword: How Tariffs Impact Software Development and Hardware Manufacturing in the US
+## How Tariffs Impact Software Development and Hardware Manufacturing in the US
 
 The recent implementation of tariffs (reaching up to 54% on Chinese imports; 145% total) is creating significant ripple effects across the tech industry. These trade policies are reshaping not just hardware manufacturing but also the software development landscape.
 
