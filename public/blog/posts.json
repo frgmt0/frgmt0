@@ -58,5 +58,15 @@
     "file": "myart.md",
     "image": "blog/images/wallpaper-3.jpg",
     "tags": ["Art", "Reflection"]
+  },
+  {
+    "id": 7,
+    "title": "Tariffs and the Tech Industry",
+    "slug": "tariffs",
+    "date": "2025-04-15",
+    "excerpt": "A discussion on the impact of tariffs on the tech industry",
+    "file": "tariffs.md",
+    "image": "blog/images/tariffs.jpg",
+    "tags": ["Economy", "Technology", "Politics"]
   }
-] 
+]
