@@ -32,7 +32,7 @@
 | JavaScript | Intermediate           | ![](https://geps.dev/progress/65?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
 | TypeScript | Beginner/Intermediate  | ![](https://geps.dev/progress/45?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
 | Rust       | Intermediate           | ![](https://geps.dev/progress/80?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
-| C          | Beginner               | ![](https://geps.dev/progress/30?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
+| C          | Beginner               | ![](https://geps.dev/progress/45?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
 | C++        | Beginner               | ![](https://geps.dev/progress/25?dangerColor=B71C1C&warningColor=FF9800&successColor=4CAF50) |
 
 </div>
