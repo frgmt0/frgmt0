@@ -68,5 +68,15 @@
     "file": "tariffs.md",
     "image": "blog/images/tariffs.jpg",
     "tags": ["Economy", "Technology", "Politics"]
+  },
+  {
+    "id": 8,
+    "title": "A Call to Action",
+    "slug": "future-of-ai",
+    "date": "2025-05-06",
+    "excerpt": "A call to action for Anthropic to open source legacy AI models",
+    "file": "claude.md",
+    "image": "blog/images/claude.jpg",
+    "tags": ["AI", "Anthropic", "Open Source AI"]
   }
 ]
