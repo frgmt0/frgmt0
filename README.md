@@ -12,4 +12,10 @@ a wolf lives in this profile somewhere. he's chill. leave him alone.
 
 a lot of these repos just say TODO inside. that's not a disclaimer, that's a status update on me as a person.
 
-anyways
+anyways look at this:
+
+[![Claude Code stats](https://claude-rpc-totals.claude-rpc.workers.dev/card/frgmt0.svg)](https://claude-rpc.vercel.app/u/frgmt0)
+
+[![Claude Code hours](https://claude-rpc-totals.claude-rpc.workers.dev/badge/frgmt0.svg?metric=hours)](https://claude-rpc.vercel.app/?ref=badge)
+[![Claude Code streak](https://claude-rpc-totals.claude-rpc.workers.dev/badge/frgmt0.svg?metric=streak)](https://claude-rpc.vercel.app/?ref=badge)
+[![Claude Code tokens](https://claude-rpc-totals.claude-rpc.workers.dev/badge/frgmt0.svg?metric=tokens)](https://claude-rpc.vercel.app/?ref=badge)
