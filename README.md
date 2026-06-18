@@ -1,18 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="126" height="20" role="img" aria-label="claude · week: 12h">
-  <title>claude · week: 12h</title>
-  <linearGradient id="s" x2="0" y2="100%">
-    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
-    <stop offset="1" stop-opacity=".1"/>
-  </linearGradient>
-  <clipPath id="r"><rect width="126" height="20" rx="3" fill="#fff"/></clipPath>
-  <g clip-path="url(#r)">
-    <rect width="93" height="20" fill="#555"/>
-    <rect x="93" width="33" height="20" fill="#4c1"/>
-    <rect width="126" height="20" fill="url(#s)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
-    <text aria-hidden="true" x="465" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="770">claude · week</text>
-    <text x="465" y="140" transform="scale(.1)" fill="#fff" textLength="770">claude · week</text>
-    <text aria-hidden="true" x="1095" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="170">12h</text>
-    <text x="1095" y="140" transform="scale(.1)" fill="#fff" textLength="170">12h</text>
-  </g>
+# ro
+
+i write programming languages. there are two of them. you can't use either one.
+
+everything pinned below is named one word because by the time the thing worked i had no name left in me. you don't get to know what they do from out here. open them. or don't, that's fine, we were never close.
+
+i use arch linux. that's all. just wanted it on the record.
+
+i can solve a rubik's cube in under thirty seconds and there is nowhere else in my life this is relevant so it all comes out here.
+
+a wolf lives in this profile somewhere. he's chill. leave him alone.
+
+a lot of these repos just say TODO inside. that's not a disclaimer, that's a status update on me as a person.
+
+anyways
